@@ -18,7 +18,7 @@ const Form = (): JSX.Element => {
         <input
           type="text"
           id="first name"
-          className="form__input-container"
+          className="form__input-container-disabled"
           placeholder="Info from registration form"
           disabled
         />
@@ -28,7 +28,7 @@ const Form = (): JSX.Element => {
         <input
           type="text"
           id="last name"
-          className="form__input-container"
+          className="form__input-container-disabled"
           placeholder="Info from registration form"
           disabled
         />
@@ -38,7 +38,7 @@ const Form = (): JSX.Element => {
         <input
           type="text"
           id="first name"
-          className="form__input-container"
+          className="form__input-container-disabled"
           placeholder="Info from registration form"
           disabled
         />
@@ -48,10 +48,37 @@ const Form = (): JSX.Element => {
         <input
           type="text"
           id="phone number"
-          className="form__input-container"
+          className="form__input-container-disabled"
           placeholder="Info from registration form"
           disabled
         />
+        <label htmlFor="birth date" className="form__input-label">
+          Date of Birth
+        </label>
+        <input type="text" id="birth date" className="form__input-container" />
+        <FormInformationStyled className="form__address">
+          Your address
+        </FormInformationStyled>
+        <label htmlFor="nationality" className="form__input-label">
+          Nationality
+        </label>
+        <input type="text" id="nationality" className="form__input-container" />{" "}
+        <label htmlFor="address 1" className="form__input-label">
+          Address Line 1
+        </label>
+        <input type="text" id="address 2" className="form__input-container" />{" "}
+        <label htmlFor="address 2" className="form__input-label">
+          Address Line 2
+        </label>
+        <input type="text" id="country" className="form__input-container" />{" "}
+        <label htmlFor="country" className="form__input-label">
+          Country
+        </label>
+        <input type="text" id="address 2" className="form__input-container" />
+        <label htmlFor="province" className="form__input-label">
+          Province / State
+        </label>
+        <input type="text" id="province" className="form__input-container" />
       </FormStyled>
     </FormContainerStyled>
   );
