@@ -1,3 +1,5 @@
+import React, { useEffect, useState } from "react";
+import { UserData } from "../../interfaces/UserData";
 import FormButton from "../Button/Button";
 import {
   FormContainerStyled,
@@ -6,6 +8,45 @@ import {
 } from "./FormStyled";
 
 const Form = (): JSX.Element => {
+  const formInitialState: UserData = {
+    address1: "",
+    address2: "",
+    birth: "",
+    country: "",
+    nationality: "",
+    province: "",
+  };
+
+  const [formData, setFormData] = useState<UserData>(formInitialState);
+  const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
+
+  const changeData = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [event.target.id]: event.target.value });
+  };
+
+  useEffect(() => {
+    if (
+      formData.address1 !== "" &&
+      formData.address2 !== "" &&
+      formData.birth !== "" &&
+      formData.country !== "" &&
+      formData.nationality !== "" &&
+      formData.province !== ""
+    ) {
+      setIsButtonDisabled(false);
+      return;
+    }
+
+    setIsButtonDisabled(true);
+  }, [
+    formData.address1,
+    formData.address2,
+    formData.birth,
+    formData.country,
+    formData.nationality,
+    formData.province,
+  ]);
+
   return (
     <FormContainerStyled>
       <FormInformationStyled>
@@ -34,12 +75,12 @@ const Form = (): JSX.Element => {
           placeholder="Info from registration form"
           disabled
         />
-        <label htmlFor="email address" className="form__input-label">
+        <label htmlFor="email" className="form__input-label">
           Email Address
         </label>
         <input
           type="text"
-          id="email address"
+          id="email"
           className="form__input-container-disabled"
           placeholder="Info from registration form"
           disabled
@@ -54,38 +95,69 @@ const Form = (): JSX.Element => {
           placeholder="Info from registration form"
           disabled
         />
-        <label htmlFor="birth date" className="form__input-label">
+        <label htmlFor="birth" className="form__input-label">
           Date of Birth
         </label>
-        <input type="text" id="birth date" className="form__input-container" />
+        <input
+          type="text"
+          id="birth"
+          className="form__input-container"
+          onChange={changeData}
+        />
         <FormInformationStyled className="form__address">
           Your address
         </FormInformationStyled>
         <label htmlFor="nationality" className="form__input-label">
           Nationality
         </label>
-        <input type="text" id="nationality" className="form__input-container" />{" "}
-        <label htmlFor="address 1" className="form__input-label">
+        <input
+          type="text"
+          id="nationality"
+          className="form__input-container"
+          onChange={changeData}
+        />{" "}
+        <label htmlFor="address1" className="form__input-label">
           Address Line 1
         </label>
-        <input type="text" id="address 1" className="form__input-container" />{" "}
-        <label htmlFor="address 2" className="form__input-label">
+        <input
+          type="text"
+          id="address1"
+          className="form__input-container"
+          onChange={changeData}
+        />{" "}
+        <label htmlFor="address2" className="form__input-label">
           Address Line 2
         </label>
-        <input type="text" id="address 2" className="form__input-container" />{" "}
+        <input
+          type="text"
+          id="address2"
+          className="form__input-container"
+          onChange={changeData}
+        />{" "}
         <label htmlFor="country" className="form__input-label">
           Country
         </label>
-        <input type="text" id="country" className="form__input-container" />
+        <input
+          type="text"
+          id="country"
+          className="form__input-container"
+          onChange={changeData}
+        />
         <label htmlFor="province" className="form__input-label">
           Province / State
         </label>
-        <input type="text" id="province" className="form__input-container" />
+        <input
+          type="text"
+          id="province"
+          className="form__input-container"
+          onChange={changeData}
+        />
       </FormStyled>
       <FormButton
         buttonType="submit"
         buttonText="NEXT STEP"
         buttonClass=""
+        isDisabled={isButtonDisabled}
         buttonFunction={() => console.log("Test")}
       />
     </FormContainerStyled>

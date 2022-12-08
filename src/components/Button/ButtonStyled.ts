@@ -25,4 +25,12 @@ export const ButtonStyled = styled.button`
     color: ${({ theme }) => theme.colors.mainColor};
     border: solid 1px ${({ theme }) => theme.colors.mainColor};
   }
+  &:disabled {
+    background-color: #c4c4c4;
+    &:active {
+      background-color: none;
+      color: white;
+      border: none;
+    }
+  }
 `;

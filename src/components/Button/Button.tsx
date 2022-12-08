@@ -5,9 +5,11 @@ interface ButtonProps {
   buttonFunction: () => void;
   buttonText: string;
   buttonType: "button" | "submit" | "reset" | undefined;
+  isDisabled: boolean;
 }
 
 const FormButton = ({
+  isDisabled,
   buttonClass,
   buttonFunction,
   buttonType,
@@ -15,6 +17,7 @@ const FormButton = ({
 }: ButtonProps): JSX.Element => {
   return (
     <ButtonStyled
+      disabled={isDisabled}
       type={buttonType}
       onClick={buttonFunction}
       className={buttonClass}

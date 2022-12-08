@@ -15,6 +15,7 @@ describe("Given a Button function", () => {
       render(
         <ThemeProvider theme={dark}>
           <Button
+            isDisabled={false}
             buttonType="submit"
             buttonClass={expectedButtonClass}
             buttonFunction={expectedButtonFunction}
@@ -41,6 +42,7 @@ describe("Given a Button function", () => {
       render(
         <ThemeProvider theme={dark}>
           <Button
+            isDisabled={false}
             buttonType="submit"
             buttonClass={expectedButtonClass}
             buttonFunction={expectedButtonFunction}
