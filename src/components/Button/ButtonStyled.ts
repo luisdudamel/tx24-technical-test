@@ -5,7 +5,7 @@ export const ButtonStyled = styled.button`
   height: 46.88px;
   left: 88px;
   top: 1112.02px;
-  color: ${({ theme }) => theme.colors.textColor};
+  color: ${({ theme }) => theme.colors.buttonText};
   background: ${({ theme }) => theme.colors.mainColor};
   border-radius: 5px;
   border: none;
@@ -17,7 +17,7 @@ export const ButtonStyled = styled.button`
 
   &:active {
     background-color: ${({ theme }) => theme.colors.appBackground};
-    color: ${({ theme }) => theme.colors.mainColor};
+    color: ${({ theme }) => theme.colors.buttonText};
     border: ${({ theme }) => theme.colors.mainColor};
   }
 `;

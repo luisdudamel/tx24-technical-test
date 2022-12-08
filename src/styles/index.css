@@ -17,17 +17,17 @@ body {
     url(../fonts/Sansation_Regular.ttf) format("opentype");
 }
 @font-face {
-  font-family: "Sansation";
+  font-family: "Sansation Bold";
   font-weight: 700;
   src: local("Sansation"), url(../fonts/Sansation_Bold.ttf) format("opentype");
 }
 @font-face {
-  font-family: "Sansation";
+  font-family: "Sansation Italic";
   font-style: italic;
   src: local("Sansation"), url(../fonts/Sansation_Italic.ttf) format("opentype");
 }
 @font-face {
-  font-family: "Sansation";
+  font-family: "Sansation Light";
   font-weight: 300;
   src: local("Sansation"), url(../fonts/Sansation_Light.ttf) format("opentype");
 }
