@@ -1,4 +1,4 @@
-import Button from "./components/Button";
+import Button from "./components/Button/Button";
 
 function App() {
   const buttonFunction = (): void => {
@@ -9,6 +9,7 @@ function App() {
     <Button
       buttonFunction={() => buttonFunction()}
       buttonClass="form__button"
+      buttonText="Next Step"
     />
   );
 }

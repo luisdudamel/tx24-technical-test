@@ -3,14 +3,19 @@ import "./button.css";
 interface ButtonProps {
   buttonClass: string;
   buttonFunction: () => void;
+  buttonText: string;
 }
 
-const Button = ({ buttonClass, buttonFunction }: ButtonProps): JSX.Element => {
+const FormButton = ({
+  buttonClass,
+  buttonFunction,
+  buttonText,
+}: ButtonProps): JSX.Element => {
   return (
     <button onClick={buttonFunction} className={buttonClass}>
-      NEXT STEP
+      {buttonText}
     </button>
   );
 };
 
-export default Button;
+export default FormButton;
