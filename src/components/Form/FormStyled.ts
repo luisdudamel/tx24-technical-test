@@ -34,7 +34,7 @@ export const FormStyled = styled.form`
   padding-top: 50px;
   padding-right: 15px;
   padding-left: 15px;
-  padding-bottom: 30px;
+  padding-bottom: 70px;
 
   .form__input {
     &-label {
@@ -53,7 +53,7 @@ export const FormStyled = styled.form`
 
     &-container {
       width: 100%;
-      height: 30px;
+      height: 35px;
       border: 1px solid;
       border-color: ${({ theme }) => theme.colors.mainColor};
       border-radius: 5px;
@@ -76,7 +76,7 @@ export const FormStyled = styled.form`
 
       &-disabled {
         width: 100%;
-        height: 30px;
+        height: 35px;
         background: rgba(230, 230, 230, 0.35);
         border: 1px solid;
         border-color: ${({ theme }) => theme.colors.mainColor};

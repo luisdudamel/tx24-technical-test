@@ -1,4 +1,4 @@
-import { ButtonStyled } from "./ButtonStyled";
+import { FormButtonStyled } from "./ButtonStyled";
 
 interface ButtonProps {
   buttonClass: string;
@@ -7,21 +7,19 @@ interface ButtonProps {
   isDisabled: boolean;
 }
 
-const FormButton = ({
+const Button = ({
   isDisabled,
   buttonClass,
   buttonType,
   buttonText,
 }: ButtonProps): JSX.Element => {
-  return (
-    <ButtonStyled
-      disabled={isDisabled}
-      type={buttonType}
-      className={buttonClass}
-    >
+  return buttonClass === "formButton" ? (
+    <FormButtonStyled disabled={isDisabled} type={buttonType}>
       {buttonText}
-    </ButtonStyled>
+    </FormButtonStyled>
+  ) : (
+    <></>
   );
 };
 
-export default FormButton;
+export default Button;

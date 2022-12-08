@@ -50,6 +50,7 @@ const Form = (): JSX.Element => {
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(formData);
+    setFormData(formInitialState);
   };
 
   return (
@@ -107,6 +108,7 @@ const Form = (): JSX.Element => {
           id="birth"
           className="form__input-container"
           onChange={changeData}
+          value={formData.birth}
         />
         <FormInformationStyled className="form__address">
           Your address
@@ -119,6 +121,7 @@ const Form = (): JSX.Element => {
           id="nationality"
           className="form__input-container"
           onChange={changeData}
+          value={formData.nationality}
         />{" "}
         <label htmlFor="address1" className="form__input-label">
           Address Line 1
@@ -128,6 +131,7 @@ const Form = (): JSX.Element => {
           id="address1"
           className="form__input-container"
           onChange={changeData}
+          value={formData.address1}
         />{" "}
         <label htmlFor="address2" className="form__input-label">
           Address Line 2
@@ -137,6 +141,7 @@ const Form = (): JSX.Element => {
           id="address2"
           className="form__input-container"
           onChange={changeData}
+          value={formData.address2}
         />{" "}
         <label htmlFor="country" className="form__input-label">
           Country
@@ -146,6 +151,7 @@ const Form = (): JSX.Element => {
           id="country"
           className="form__input-container"
           onChange={changeData}
+          value={formData.country}
         />
         <label htmlFor="province" className="form__input-label">
           Province / State
@@ -155,11 +161,12 @@ const Form = (): JSX.Element => {
           id="province"
           className="form__input-container"
           onChange={changeData}
+          value={formData.province}
         />
         <FormButton
           buttonType="submit"
           buttonText="NEXT STEP"
-          buttonClass=""
+          buttonClass="formButton"
           isDisabled={isButtonDisabled}
         />
       </FormStyled>
