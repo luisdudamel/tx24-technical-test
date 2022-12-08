@@ -29,32 +29,4 @@ describe("Given a Button function", () => {
       expect(formButton).toBeInTheDocument();
     });
   });
-
-  describe("And the user clicks on the button", () => {
-    test("Then it should call the received function`", async () => {
-      const buttonText = "Next Step";
-      const expectedButtonText = "Next Step";
-      const expectedButtonClass = "button__class";
-      const expectedButtonFunction = jest.fn();
-
-      render(
-        <ThemeProvider theme={dark}>
-          <Button
-            isDisabled={false}
-            buttonType="submit"
-            buttonClass={expectedButtonClass}
-            buttonText={buttonText}
-          />
-        </ThemeProvider>
-      );
-
-      const formButton = screen.getByRole("button", {
-        name: expectedButtonText,
-      });
-
-      await userEvent.click(formButton);
-
-      expect(expectedButtonFunction).toHaveBeenCalled();
-    });
-  });
 });
