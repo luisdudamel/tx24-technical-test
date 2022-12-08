@@ -47,14 +47,18 @@ const Form = (): JSX.Element => {
     formData.province,
   ]);
 
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    console.log(formData);
+  };
+
   return (
     <FormContainerStyled>
       <FormInformationStyled>
         Please type carefully and fill out the form with your personal details.
         You cannot edit these details once you submitted the form.
       </FormInformationStyled>
-      <label htmlFor=""></label>
-      <FormStyled>
+      <FormStyled onSubmit={handleFormSubmit}>
         <label htmlFor="first name" className="form__input-label">
           First Name
         </label>
@@ -152,14 +156,13 @@ const Form = (): JSX.Element => {
           className="form__input-container"
           onChange={changeData}
         />
+        <FormButton
+          buttonType="submit"
+          buttonText="NEXT STEP"
+          buttonClass=""
+          isDisabled={isButtonDisabled}
+        />
       </FormStyled>
-      <FormButton
-        buttonType="submit"
-        buttonText="NEXT STEP"
-        buttonClass=""
-        isDisabled={isButtonDisabled}
-        buttonFunction={() => console.log("Test")}
-      />
     </FormContainerStyled>
   );
 };

@@ -22,12 +22,15 @@ export const FormInformationStyled = styled.p`
   text-align: center;
   letter-spacing: 0.05em;
   color: black;
-  padding: 0px 10px;
+  padding: 0px 20px;
 `;
 
 export const FormStyled = styled.form`
   width: 100%;
-
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: center;
   padding-top: 50px;
   padding-right: 15px;
   padding-left: 15px;
@@ -44,6 +47,8 @@ export const FormStyled = styled.form`
       align-items: center;
       letter-spacing: 0.05em;
       padding-bottom: 5px;
+      text-align: left;
+      width: 100%;
     }
 
     &-container {
@@ -102,5 +107,11 @@ export const FormStyled = styled.form`
     display: flex;
     align-items: center;
     letter-spacing: 0.05em;
+    text-align: left;
+    width: 100%;
+  }
+
+  button {
+    margin-top: 50px;
   }
 `;

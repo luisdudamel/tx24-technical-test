@@ -10,7 +10,6 @@ describe("Given a Button function", () => {
       const buttonText = "Next Step";
       const expectedButtonText = "Next Step";
       const expectedButtonClass = "button__class";
-      const expectedButtonFunction = () => {};
 
       render(
         <ThemeProvider theme={dark}>
@@ -18,7 +17,6 @@ describe("Given a Button function", () => {
             isDisabled={false}
             buttonType="submit"
             buttonClass={expectedButtonClass}
-            buttonFunction={expectedButtonFunction}
             buttonText={buttonText}
           />
         </ThemeProvider>
@@ -45,7 +43,6 @@ describe("Given a Button function", () => {
             isDisabled={false}
             buttonType="submit"
             buttonClass={expectedButtonClass}
-            buttonFunction={expectedButtonFunction}
             buttonText={buttonText}
           />
         </ThemeProvider>
