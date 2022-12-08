@@ -1,6 +1,6 @@
 import { ThemeProvider } from "styled-components";
 import Button from "./components/Button/Button";
-import { dark, light } from "./styles/Theme.styled";
+import { light } from "./styles/Theme.styled";
 
 function App() {
   const buttonFunction = (): void => {
