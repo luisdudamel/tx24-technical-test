@@ -4,7 +4,8 @@ interface theme {
     mainColor: string;
     inactiveColor: string;
     appBackground: string;
-    textColor: string;
+    buttonText: string;
+    mainText: string;
   };
 }
 
@@ -14,7 +15,8 @@ export const light: theme = {
     mainColor: "#ff1282",
     inactiveColor: "#c4c4c4",
     appBackground: "white",
-    textColor: "white",
+    buttonText: "white",
+    mainText: "black",
   },
 };
 
@@ -24,6 +26,7 @@ export const dark: theme = {
     mainColor: "#00FFF7",
     inactiveColor: "#c4c4c4",
     appBackground: "#363442",
-    textColor: "#363442",
+    buttonText: "#363442",
+    mainText: "white",
   },
 };

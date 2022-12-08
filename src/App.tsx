@@ -4,9 +4,11 @@ import { light } from "./styles/Theme.styled";
 
 function App() {
   return (
-    <ThemeProvider theme={light}>
-      <Layout />
-    </ThemeProvider>
+    <>
+      <ThemeProvider theme={light}>
+        <Layout />
+      </ThemeProvider>
+    </>
   );
 }
 

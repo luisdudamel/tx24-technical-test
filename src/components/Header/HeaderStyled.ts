@@ -1,16 +1,21 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
+  z-index: 2;
+  position: fixed;
+  top: 0px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   height: 40px;
   padding: 5px 10px;
   align-items: center;
   justify-content: space-between;
+  background-color: white;
 `;
 
 export const StyledLogo = styled.img`
-  width: 40px;
+  width: 50px;
 `;
 
 export const StyledHamburger = styled.div`
