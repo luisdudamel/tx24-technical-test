@@ -11,13 +11,18 @@ export const ButtonStyled = styled.button`
   border: none;
   width: 200px;
   height: 46.88px;
-  font-family: "Sansation";
-  font-weight: 300;
   cursor: pointer;
+  font-family: "Sansation Light";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.05em;
 
   &:active {
     background-color: ${({ theme }) => theme.colors.appBackground};
-    color: ${({ theme }) => theme.colors.buttonText};
-    border: ${({ theme }) => theme.colors.mainColor};
+    color: ${({ theme }) => theme.colors.mainColor};
+    border: solid 1px ${({ theme }) => theme.colors.mainColor};
   }
 `;

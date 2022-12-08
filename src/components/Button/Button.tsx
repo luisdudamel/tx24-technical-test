@@ -4,15 +4,21 @@ interface ButtonProps {
   buttonClass: string;
   buttonFunction: () => void;
   buttonText: string;
+  buttonType: "button" | "submit" | "reset" | undefined;
 }
 
 const FormButton = ({
   buttonClass,
   buttonFunction,
+  buttonType,
   buttonText,
 }: ButtonProps): JSX.Element => {
   return (
-    <ButtonStyled onClick={buttonFunction} className={buttonClass}>
+    <ButtonStyled
+      type={buttonType}
+      onClick={buttonFunction}
+      className={buttonClass}
+    >
       {buttonText}
     </ButtonStyled>
   );

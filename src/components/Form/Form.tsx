@@ -1,3 +1,4 @@
+import FormButton from "../Button/Button";
 import {
   FormContainerStyled,
   FormInformationStyled,
@@ -11,6 +12,7 @@ const Form = (): JSX.Element => {
         Please type carefully and fill out the form with your personal details.
         You cannot edit these details once you submitted the form.
       </FormInformationStyled>
+      <label htmlFor=""></label>
       <FormStyled>
         <label htmlFor="first name" className="form__input-label">
           First Name
@@ -37,7 +39,7 @@ const Form = (): JSX.Element => {
         </label>
         <input
           type="text"
-          id="first name"
+          id="email address"
           className="form__input-container-disabled"
           placeholder="Info from registration form"
           disabled
@@ -66,20 +68,26 @@ const Form = (): JSX.Element => {
         <label htmlFor="address 1" className="form__input-label">
           Address Line 1
         </label>
-        <input type="text" id="address 2" className="form__input-container" />{" "}
+        <input type="text" id="address 1" className="form__input-container" />{" "}
         <label htmlFor="address 2" className="form__input-label">
           Address Line 2
         </label>
-        <input type="text" id="country" className="form__input-container" />{" "}
+        <input type="text" id="address 2" className="form__input-container" />{" "}
         <label htmlFor="country" className="form__input-label">
           Country
         </label>
-        <input type="text" id="address 2" className="form__input-container" />
+        <input type="text" id="country" className="form__input-container" />
         <label htmlFor="province" className="form__input-label">
           Province / State
         </label>
         <input type="text" id="province" className="form__input-container" />
       </FormStyled>
+      <FormButton
+        buttonType="submit"
+        buttonText="NEXT STEP"
+        buttonClass=""
+        buttonFunction={() => console.log("Test")}
+      />
     </FormContainerStyled>
   );
 };

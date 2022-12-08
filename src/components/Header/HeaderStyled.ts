@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
+  z-index: 2;
   position: fixed;
   top: 0px;
   width: 100%;

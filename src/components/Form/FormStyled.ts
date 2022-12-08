@@ -8,6 +8,7 @@ export const FormContainerStyled = styled.div`
   flex-direction: column;
   padding: 25px 0px;
   padding-top: 60px;
+  align-items: center;
 `;
 
 export const FormInformationStyled = styled.p`
@@ -27,7 +28,10 @@ export const FormInformationStyled = styled.p`
 export const FormStyled = styled.form`
   width: 100%;
 
-  padding: 50px 15px;
+  padding-top: 50px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 30px;
 
   .form__input {
     &-label {

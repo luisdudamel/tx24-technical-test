@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const FooterStyled = styled.footer`
   text-align: center;
   padding-bottom: 10px;
+  padding-top: 20px;
   font-style: normal;
   font-weight: 300;
   font-size: 12px;
