@@ -1,4 +1,6 @@
+import { ThemeProvider } from "styled-components";
 import Button from "./components/Button/Button";
+import { dark, light } from "./styles/Theme.styled";
 
 function App() {
   const buttonFunction = (): void => {
@@ -6,11 +8,13 @@ function App() {
   };
 
   return (
-    <Button
-      buttonFunction={() => buttonFunction()}
-      buttonClass="form__button"
-      buttonText="Next Step"
-    />
+    <ThemeProvider theme={light}>
+      <Button
+        buttonFunction={() => buttonFunction()}
+        buttonClass="form__button"
+        buttonText="Next Step"
+      />
+    </ThemeProvider>
   );
 }
 

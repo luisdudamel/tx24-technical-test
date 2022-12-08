@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { ThemeProvider } from "styled-components";
+import { dark } from "../../styles/Theme.styled";
 import Button from "./Button";
 
 describe("Given a Button function", () => {
@@ -11,11 +13,13 @@ describe("Given a Button function", () => {
       const expectedButtonFunction = () => {};
 
       render(
-        <Button
-          buttonClass={expectedButtonClass}
-          buttonFunction={expectedButtonFunction}
-          buttonText={buttonText}
-        />
+        <ThemeProvider theme={dark}>
+          <Button
+            buttonClass={expectedButtonClass}
+            buttonFunction={expectedButtonFunction}
+            buttonText={buttonText}
+          />
+        </ThemeProvider>
       );
 
       const formButton = screen.getByRole("button", {
@@ -34,11 +38,13 @@ describe("Given a Button function", () => {
       const expectedButtonFunction = jest.fn();
 
       render(
-        <Button
-          buttonClass={expectedButtonClass}
-          buttonFunction={expectedButtonFunction}
-          buttonText={buttonText}
-        />
+        <ThemeProvider theme={dark}>
+          <Button
+            buttonClass={expectedButtonClass}
+            buttonFunction={expectedButtonFunction}
+            buttonText={buttonText}
+          />
+        </ThemeProvider>
       );
 
       const formButton = screen.getByRole("button", {
