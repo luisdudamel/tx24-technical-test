@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ButtonStyled = styled.button`
+export const FormButtonStyled = styled.button`
   width: 200px;
   height: 46.88px;
   left: 88px;
@@ -24,5 +24,13 @@ export const ButtonStyled = styled.button`
     background-color: ${({ theme }) => theme.colors.appBackground};
     color: ${({ theme }) => theme.colors.mainColor};
     border: solid 1px ${({ theme }) => theme.colors.mainColor};
+  }
+  &:disabled {
+    background-color: #c4c4c4;
+    &:active {
+      background-color: none;
+      color: white;
+      border: none;
+    }
   }
 `;

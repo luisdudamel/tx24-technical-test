@@ -22,16 +22,19 @@ export const FormInformationStyled = styled.p`
   text-align: center;
   letter-spacing: 0.05em;
   color: black;
-  padding: 0px 10px;
+  padding: 0px 20px;
 `;
 
 export const FormStyled = styled.form`
   width: 100%;
-
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: center;
   padding-top: 50px;
   padding-right: 15px;
   padding-left: 15px;
-  padding-bottom: 30px;
+  padding-bottom: 70px;
 
   .form__input {
     &-label {
@@ -44,11 +47,13 @@ export const FormStyled = styled.form`
       align-items: center;
       letter-spacing: 0.05em;
       padding-bottom: 5px;
+      text-align: left;
+      width: 100%;
     }
 
     &-container {
       width: 100%;
-      height: 30px;
+      height: 35px;
       border: 1px solid;
       border-color: ${({ theme }) => theme.colors.mainColor};
       border-radius: 5px;
@@ -71,7 +76,7 @@ export const FormStyled = styled.form`
 
       &-disabled {
         width: 100%;
-        height: 30px;
+        height: 35px;
         background: rgba(230, 230, 230, 0.35);
         border: 1px solid;
         border-color: ${({ theme }) => theme.colors.mainColor};
@@ -102,5 +107,11 @@ export const FormStyled = styled.form`
     display: flex;
     align-items: center;
     letter-spacing: 0.05em;
+    text-align: left;
+    width: 100%;
+  }
+
+  button {
+    margin-top: 50px;
   }
 `;
