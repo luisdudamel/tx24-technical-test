@@ -1,5 +1,7 @@
+import Button from "./components/Button";
+
 function App() {
-  return <></>;
+  return <Button buttonClass="form__button" />;
 }
 
 export default App;
