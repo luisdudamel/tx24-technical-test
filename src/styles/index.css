@@ -9,22 +9,23 @@ body {
 
 @font-face {
   font-family: "Sansation";
-  src: local("Sansation"), url(./fonts/Sansation_Regular.ttf) format("opentype");
+  src: local("Sansation"),
+    url(../fonts/Sansation_Regular.ttf) format("opentype");
 }
 @font-face {
   font-family: "Sansation";
   font-weight: 700;
-  src: local("Sansation"), url(./fonts/Sansation_Bold.ttf) format("opentype");
+  src: local("Sansation"), url(../fonts/Sansation_Bold.ttf) format("opentype");
 }
 @font-face {
   font-family: "Sansation";
   font-style: italic;
-  src: local("Sansation"), url(./fonts/Sansation_Italic.ttf) format("opentype");
+  src: local("Sansation"), url(../fonts/Sansation_Italic.ttf) format("opentype");
 }
 @font-face {
   font-family: "Sansation";
   font-weight: 300;
-  src: local("Sansation"), url(./fonts/Sansation_Light.ttf) format("opentype");
+  src: local("Sansation"), url(../fonts/Sansation_Light.ttf) format("opentype");
 }
 
 code {

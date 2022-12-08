@@ -1,4 +1,4 @@
-import "./button.css";
+import { ButtonStyled } from "./ButtonStyled";
 
 interface ButtonProps {
   buttonClass: string;
@@ -12,9 +12,9 @@ const FormButton = ({
   buttonText,
 }: ButtonProps): JSX.Element => {
   return (
-    <button onClick={buttonFunction} className={buttonClass}>
+    <ButtonStyled onClick={buttonFunction} className={buttonClass}>
       {buttonText}
-    </button>
+    </ButtonStyled>
   );
 };
 
