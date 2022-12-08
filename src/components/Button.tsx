@@ -2,10 +2,15 @@ import "./button.css";
 
 interface ButtonProps {
   buttonClass: string;
+  buttonFunction: () => void;
 }
 
-const Button = ({ buttonClass }: ButtonProps): JSX.Element => {
-  return <button className={buttonClass}>NEXT STEP</button>;
+const Button = ({ buttonClass, buttonFunction }: ButtonProps): JSX.Element => {
+  return (
+    <button onClick={buttonFunction} className={buttonClass}>
+      NEXT STEP
+    </button>
+  );
 };
 
 export default Button;

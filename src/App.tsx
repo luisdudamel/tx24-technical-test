@@ -1,7 +1,16 @@
 import Button from "./components/Button";
 
 function App() {
-  return <Button buttonClass="form__button" />;
+  const buttonFunction = (): void => {
+    console.log("Click");
+  };
+
+  return (
+    <Button
+      buttonFunction={() => buttonFunction()}
+      buttonClass="form__button"
+    />
+  );
 }
 
 export default App;
