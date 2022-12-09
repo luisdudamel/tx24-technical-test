@@ -53,5 +53,30 @@ describe("Given a IdentitySelector function", () => {
 
       expect(nextButton).toBeEnabled();
     });
+
+    describe("And the user clicks on th same button with the text `Passport`", () => {
+      test("Then the button with the text `NEXT STEP` should be disabled", async () => {
+        const expectedPassportText = "Id Icon Passport";
+        const expectedNextButtonText = "NEXT STEP";
+
+        render(
+          <ThemeProvider theme={light}>
+            <IdentitySelector />
+          </ThemeProvider>
+        );
+
+        const passportButton = screen.getByRole("button", {
+          name: expectedPassportText,
+        });
+
+        const nextButton = screen.getByRole("button", {
+          name: expectedNextButtonText,
+        });
+        await userEvent.click(passportButton);
+        await userEvent.click(passportButton);
+
+        expect(nextButton).toBeDisabled();
+      });
+    });
   });
 });
