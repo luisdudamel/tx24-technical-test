@@ -34,3 +34,27 @@ export const FormButtonStyled = styled.button`
     }
   }
 `;
+
+export const IdentityButtonStyled = styled.button`
+  display: flex;
+  padding-left: 15px;
+  gap: 10px;
+  color: ${({ theme }) => theme.colors.inactiveColor};
+  background: ${({ theme }) => theme.colors.mainColor};
+  font-family: "Sansation Light";
+  width: 280px;
+  height: 70px;
+  left: 48px;
+  top: 208px;
+  background: #ffffff;
+  border: 1px solid ${({ theme }) => theme.colors.inactiveColor};
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+`;

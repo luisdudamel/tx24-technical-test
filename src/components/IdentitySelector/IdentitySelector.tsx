@@ -1,17 +1,66 @@
 import { useState } from "react";
 import Button from "../Button/Button";
 import {
+  DocumentSelector,
   IdentityContainerStyled,
   IdentityInformationStyled,
 } from "./IdentitySelectorStyled";
 
 const IdentitySelector = (): JSX.Element => {
+  const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
+  const [activeButton, setActiveButton] = useState<string>("");
+
+  const enableNextButton = (buttonToActivate: string): void => {
+    if (activeButton === buttonToActivate) {
+      setActiveButton("");
+      setIsButtonDisabled(!isButtonDisabled);
+      return;
+    }
+    setActiveButton(buttonToActivate);
+    setIsButtonDisabled(!isButtonDisabled);
+  };
+
   return (
     <IdentityContainerStyled>
       <IdentityInformationStyled>
         In order to complete this step, please upload any of the following
         personal documents
       </IdentityInformationStyled>
+      <DocumentSelector>
+        <Button
+          buttonClass="identity"
+          buttonText="Passport"
+          buttonType="button"
+          active={activeButton === "Passport" ? true : false}
+          setActive={enableNextButton}
+          isDisabled={false}
+          buttonImage={<img src="img/Passport-1.svg" alt="Id Icon"></img>}
+        />
+        <Button
+          buttonClass="identity"
+          buttonText="National Card"
+          buttonType="button"
+          isDisabled={false}
+          setActive={enableNextButton}
+          active={activeButton === "National Card" ? true : false}
+          buttonImage={<img src="img/id-1.svg" alt="Id Icon"></img>}
+        />
+        <Button
+          buttonClass="identity"
+          buttonText="Driver's License"
+          buttonType="button"
+          isDisabled={false}
+          setActive={enableNextButton}
+          active={activeButton === "Driver's License" ? true : false}
+          buttonImage={<img src="img/license-1.svg" alt="Id Icon"></img>}
+        />
+      </DocumentSelector>
+      <Button
+        buttonClass="formButton"
+        buttonText="NEXT STEP"
+        buttonType="submit"
+        isDisabled={isButtonDisabled}
+      />
     </IdentityContainerStyled>
   );
 };

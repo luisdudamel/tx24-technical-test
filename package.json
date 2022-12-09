@@ -51,6 +51,7 @@
       "src/**/*.tsx",
       "src/**/*.ts",
       "!src/index.tsx",
+      "!src/interfaces/*.ts",
       "!src/App.tsx",
       "!src/**/*.test.ts",
       "!src/reportWebVitals.ts",
