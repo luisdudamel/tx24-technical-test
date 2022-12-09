@@ -6,6 +6,8 @@ interface ButtonProps {
   buttonType: "button" | "submit" | "reset" | undefined;
   isDisabled: boolean;
   buttonImage?: JSX.Element;
+  active?: boolean;
+  setActive?: (active: string) => void;
 }
 
 const Button = ({
@@ -14,6 +16,8 @@ const Button = ({
   buttonType,
   buttonText,
   buttonImage,
+  active,
+  setActive,
 }: ButtonProps): JSX.Element => {
   return (
     <>
@@ -23,7 +27,12 @@ const Button = ({
         </FormButtonStyled>
       ) : null}
       {buttonClass === "identity" ? (
-        <IdentityButtonStyled disabled={isDisabled} type={buttonType}>
+        <IdentityButtonStyled
+          onClick={() => (setActive ? setActive(buttonText) : null)}
+          className={active ? "button__active" : ""}
+          disabled={isDisabled}
+          type={buttonType}
+        >
           {buttonImage}
           {buttonText}
         </IdentityButtonStyled>

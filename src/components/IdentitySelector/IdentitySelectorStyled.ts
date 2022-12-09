@@ -34,4 +34,9 @@ export const DocumentSelector = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  .button__active {
+    background-color: ${({ theme }) => theme.colors.appBackground};
+    color: ${({ theme }) => theme.colors.mainColor};
+    border: solid 1px ${({ theme }) => theme.colors.mainColor};
+  }
 `;

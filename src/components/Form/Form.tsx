@@ -53,7 +53,6 @@ const Form = ({ setStep }: FormProps): JSX.Element => {
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(formData);
     setFormData(formInitialState);
     setStep(2);
   };

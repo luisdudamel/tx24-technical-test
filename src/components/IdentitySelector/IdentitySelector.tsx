@@ -8,6 +8,7 @@ import {
 
 const IdentitySelector = (): JSX.Element => {
   const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
+  const [activeButton, setActiveButton] = useState<string>("");
 
   return (
     <IdentityContainerStyled>
@@ -20,6 +21,8 @@ const IdentitySelector = (): JSX.Element => {
           buttonClass="identity"
           buttonText="Passport"
           buttonType="button"
+          active={activeButton === "Passport" ? true : false}
+          setActive={setActiveButton}
           isDisabled={false}
           buttonImage={<img src="img/Passport-1.svg" alt="Id Icon"></img>}
         />
@@ -28,14 +31,17 @@ const IdentitySelector = (): JSX.Element => {
           buttonText="National Card"
           buttonType="button"
           isDisabled={false}
+          setActive={setActiveButton}
+          active={activeButton === "National Card" ? true : false}
           buttonImage={<img src="img/id-1.svg" alt="Id Icon"></img>}
         />
-
         <Button
           buttonClass="identity"
           buttonText="Driver's License"
           buttonType="button"
           isDisabled={false}
+          setActive={setActiveButton}
+          active={activeButton === "Driver's License" ? true : false}
           buttonImage={<img src="img/license-1.svg" alt="Id Icon"></img>}
         />
       </DocumentSelector>
