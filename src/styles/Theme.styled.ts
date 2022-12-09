@@ -1,4 +1,4 @@
-interface theme {
+interface styleTheme {
   name: string;
   colors: {
     mainColor: string;
@@ -9,7 +9,7 @@ interface theme {
   };
 }
 
-export const light: theme = {
+export const light: styleTheme = {
   name: "light-theme",
   colors: {
     mainColor: "#ff1282",
@@ -20,7 +20,7 @@ export const light: theme = {
   },
 };
 
-export const dark: theme = {
+export const dark: styleTheme = {
   name: "light-theme",
   colors: {
     mainColor: "#00FFF7",

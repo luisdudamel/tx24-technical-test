@@ -8,6 +8,7 @@ describe("Given a Form function", () => {
   describe("When invoked", () => {
     test("Then it should render a form with button with the text `NEXT STEP`", () => {
       const expectedText = "NEXT STEP";
+
       render(
         <ThemeProvider theme={light}>
           <Form setStep={jest.fn()} />
@@ -19,13 +20,14 @@ describe("Given a Form function", () => {
       expect(formButton).toBeInTheDocument();
     });
 
-    describe("And the user enters valid text on every input field", () => {
-      test("Then it should the button with the text `NEXT STEP` to enabled", () => {
+    describe("And the user enters valid text on every input field and clicks the button with the text `NEXT STEP`", () => {
+      test("Then the button with the text `NEXT STEP` should be enabled be enabled", async () => {
         const expectedButtonText = "NEXT STEP";
+        const mockSetFunction = jest.fn();
 
         render(
           <ThemeProvider theme={light}>
-            <Form setStep={jest.fn()} />
+            <Form setStep={mockSetFunction} />
           </ThemeProvider>
         );
 
@@ -64,6 +66,10 @@ describe("Given a Form function", () => {
         });
 
         expect(nextButton).toBeEnabled();
+
+        await userEvent.click(nextButton);
+
+        expect(mockSetFunction).toHaveBeenCalled();
       });
     });
   });
