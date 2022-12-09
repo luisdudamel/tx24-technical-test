@@ -7,7 +7,11 @@ import {
   FormStyled,
 } from "./FormStyled";
 
-const Form = (): JSX.Element => {
+interface FormProps {
+  setStep: (currentStep: number) => void;
+}
+
+const Form = ({ setStep }: FormProps): JSX.Element => {
   const formInitialState: UserData = {
     address1: "",
     address2: "",
@@ -51,6 +55,7 @@ const Form = (): JSX.Element => {
     event.preventDefault();
     console.log(formData);
     setFormData(formInitialState);
+    setStep(2);
   };
 
   return (

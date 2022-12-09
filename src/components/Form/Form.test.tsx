@@ -10,7 +10,7 @@ describe("Given a Form function", () => {
       const expectedText = "NEXT STEP";
       render(
         <ThemeProvider theme={light}>
-          <Form />
+          <Form setStep={jest.fn()} />
         </ThemeProvider>
       );
 
@@ -25,7 +25,7 @@ describe("Given a Form function", () => {
 
         render(
           <ThemeProvider theme={light}>
-            <Form />
+            <Form setStep={jest.fn()} />
           </ThemeProvider>
         );
 

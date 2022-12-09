@@ -6,7 +6,6 @@ export const IdentityContainerStyled = styled.div`
   width: 100%;
   align-items: flex-start;
   flex-direction: column;
-  padding: 25px 0px;
   padding-top: 60px;
   align-items: center;
 `;
@@ -23,4 +22,14 @@ export const IdentityInformationStyled = styled.p`
   letter-spacing: 0.05em;
   color: black;
   padding: 0px 20px;
+`;
+
+export const DocumentSelector = styled.div`
+  margin-top: 10px;
+  margin-bottom: 20px;
+  height: 70%;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  justify-content: space-evenly;
 `;

@@ -34,3 +34,24 @@ export const FormButtonStyled = styled.button`
     }
   }
 `;
+
+export const IdentityButtonStyled = styled.button`
+  display: flex;
+  color: ${({ theme }) => theme.colors.mainColor};
+  background: ${({ theme }) => theme.colors.mainColor};
+  font-family: "Sansation Light";
+  width: 280px;
+  height: 70px;
+  left: 48px;
+  top: 208px;
+  background: #ffffff;
+  border: 1px solid #ff1282;
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.05em;
+`;
