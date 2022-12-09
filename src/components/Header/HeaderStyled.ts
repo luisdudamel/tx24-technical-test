@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
+  position: sticky;
   z-index: 2;
-  position: fixed;
   top: 0px;
   width: 100%;
   display: flex;

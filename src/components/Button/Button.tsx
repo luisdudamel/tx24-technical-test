@@ -5,6 +5,7 @@ interface ButtonProps {
   buttonText: string;
   buttonType: "button" | "submit" | "reset" | undefined;
   isDisabled: boolean;
+  buttonImage?: JSX.Element;
 }
 
 const Button = ({
@@ -12,6 +13,7 @@ const Button = ({
   buttonClass,
   buttonType,
   buttonText,
+  buttonImage,
 }: ButtonProps): JSX.Element => {
   return (
     <>
@@ -22,6 +24,7 @@ const Button = ({
       ) : null}
       {buttonClass === "identity" ? (
         <IdentityButtonStyled disabled={isDisabled} type={buttonType}>
+          {buttonImage}
           {buttonText}
         </IdentityButtonStyled>
       ) : null}

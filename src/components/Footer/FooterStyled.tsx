@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const FooterStyled = styled.footer`
-  position: fixed;
-  bottom: 0px;
+  margin-top: 30px;
   width: 100%;
   background-color: white;
   height: 30px;
@@ -14,4 +13,5 @@ export const FooterStyled = styled.footer`
   font-size: 12px;
   line-height: 30px;
   letter-spacing: 0.035em;
+  color: #000000;
 `;

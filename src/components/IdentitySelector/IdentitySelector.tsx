@@ -21,18 +21,22 @@ const IdentitySelector = (): JSX.Element => {
           buttonText="Passport"
           buttonType="button"
           isDisabled={false}
+          buttonImage={<img src="img/Passport-1.svg" alt="Id Icon"></img>}
         />
         <Button
           buttonClass="identity"
           buttonText="National Card"
           buttonType="button"
           isDisabled={false}
+          buttonImage={<img src="img/id-1.svg" alt="Id Icon"></img>}
         />
+
         <Button
           buttonClass="identity"
           buttonText="Driver's License"
           buttonType="button"
           isDisabled={false}
+          buttonImage={<img src="img/license-1.svg" alt="Id Icon"></img>}
         />
       </DocumentSelector>
       <Button
