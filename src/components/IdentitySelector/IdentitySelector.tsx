@@ -10,6 +10,16 @@ const IdentitySelector = (): JSX.Element => {
   const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
   const [activeButton, setActiveButton] = useState<string>("");
 
+  const enableNextButton = (buttonToActivate: string): void => {
+    if (activeButton === buttonToActivate) {
+      setActiveButton("");
+      setIsButtonDisabled(!isButtonDisabled);
+      return;
+    }
+    setActiveButton(buttonToActivate);
+    setIsButtonDisabled(!isButtonDisabled);
+  };
+
   return (
     <IdentityContainerStyled>
       <IdentityInformationStyled>
@@ -22,7 +32,7 @@ const IdentitySelector = (): JSX.Element => {
           buttonText="Passport"
           buttonType="button"
           active={activeButton === "Passport" ? true : false}
-          setActive={setActiveButton}
+          setActive={enableNextButton}
           isDisabled={false}
           buttonImage={<img src="img/Passport-1.svg" alt="Id Icon"></img>}
         />
@@ -31,7 +41,7 @@ const IdentitySelector = (): JSX.Element => {
           buttonText="National Card"
           buttonType="button"
           isDisabled={false}
-          setActive={setActiveButton}
+          setActive={enableNextButton}
           active={activeButton === "National Card" ? true : false}
           buttonImage={<img src="img/id-1.svg" alt="Id Icon"></img>}
         />
@@ -40,7 +50,7 @@ const IdentitySelector = (): JSX.Element => {
           buttonText="Driver's License"
           buttonType="button"
           isDisabled={false}
-          setActive={setActiveButton}
+          setActive={enableNextButton}
           active={activeButton === "Driver's License" ? true : false}
           buttonImage={<img src="img/license-1.svg" alt="Id Icon"></img>}
         />
