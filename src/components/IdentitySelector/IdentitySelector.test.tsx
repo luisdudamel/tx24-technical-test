@@ -79,4 +79,100 @@ describe("Given a IdentitySelector function", () => {
       });
     });
   });
+
+  describe("When it's invoked and the user clicks on the National Card button", () => {
+    test("Then the button with the text `NEXT STEP` should be enabled", async () => {
+      const expectedNationalCardText = "Id Icon National Card";
+      const expectedNextButtonText = "NEXT STEP";
+
+      render(
+        <ThemeProvider theme={light}>
+          <IdentitySelector />
+        </ThemeProvider>
+      );
+
+      const nationalCardButton = screen.getByRole("button", {
+        name: expectedNationalCardText,
+      });
+      const nextButton = screen.getByRole("button", {
+        name: expectedNextButtonText,
+      });
+      await userEvent.click(nationalCardButton);
+
+      expect(nextButton).toBeEnabled();
+    });
+
+    describe("And the user clicks on th same button with the text `National Card Button`", () => {
+      test("Then the button with the text `NEXT STEP` should be disabled", async () => {
+        const expectedNationalCardText = "Id Icon National Card";
+        const expectedNextButtonText = "NEXT STEP";
+
+        render(
+          <ThemeProvider theme={light}>
+            <IdentitySelector />
+          </ThemeProvider>
+        );
+
+        const nationalCardButton = screen.getByRole("button", {
+          name: expectedNationalCardText,
+        });
+
+        const nextButton = screen.getByRole("button", {
+          name: expectedNextButtonText,
+        });
+        await userEvent.click(nationalCardButton);
+        await userEvent.click(nationalCardButton);
+
+        expect(nextButton).toBeDisabled();
+      });
+    });
+  });
+
+  describe("When it's invoked and the user clicks on the Driver`s license button", () => {
+    test("Then the button with the text `NEXT STEP` should be enabled", async () => {
+      const expectedDriversLicenseText = "Id Icon Driver's License";
+      const expectedNextButtonText = "NEXT STEP";
+
+      render(
+        <ThemeProvider theme={light}>
+          <IdentitySelector />
+        </ThemeProvider>
+      );
+
+      const driversLicenseButton = screen.getByRole("button", {
+        name: expectedDriversLicenseText,
+      });
+      const nextButton = screen.getByRole("button", {
+        name: expectedNextButtonText,
+      });
+      await userEvent.click(driversLicenseButton);
+
+      expect(nextButton).toBeEnabled();
+    });
+
+    describe("And the user clicks on th same button with the text `National Card Button`", () => {
+      test("Then the button with the text `NEXT STEP` should be disabled", async () => {
+        const expectedDriversLicenseText = "Id Icon Driver's License";
+        const expectedNextButtonText = "NEXT STEP";
+
+        render(
+          <ThemeProvider theme={light}>
+            <IdentitySelector />
+          </ThemeProvider>
+        );
+
+        const driversLicenseButton = screen.getByRole("button", {
+          name: expectedDriversLicenseText,
+        });
+
+        const nextButton = screen.getByRole("button", {
+          name: expectedNextButtonText,
+        });
+        await userEvent.click(driversLicenseButton);
+        await userEvent.click(driversLicenseButton);
+
+        expect(nextButton).toBeDisabled();
+      });
+    });
+  });
 });

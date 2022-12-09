@@ -13,11 +13,11 @@ const IdentitySelector = (): JSX.Element => {
   const enableNextButton = (buttonToActivate: string): void => {
     if (activeButton === buttonToActivate) {
       setActiveButton("");
-      setIsButtonDisabled(!isButtonDisabled);
+      setIsButtonDisabled(true);
       return;
     }
     setActiveButton(buttonToActivate);
-    setIsButtonDisabled(!isButtonDisabled);
+    setIsButtonDisabled(false);
   };
 
   return (
