@@ -1,3 +1,4 @@
+import React, { RefObject } from "react";
 import {
   FormButtonStyled,
   IdentityButtonStyled,
@@ -15,6 +16,8 @@ interface ButtonProps {
   setActive?: (active: string) => void;
   setStep?: (step: number) => void;
   setDocument?: (document: string) => void;
+  uploadImage?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  reference?: RefObject<HTMLInputElement>;
 }
 
 const Button = ({
@@ -27,6 +30,8 @@ const Button = ({
   step,
   setActive,
   setStep,
+  uploadImage,
+  reference,
 }: ButtonProps): JSX.Element => {
   return (
     <>
@@ -52,14 +57,13 @@ const Button = ({
       ) : null}
       {buttonClass === "select" ? (
         <SelectButtonStyled
-          onClick={() => (setActive ? setActive(buttonText) : null)}
+          onClick={() => reference?.current?.click()}
           className={active ? "button__active" : ""}
           disabled={isDisabled}
           type={buttonType}
         >
           {buttonImage}
           {buttonText}
-          <input type="file" hidden name="document" id="document" />
         </SelectButtonStyled>
       ) : null}
     </>

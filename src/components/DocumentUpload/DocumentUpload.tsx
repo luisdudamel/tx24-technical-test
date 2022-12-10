@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { DocumentUploaderData } from "../../interfaces/UserData";
 import Button from "../Button/Button";
 import {
@@ -16,7 +16,7 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
     front: "",
     back: "",
   };
-
+  const inputRef = useRef(null);
   const [currentDocument, setCurrentDocument] = useState<string>(document);
   const [formData, setFormData] =
     useState<DocumentUploaderData>(formInitialState);
@@ -26,8 +26,9 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
       ...formData,
       [event.target.id]: event.target.files?.[0] || "",
     });
+    console.log(formData);
   };
-
+  console.log(inputRef);
   return (
     <DocumentUploadContainer>
       <DocumentUploadInformation>
@@ -48,11 +49,22 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
         <p className="documentUpload__selector--information">
           Upload here your passport copy
         </p>
-        <Button
-          buttonClass="select"
-          buttonText="SELECT"
-          buttonType="submit"
-          isDisabled={false}
+        {inputRef && (
+          <Button
+            buttonClass="select"
+            buttonText="SELECT"
+            buttonType="submit"
+            isDisabled={false}
+            reference={inputRef}
+          />
+        )}
+        <input
+          ref={inputRef}
+          type="file"
+          name="document"
+          hidden
+          id="document"
+          onChange={uploadImage}
         />
       </DocumentUploader>
       <Button
@@ -60,6 +72,8 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
         buttonText="NEXT STEP"
         buttonType="submit"
         isDisabled={true}
+        uploadImage={uploadImage}
+        reference={inputRef}
       ></Button>
     </DocumentUploadContainer>
   );
