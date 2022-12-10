@@ -110,6 +110,9 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
                 isDisabled={false}
                 reference={inputRef}
               />
+              <label hidden htmlFor="frontdocument">
+                Document Front
+              </label>
               <input
                 ref={inputRef}
                 type="file"
@@ -141,6 +144,9 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
                 isDisabled={false}
                 reference={inputRef}
               />
+              <label hidden htmlFor="frontdocument">
+                Document Front
+              </label>
               <input
                 ref={inputRef}
                 type="file"
@@ -168,6 +174,9 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
                 isDisabled={false}
                 reference={backInputRef}
               />
+              <label hidden htmlFor="backdocument">
+                Document Back
+              </label>
               <input
                 ref={backInputRef}
                 type="file"
