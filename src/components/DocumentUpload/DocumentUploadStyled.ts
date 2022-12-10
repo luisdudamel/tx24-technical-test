@@ -50,10 +50,12 @@ export const DocumentUploadInformation = styled.p`
 export const DocumentUploader = styled.div`
   flex: 1;
   display: flex;
+  width: 100%;
   flex-direction: column;
   padding-bottom: 50px;
   padding-left: 10px;
   padding-right: 10px;
+  align-items: center;
 
   .documentUpload__selector {
     &--information {
@@ -64,6 +66,33 @@ export const DocumentUploader = styled.div`
       line-height: 20px;
       text-align: center;
       letter-spacing: 0.05em;
+    }
+
+    &__filenameContainer {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      gap: 20px;
+
+      p {
+        font-family: "Sansation Light";
+        overflow: hidden;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.05em;
+        color: #000000;
+        overflow-wrap: break-word;
+      }
+      button {
+        font-family: "Sansation Light";
+        font-style: normal;
+        font-size: 18px;
+        border: none;
+        background: none;
+        cursor: pointer;
+      }
     }
   }
 `;

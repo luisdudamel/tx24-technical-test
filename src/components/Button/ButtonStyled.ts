@@ -41,7 +41,7 @@ export const SelectButtonStyled = styled.button`
   color: ${({ theme }) => theme.colors.buttonText};
   background: ${({ theme }) => theme.colors.mainColor};
   font-family: "Sansation Light";
-  width: 100%;
+  width: 90%;
   height: 48px;
   left: 24px;
   top: 475px;

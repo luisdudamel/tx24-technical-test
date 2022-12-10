@@ -30,7 +30,6 @@ const Button = ({
   step,
   setActive,
   setStep,
-  uploadImage,
   reference,
 }: ButtonProps): JSX.Element => {
   return (

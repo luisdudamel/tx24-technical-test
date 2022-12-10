@@ -12,25 +12,30 @@ interface documentUploadProps {
 }
 
 const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
-  const formInitialState: DocumentUploaderData = {
-    front: "",
-    back: "",
-  };
   const inputRef = useRef(null);
-  const [currentDocument, setCurrentDocument] = useState<string | undefined>(
-    ""
-  );
-  const [formData, setFormData] =
-    useState<DocumentUploaderData>(formInitialState);
+  const backInputRef = useRef(null);
+  const [currentDocuments, setCurrentDocuments] = useState({
+    frontdocument: "",
+    backdocument: "",
+  });
+  const [formData, setFormData] = useState({});
 
   const uploadImage = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setFormData({
       ...formData,
       [event.target.id]: event.target.files?.[0] || "",
     });
-    setCurrentDocument(event.target.files?.[0].name);
+    setCurrentDocuments({
+      ...currentDocuments,
+      [event.target.id]: event.target.files?.[0]?.name,
+    });
   };
-  console.log(inputRef);
+
+  const clearFormData = () => {
+    setCurrentDocuments({ frontdocument: "", backdocument: "" });
+    setFormData({});
+  };
+  console.log(formData);
   return (
     <DocumentUploadContainer>
       <DocumentUploadInformation>
@@ -47,36 +52,100 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
           Make sure there is no light glare on the card
         </li>
       </ul>
-      <DocumentUploader>
-        <p className="documentUpload__selector--information">
-          Upload here your {document} copy
-        </p>
-        {currentDocument === "" ? (
-          <Button
-            buttonClass="select"
-            buttonText="SELECT"
-            buttonType="submit"
-            isDisabled={false}
-            reference={inputRef}
+      {document === "Passport" ? (
+        <DocumentUploader>
+          <p className="documentUpload__selector--information">
+            Upload here your {document} copy
+          </p>
+          {currentDocuments?.frontdocument === "" ? (
+            <>
+              <Button
+                buttonClass="select"
+                buttonText="SELECT"
+                buttonType="submit"
+                isDisabled={false}
+                reference={inputRef}
+              />
+            </>
+          ) : (
+            <div className="documentUpload__selector__filenameContainer">
+              <p>{currentDocuments?.frontdocument}</p>
+              <button onClick={clearFormData}>X</button>
+            </div>
+          )}
+          <input
+            ref={inputRef}
+            type="file"
+            name="frontdocument"
+            hidden
+            id="frontdocument"
+            onChange={uploadImage}
           />
-        ) : (
-          currentDocument
-        )}
-        <input
-          ref={inputRef}
-          type="file"
-          name="document"
-          hidden
-          id="document"
-          onChange={uploadImage}
-        />
-      </DocumentUploader>
+        </DocumentUploader>
+      ) : null}
+      {document === "National Card" ? (
+        <DocumentUploader>
+          <p className="documentUpload__selector--information">
+            Upload here your {document} copy (Front side)
+          </p>
+          {currentDocuments?.frontdocument === "" ? (
+            <>
+              <Button
+                buttonClass="select"
+                buttonText="SELECT"
+                buttonType="submit"
+                isDisabled={false}
+                reference={inputRef}
+              />
+              <input
+                ref={inputRef}
+                type="file"
+                name="frontdocument"
+                hidden
+                id="frontdocument"
+                onChange={uploadImage}
+              />
+            </>
+          ) : (
+            <div className="documentUpload__selector__filenameContainer">
+              <p>{currentDocuments?.frontdocument}</p>
+              <button onClick={() => clearFormData}>X</button>
+            </div>
+          )}
+          <p className="documentUpload__selector--information">
+            Upload here your {document} copy (Back side)
+          </p>
+          {currentDocuments?.frontdocument === "" ? (
+            <>
+              <Button
+                buttonClass="select"
+                buttonText="SELECT"
+                buttonType="submit"
+                isDisabled={false}
+                reference={backInputRef}
+              />
+              <input
+                ref={backInputRef}
+                type="file"
+                name="backdocument"
+                hidden
+                id="backdocument"
+                onChange={uploadImage}
+              />
+            </>
+          ) : (
+            <div className="documentUpload__selector__filenameContainer">
+              <p>{currentDocuments?.backdocument}</p>
+              <button onClick={() => clearFormData}>X</button>
+            </div>
+          )}
+        </DocumentUploader>
+      ) : null}
       <Button
         buttonClass="formButton"
         buttonText="NEXT STEP"
         buttonType="submit"
-        isDisabled={true}
-        uploadImage={uploadImage}
+        isDisabled={currentDocuments?.frontdocument === ""}
         reference={inputRef}
       ></Button>
     </DocumentUploadContainer>

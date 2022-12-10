@@ -8,6 +8,6 @@ export interface UserData {
 }
 
 export interface DocumentUploaderData {
-  front: string;
-  back?: string;
+  frontdocument: string;
+  backdocument?: string;
 }
