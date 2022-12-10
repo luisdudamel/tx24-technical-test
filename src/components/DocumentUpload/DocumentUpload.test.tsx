@@ -9,13 +9,14 @@ describe("Given a DocumentUpload function", () => {
     test("Then the button with the text `NEXT STEP` should be enabled", () => {
       const expectedButtonText = "NEXT STEP";
       const expectedDocumentText = "Passport";
+      const expectedFrontLabelText = "Document Front";
 
       render(
         <ThemeProvider theme={dark}>
           <DocumentUpload document={expectedDocumentText} />
         </ThemeProvider>
       );
-      const input = screen.getByLabelText("frontdocument");
+      const input = screen.getByLabelText(expectedFrontLabelText);
 
       const file = new File([new ArrayBuffer(1)], "photo.jpg");
 
@@ -30,13 +31,14 @@ describe("Given a DocumentUpload function", () => {
       test("Then the button with the text `NEXT STEP` should be disabled", () => {
         const expectedButtonText = "NEXT STEP";
         const expectedDocumentText = "Passport";
+        const expectedFrontLabelText = "Document Front";
 
         render(
           <ThemeProvider theme={dark}>
             <DocumentUpload document={expectedDocumentText} />
           </ThemeProvider>
         );
-        const input = screen.getByLabelText("frontdocument");
+        const input = screen.getByLabelText(expectedFrontLabelText);
 
         const file = new File([new ArrayBuffer(1)], "photo.jpg");
 
