@@ -13,7 +13,7 @@ describe("Given a IdentitySelector function", () => {
 
       render(
         <ThemeProvider theme={light}>
-          <IdentitySelector />
+          <IdentitySelector setStep={jest.fn()} />
         </ThemeProvider>
       );
 
@@ -39,7 +39,7 @@ describe("Given a IdentitySelector function", () => {
 
       render(
         <ThemeProvider theme={light}>
-          <IdentitySelector />
+          <IdentitySelector setStep={jest.fn()} />
         </ThemeProvider>
       );
 
@@ -61,7 +61,7 @@ describe("Given a IdentitySelector function", () => {
 
         render(
           <ThemeProvider theme={light}>
-            <IdentitySelector />
+            <IdentitySelector setStep={jest.fn()} />
           </ThemeProvider>
         );
 
@@ -87,7 +87,7 @@ describe("Given a IdentitySelector function", () => {
 
       render(
         <ThemeProvider theme={light}>
-          <IdentitySelector />
+          <IdentitySelector setStep={jest.fn()} />
         </ThemeProvider>
       );
 
@@ -109,7 +109,7 @@ describe("Given a IdentitySelector function", () => {
 
         render(
           <ThemeProvider theme={light}>
-            <IdentitySelector />
+            <IdentitySelector setStep={jest.fn()} />
           </ThemeProvider>
         );
 
@@ -135,7 +135,7 @@ describe("Given a IdentitySelector function", () => {
 
       render(
         <ThemeProvider theme={light}>
-          <IdentitySelector />
+          <IdentitySelector setStep={jest.fn()} />
         </ThemeProvider>
       );
 
@@ -157,7 +157,7 @@ describe("Given a IdentitySelector function", () => {
 
         render(
           <ThemeProvider theme={light}>
-            <IdentitySelector />
+            <IdentitySelector setStep={jest.fn()} />
           </ThemeProvider>
         );
 

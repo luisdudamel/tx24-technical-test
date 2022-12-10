@@ -57,4 +57,18 @@ export const IdentityButtonStyled = styled.button`
   align-items: center;
   letter-spacing: 0.05em;
   cursor: pointer;
+
+  &:active {
+    background-color: ${({ theme }) => theme.colors.appBackground};
+    color: ${({ theme }) => theme.colors.mainColor};
+    border: solid 1px ${({ theme }) => theme.colors.mainColor};
+  }
+  &:disabled {
+    background-color: #c4c4c4;
+    &:active {
+      background-color: none;
+      color: white;
+      border: none;
+    }
+  }
 `;

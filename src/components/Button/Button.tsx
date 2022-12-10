@@ -7,7 +7,9 @@ interface ButtonProps {
   isDisabled: boolean;
   buttonImage?: JSX.Element;
   active?: boolean;
+  step?: number;
   setActive?: (active: string) => void;
+  setStep?: (step: number) => void;
 }
 
 const Button = ({
@@ -17,12 +19,18 @@ const Button = ({
   buttonText,
   buttonImage,
   active,
+  step,
   setActive,
+  setStep,
 }: ButtonProps): JSX.Element => {
   return (
     <>
       {buttonClass === "formButton" ? (
-        <FormButtonStyled disabled={isDisabled} type={buttonType}>
+        <FormButtonStyled
+          disabled={isDisabled}
+          type={buttonType}
+          onClick={() => (setStep ? setStep(step as number) : null)}
+        >
           {buttonText}
         </FormButtonStyled>
       ) : null}
