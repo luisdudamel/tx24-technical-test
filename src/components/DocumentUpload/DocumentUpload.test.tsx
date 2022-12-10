@@ -104,4 +104,62 @@ describe("Given a DocumentUpload function", () => {
       });
     });
   });
+
+  describe("When it's invoked with the document `National Card` and the user uploads a File", () => {
+    test("Then the button with the text `NEXT STEP` should be enabled", () => {
+      const expectedButtonText = "NEXT STEP";
+      const expectedDocumentText = "National Card";
+      const expectedFrontLabelText = "Document Front";
+      const expectedBackLabelText = "Document Back";
+
+      render(
+        <ThemeProvider theme={dark}>
+          <DocumentUpload document={expectedDocumentText} />
+        </ThemeProvider>
+      );
+      const frontInput = screen.getByLabelText(expectedFrontLabelText);
+      const backInput = screen.getByLabelText(expectedBackLabelText);
+
+      const file = new File([new ArrayBuffer(1)], "photo.jpg");
+
+      userEvent.upload(frontInput, file);
+      userEvent.upload(backInput, file);
+
+      const nextButton = screen.getByRole("button", {
+        name: expectedButtonText,
+      });
+      expect(nextButton).toBeEnabled();
+    });
+    describe("And the user clicks the button with the text `X`", () => {
+      test("Then the button with the text `NEXT STEP` should be disabled", () => {
+        const expectedButtonText = "NEXT STEP";
+        const expectedDocumentText = "National Card";
+        const expectedFrontLabelText = "Document Front";
+        const expectedBackLabelText = "Document Back";
+
+        render(
+          <ThemeProvider theme={dark}>
+            <DocumentUpload document={expectedDocumentText} />
+          </ThemeProvider>
+        );
+        const frontInput = screen.getByLabelText(expectedFrontLabelText);
+        const backInput = screen.getByLabelText(expectedBackLabelText);
+
+        const file = new File([new ArrayBuffer(1)], "photo.jpg");
+
+        userEvent.upload(frontInput, file);
+        userEvent.upload(backInput, file);
+
+        const deleteButton = screen.getAllByRole("button", { name: "X" });
+
+        userEvent.click(deleteButton[0]);
+        userEvent.click(deleteButton[1]);
+
+        const nextButton = screen.getByRole("button", {
+          name: expectedButtonText,
+        });
+        expect(nextButton).not.toBeEnabled();
+      });
+    });
+  });
 });
