@@ -14,6 +14,7 @@ interface ButtonProps {
   step?: number;
   setActive?: (active: string) => void;
   setStep?: (step: number) => void;
+  setDocument?: (document: string) => void;
 }
 
 const Button = ({

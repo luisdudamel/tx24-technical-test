@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "../Button/Button";
 import {
   DocumentUploadContainer,
@@ -5,7 +6,13 @@ import {
   DocumentUploadInformation,
 } from "./DocumentUploadStyled";
 
-const DocumentUpload = (): JSX.Element => {
+interface documentUploadProps {
+  document: string;
+}
+
+const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
+  const [currentDocument, setCurrentDocument] = useState<string>("");
+
   return (
     <DocumentUploadContainer>
       <DocumentUploadInformation>
@@ -23,6 +30,9 @@ const DocumentUpload = (): JSX.Element => {
         </li>
       </ul>
       <DocumentUploader>
+        <p className="documentUpload__selector--information">
+          Upload here your passport copy
+        </p>
         <Button
           buttonClass="select"
           buttonText="SELECT"

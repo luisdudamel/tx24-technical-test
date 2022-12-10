@@ -8,19 +8,25 @@ import {
 
 interface identitySelectorProps {
   setStep: (step: number) => void;
+  setDocument: (document: string) => void;
 }
 
-const IdentitySelector = ({ setStep }: identitySelectorProps): JSX.Element => {
+const IdentitySelector = ({
+  setStep,
+  setDocument,
+}: identitySelectorProps): JSX.Element => {
   const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
   const [activeButton, setActiveButton] = useState<string>("");
 
   const enableNextButton = (buttonToActivate: string): void => {
     if (activeButton === buttonToActivate) {
       setActiveButton("");
+      setDocument("");
       setIsButtonDisabled(true);
       return;
     }
     setActiveButton(buttonToActivate);
+    setDocument(buttonToActivate);
     setIsButtonDisabled(false);
   };
 

@@ -50,4 +50,20 @@ export const DocumentUploadInformation = styled.p`
 export const DocumentUploader = styled.div`
   flex: 1;
   display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  .documentUpload__selector {
+    &--information {
+      font-family: "Sansation Light";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 20px;
+      text-align: center;
+      letter-spacing: 0.05em;
+    }
+  }
 `;
