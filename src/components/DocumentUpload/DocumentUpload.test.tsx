@@ -105,7 +105,7 @@ describe("Given a DocumentUpload function", () => {
     });
   });
 
-  describe("When it's invoked with the document `National Card` and the user uploads a File", () => {
+  describe("When it's invoked with the document `National Card` and the user uploads two Files", () => {
     test("Then the button with the text `NEXT STEP` should be enabled", () => {
       const expectedButtonText = "NEXT STEP";
       const expectedDocumentText = "National Card";
