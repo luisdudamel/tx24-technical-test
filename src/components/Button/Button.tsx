@@ -17,7 +17,7 @@ interface ButtonProps {
   setStep?: (step: number) => void;
   setDocument?: (document: string) => void;
   uploadImage?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  reference?: RefObject<HTMLInputElement>;
+  reference?: RefObject<HTMLInputElement> | null | undefined;
 }
 
 const Button = ({

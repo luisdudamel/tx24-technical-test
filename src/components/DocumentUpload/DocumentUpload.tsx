@@ -76,6 +76,9 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
                 isDisabled={false}
                 reference={inputRef}
               />
+              <label hidden htmlFor="frontdocument">
+                frontdocument
+              </label>
               <input
                 ref={inputRef}
                 type="file"

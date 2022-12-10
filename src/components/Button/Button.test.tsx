@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { dark } from "../../styles/Theme.styled";
+import DocumentUpload from "../DocumentUpload/DocumentUpload";
 import Button from "./Button";
 
 describe("Given a Button function", () => {
@@ -57,6 +58,30 @@ describe("Given a Button function", () => {
       await userEvent.click(formButton);
 
       expect(mockFunction).not.toHaveBeenCalled();
+    });
+  });
+
+  describe("When invoked with the text `SELECT` and a function and the user clicks on the button", () => {
+    test("Then it should call the received function", async () => {
+      const buttonText = "SELECT";
+
+      const mockFunction = jest.fn();
+
+      const spy = jest
+        .spyOn(React, "useRef")
+        .mockReturnValueOnce({ current: { click: mockFunction } });
+
+      render(
+        <ThemeProvider theme={dark}>
+          <DocumentUpload document="Passport" />
+        </ThemeProvider>
+      );
+
+      const selectButton = screen.getByRole("button", { name: buttonText });
+
+      await userEvent.click(selectButton);
+
+      expect(spy).toHaveBeenCalled();
     });
   });
 });
