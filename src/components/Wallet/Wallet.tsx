@@ -1,5 +1,8 @@
 import Button from "../Button/Button";
 import {
+  AgreementsContainer,
+  WalletAddress,
+  WalletAddressContainer,
   WalletContainerStyled,
   WalletInformationStyled,
   WalletSelect,
@@ -34,6 +37,34 @@ const Wallet = (): JSX.Element => {
           </option>
         </WalletSelect>
       </WalletSelectContainer>
+      <WalletAddressContainer>
+        <label className="wallet__address__label" htmlFor="wallets">
+          Your address for tokens
+        </label>
+        <WalletAddress />
+        <p className="wallet__address__note">
+          Note: Address should be ERC20-compliant
+        </p>
+      </WalletAddressContainer>
+      <AgreementsContainer>
+        <div className="wallet__terms__container">
+          <input type="checkbox" id="terms" name="terms" value="terms" />
+          <label className="wallet__terms" htmlFor="terms">
+            I Have Read The Terms Of Condition And Privacy Policy.
+          </label>
+        </div>
+        <div className="wallet__terms__container">
+          <input
+            type="checkbox"
+            id="information"
+            name="information"
+            value="information"
+          />
+          <label className="wallet__terms" htmlFor="information">
+            All The Personal Information I Have Entered Is Correct.
+          </label>
+        </div>
+      </AgreementsContainer>
       <Button
         buttonClass="formButton"
         buttonText="NEXT STEP"
