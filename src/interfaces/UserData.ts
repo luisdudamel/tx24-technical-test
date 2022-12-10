@@ -6,3 +6,8 @@ export interface UserData {
   country: string;
   province: string;
 }
+
+export interface DocumentUploaderData {
+  frontdocument: string;
+  backdocument?: string;
+}

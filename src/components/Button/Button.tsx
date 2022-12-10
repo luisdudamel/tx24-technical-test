@@ -1,4 +1,9 @@
-import { FormButtonStyled, IdentityButtonStyled } from "./ButtonStyled";
+import React, { RefObject } from "react";
+import {
+  FormButtonStyled,
+  IdentityButtonStyled,
+  SelectButtonStyled,
+} from "./ButtonStyled";
 
 interface ButtonProps {
   buttonClass: string;
@@ -7,7 +12,12 @@ interface ButtonProps {
   isDisabled: boolean;
   buttonImage?: JSX.Element;
   active?: boolean;
+  step?: number;
   setActive?: (active: string) => void;
+  setStep?: (step: number) => void;
+  setDocument?: (document: string) => void;
+  uploadImage?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  reference?: RefObject<HTMLInputElement> | null;
 }
 
 const Button = ({
@@ -17,12 +27,19 @@ const Button = ({
   buttonText,
   buttonImage,
   active,
+  step,
   setActive,
+  setStep,
+  reference,
 }: ButtonProps): JSX.Element => {
   return (
     <>
       {buttonClass === "formButton" ? (
-        <FormButtonStyled disabled={isDisabled} type={buttonType}>
+        <FormButtonStyled
+          disabled={isDisabled}
+          type={buttonType}
+          onClick={() => (setStep ? setStep(step as number) : null)}
+        >
           {buttonText}
         </FormButtonStyled>
       ) : null}
@@ -36,6 +53,17 @@ const Button = ({
           {buttonImage}
           {buttonText}
         </IdentityButtonStyled>
+      ) : null}
+      {buttonClass === "select" ? (
+        <SelectButtonStyled
+          onClick={() => reference?.current?.click()}
+          className={active ? "button__active" : ""}
+          disabled={isDisabled}
+          type={buttonType}
+        >
+          {buttonImage}
+          {buttonText}
+        </SelectButtonStyled>
       ) : null}
     </>
   );

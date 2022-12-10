@@ -35,6 +35,40 @@ export const FormButtonStyled = styled.button`
   }
 `;
 
+export const SelectButtonStyled = styled.button`
+  padding-left: 15px;
+  gap: 10px;
+  color: ${({ theme }) => theme.colors.buttonText};
+  background: ${({ theme }) => theme.colors.mainColor};
+  font-family: "Sansation Light";
+  width: 90%;
+  height: 48px;
+  left: 24px;
+  top: 475px;
+  border: 1px solid ${({ theme }) => theme.colors.inactiveColor};
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+
+  &:active {
+    background-color: ${({ theme }) => theme.colors.appBackground};
+    color: ${({ theme }) => theme.colors.mainColor};
+    border: solid 1px ${({ theme }) => theme.colors.mainColor};
+  }
+  &:disabled {
+    background-color: #c4c4c4;
+    &:active {
+      background-color: none;
+      color: white;
+      border: none;
+    }
+  }
+`;
 export const IdentityButtonStyled = styled.button`
   display: flex;
   padding-left: 15px;
@@ -57,4 +91,18 @@ export const IdentityButtonStyled = styled.button`
   align-items: center;
   letter-spacing: 0.05em;
   cursor: pointer;
+
+  &:active {
+    background-color: ${({ theme }) => theme.colors.appBackground};
+    color: ${({ theme }) => theme.colors.mainColor};
+    border: solid 1px ${({ theme }) => theme.colors.mainColor};
+  }
+  &:disabled {
+    background-color: #c4c4c4;
+    &:active {
+      background-color: none;
+      color: white;
+      border: none;
+    }
+  }
 `;

@@ -6,17 +6,27 @@ import {
   IdentityInformationStyled,
 } from "./IdentitySelectorStyled";
 
-const IdentitySelector = (): JSX.Element => {
+interface identitySelectorProps {
+  setStep: (step: number) => void;
+  setDocument: (document: string) => void;
+}
+
+const IdentitySelector = ({
+  setStep,
+  setDocument,
+}: identitySelectorProps): JSX.Element => {
   const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
   const [activeButton, setActiveButton] = useState<string>("");
 
   const enableNextButton = (buttonToActivate: string): void => {
     if (activeButton === buttonToActivate) {
       setActiveButton("");
+      setDocument("");
       setIsButtonDisabled(true);
       return;
     }
     setActiveButton(buttonToActivate);
+    setDocument(buttonToActivate);
     setIsButtonDisabled(false);
   };
 
@@ -58,8 +68,10 @@ const IdentitySelector = (): JSX.Element => {
       <Button
         buttonClass="formButton"
         buttonText="NEXT STEP"
-        buttonType="submit"
+        buttonType="button"
         isDisabled={isButtonDisabled}
+        setStep={setStep}
+        step={3}
       />
     </IdentityContainerStyled>
   );
