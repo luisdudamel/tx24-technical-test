@@ -99,7 +99,7 @@ export const WalletAddressContainer = styled.div`
 
 export const WalletAddress = styled.textarea`
   width: 100%;
-  height: 51.23px;
+  height: 71.23px;
   left: 17px;
   top: 278.66px;
   background: #ffffff;

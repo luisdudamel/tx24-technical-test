@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "../Button/Button";
 import {
   AgreementsContainer,
@@ -9,7 +10,29 @@ import {
   WalletSelectContainer,
 } from "./WalletStyled";
 
+interface wallet {
+  walletAddress: string;
+}
+
 const Wallet = (): JSX.Element => {
+  const [isDisabled, setIsDisabled] = useState<boolean>(true);
+  const [walletAddress, setWalletAddress] = useState<wallet>({
+    walletAddress: "",
+  });
+
+  const validateWallet = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ): void => {
+    setWalletAddress({
+      walletAddress: event.target.value,
+    });
+    if (walletAddress.walletAddress.length === 42) {
+      setIsDisabled(false);
+    } else {
+      setIsDisabled(true);
+    }
+  };
+
   const onCheck = (): void => {
     console.log("CHECK");
   };
@@ -44,7 +67,7 @@ const Wallet = (): JSX.Element => {
         <label className="wallet__address__label" htmlFor="wallets">
           Your address for tokens
         </label>
-        <WalletAddress />
+        <WalletAddress id="walletAddress" onChange={validateWallet} />
         <p className="wallet__address__note">
           Note: Address should be ERC20-compliant
         </p>
@@ -83,7 +106,7 @@ const Wallet = (): JSX.Element => {
         buttonClass="formButton"
         buttonText="NEXT STEP"
         buttonType="button"
-        isDisabled={true}
+        isDisabled={isDisabled}
       />
     </WalletContainerStyled>
   );
