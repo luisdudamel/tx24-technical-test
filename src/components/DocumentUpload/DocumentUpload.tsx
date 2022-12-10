@@ -17,7 +17,9 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
     back: "",
   };
   const inputRef = useRef(null);
-  const [currentDocument, setCurrentDocument] = useState<string>(document);
+  const [currentDocument, setCurrentDocument] = useState<string | undefined>(
+    ""
+  );
   const [formData, setFormData] =
     useState<DocumentUploaderData>(formInitialState);
 
@@ -26,7 +28,7 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
       ...formData,
       [event.target.id]: event.target.files?.[0] || "",
     });
-    console.log(formData);
+    setCurrentDocument(event.target.files?.[0].name);
   };
   console.log(inputRef);
   return (
@@ -47,9 +49,9 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
       </ul>
       <DocumentUploader>
         <p className="documentUpload__selector--information">
-          Upload here your passport copy
+          Upload here your {document} copy
         </p>
-        {inputRef && (
+        {currentDocument === "" ? (
           <Button
             buttonClass="select"
             buttonText="SELECT"
@@ -57,6 +59,8 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
             isDisabled={false}
             reference={inputRef}
           />
+        ) : (
+          currentDocument
         )}
         <input
           ref={inputRef}
