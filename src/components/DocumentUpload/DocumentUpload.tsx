@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-import { DocumentUploaderData } from "../../interfaces/UserData";
 import Button from "../Button/Button";
 import {
   DocumentUploadContainer,
@@ -46,7 +45,7 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
     }
     setFormData({});
   };
-  console.log(formData);
+
   return (
     <DocumentUploadContainer>
       <DocumentUploadInformation>
@@ -67,6 +66,37 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
         <DocumentUploader>
           <p className="documentUpload__selector--information">
             Upload here your {document} copy
+          </p>
+          {currentDocuments?.frontdocument === "" ? (
+            <>
+              <Button
+                buttonClass="select"
+                buttonText="SELECT"
+                buttonType="submit"
+                isDisabled={false}
+                reference={inputRef}
+              />
+              <input
+                ref={inputRef}
+                type="file"
+                name="frontdocument"
+                hidden
+                id="frontdocument"
+                onChange={uploadImage}
+              />
+            </>
+          ) : (
+            <div className="documentUpload__selector__filenameContainer">
+              <p>{currentDocuments?.frontdocument}</p>
+              <button onClick={() => clearFormData("front")}>X</button>
+            </div>
+          )}
+        </DocumentUploader>
+      ) : null}
+      {document === "Driver's License" ? (
+        <DocumentUploader>
+          <p className="documentUpload__selector--information">
+            Upload here your {document} copy (Front side)
           </p>
           {currentDocuments?.frontdocument === "" ? (
             <>
