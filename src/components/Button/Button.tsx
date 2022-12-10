@@ -1,4 +1,8 @@
-import { FormButtonStyled, IdentityButtonStyled } from "./ButtonStyled";
+import {
+  FormButtonStyled,
+  IdentityButtonStyled,
+  SelectButtonStyled,
+} from "./ButtonStyled";
 
 interface ButtonProps {
   buttonClass: string;
@@ -44,6 +48,17 @@ const Button = ({
           {buttonImage}
           {buttonText}
         </IdentityButtonStyled>
+      ) : null}
+      {buttonClass === "select" ? (
+        <SelectButtonStyled
+          onClick={() => (setActive ? setActive(buttonText) : null)}
+          className={active ? "button__active" : ""}
+          disabled={isDisabled}
+          type={buttonType}
+        >
+          {buttonImage}
+          {buttonText}
+        </SelectButtonStyled>
       ) : null}
     </>
   );

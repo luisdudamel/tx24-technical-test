@@ -27,7 +27,7 @@ export const DocumentUploadContainer = styled.div`
     }
 
     &--item:before {
-      content: "✓";
+      content: "✓ ";
     }
   }
 `;
@@ -45,4 +45,9 @@ export const DocumentUploadInformation = styled.p`
   color: black;
   padding: 0px 20px;
   margin-top: 50px;
+`;
+
+export const DocumentUploader = styled.div`
+  flex: 1;
+  display: flex;
 `;
