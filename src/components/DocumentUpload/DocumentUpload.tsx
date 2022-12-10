@@ -31,8 +31,19 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
     });
   };
 
-  const clearFormData = () => {
-    setCurrentDocuments({ frontdocument: "", backdocument: "" });
+  const clearFormData = (documentSide: string) => {
+    if (documentSide === "front") {
+      setCurrentDocuments({
+        frontdocument: "",
+        backdocument: currentDocuments.backdocument,
+      });
+    }
+    if (documentSide === "back") {
+      setCurrentDocuments({
+        frontdocument: currentDocuments.frontdocument,
+        backdocument: "",
+      });
+    }
     setFormData({});
   };
   console.log(formData);
@@ -66,21 +77,21 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
                 isDisabled={false}
                 reference={inputRef}
               />
+              <input
+                ref={inputRef}
+                type="file"
+                name="frontdocument"
+                hidden
+                id="frontdocument"
+                onChange={uploadImage}
+              />
             </>
           ) : (
             <div className="documentUpload__selector__filenameContainer">
               <p>{currentDocuments?.frontdocument}</p>
-              <button onClick={clearFormData}>X</button>
+              <button onClick={() => clearFormData("front")}>X</button>
             </div>
           )}
-          <input
-            ref={inputRef}
-            type="file"
-            name="frontdocument"
-            hidden
-            id="frontdocument"
-            onChange={uploadImage}
-          />
         </DocumentUploader>
       ) : null}
       {document === "National Card" ? (
@@ -109,13 +120,13 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
           ) : (
             <div className="documentUpload__selector__filenameContainer">
               <p>{currentDocuments?.frontdocument}</p>
-              <button onClick={() => clearFormData}>X</button>
+              <button onClick={() => clearFormData("front")}>X</button>
             </div>
           )}
           <p className="documentUpload__selector--information">
             Upload here your {document} copy (Back side)
           </p>
-          {currentDocuments?.frontdocument === "" ? (
+          {currentDocuments?.backdocument === "" ? (
             <>
               <Button
                 buttonClass="select"
@@ -136,7 +147,7 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
           ) : (
             <div className="documentUpload__selector__filenameContainer">
               <p>{currentDocuments?.backdocument}</p>
-              <button onClick={() => clearFormData}>X</button>
+              <button onClick={() => clearFormData("back")}>X</button>
             </div>
           )}
         </DocumentUploader>
