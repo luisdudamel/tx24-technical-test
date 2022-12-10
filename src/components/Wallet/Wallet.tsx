@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../Button/Button";
 import {
   AgreementsContainer,
@@ -19,6 +19,7 @@ const Wallet = (): JSX.Element => {
   const [walletAddress, setWalletAddress] = useState<wallet>({
     walletAddress: "",
   });
+  const [termsChecked, setTermsChecked] = useState<number>(0);
 
   const validateWallet = (
     event: React.ChangeEvent<HTMLTextAreaElement>
@@ -26,16 +27,25 @@ const Wallet = (): JSX.Element => {
     setWalletAddress({
       walletAddress: event.target.value,
     });
-    if (walletAddress.walletAddress.length === 42) {
+  };
+
+  const validateTerms = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    if (event?.target.checked === true && termsChecked >= 0) {
+      setTermsChecked(termsChecked + 1);
+    }
+    if (event?.target.checked === false) {
+      setTermsChecked(termsChecked - 1);
+    }
+  };
+
+  useEffect(() => {
+    if (termsChecked === 2 && walletAddress.walletAddress.length === 42) {
       setIsDisabled(false);
     } else {
       setIsDisabled(true);
     }
-  };
+  }, [termsChecked, walletAddress.walletAddress.length]);
 
-  const onCheck = (): void => {
-    console.log("CHECK");
-  };
   return (
     <WalletContainerStyled>
       <WalletInformationStyled>
@@ -67,7 +77,11 @@ const Wallet = (): JSX.Element => {
         <label className="wallet__address__label" htmlFor="wallets">
           Your address for tokens
         </label>
-        <WalletAddress id="walletAddress" onChange={validateWallet} />
+        <WalletAddress
+          maxLength={42}
+          id="walletAddress"
+          onChange={validateWallet}
+        />
         <p className="wallet__address__note">
           Note: Address should be ERC20-compliant
         </p>
@@ -80,7 +94,7 @@ const Wallet = (): JSX.Element => {
             id="terms"
             name="terms"
             value="terms"
-            onClick={onCheck}
+            onChange={validateTerms}
           />
           <span className="wallet__terms__custom__checkbox"></span>
           <label className="wallet__terms" htmlFor="terms">
@@ -94,7 +108,7 @@ const Wallet = (): JSX.Element => {
             id="information"
             name="information"
             value="information"
-            onClick={onCheck}
+            onChange={validateTerms}
           />
           <span className="wallet__terms__custom__checkbox"></span>
           <label className="wallet__terms" htmlFor="information">
@@ -104,7 +118,7 @@ const Wallet = (): JSX.Element => {
       </AgreementsContainer>
       <Button
         buttonClass="formButton"
-        buttonText="NEXT STEP"
+        buttonText="SUBMIT"
         buttonType="button"
         isDisabled={isDisabled}
       />
