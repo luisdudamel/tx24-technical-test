@@ -8,9 +8,13 @@ import {
 
 interface documentUploadProps {
   document: string;
+  setStep: (step: number) => void;
 }
 
-const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
+const DocumentUpload = ({
+  document,
+  setStep,
+}: documentUploadProps): JSX.Element => {
   const inputRef = useRef(null);
   const backInputRef = useRef(null);
   const [currentDocuments, setCurrentDocuments] = useState({
@@ -136,6 +140,8 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
         buttonType="submit"
         isDisabled={currentDocuments?.frontdocument === ""}
         reference={inputRef}
+        setStep={setStep}
+        step={4}
       ></Button>
     </DocumentUploadContainer>
   );

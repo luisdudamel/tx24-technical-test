@@ -73,7 +73,7 @@ describe("Given a Button function", () => {
 
       render(
         <ThemeProvider theme={dark}>
-          <DocumentUpload document="Passport" />
+          <DocumentUpload setStep={jest.fn()} document="Passport" />
         </ThemeProvider>
       );
 

@@ -13,7 +13,7 @@ describe("Given a DocumentUpload function", () => {
 
       render(
         <ThemeProvider theme={dark}>
-          <DocumentUpload document={expectedDocumentText} />
+          <DocumentUpload setStep={jest.fn()} document={expectedDocumentText} />
         </ThemeProvider>
       );
       const input = screen.getByLabelText(expectedFrontLabelText);
@@ -35,7 +35,10 @@ describe("Given a DocumentUpload function", () => {
 
         render(
           <ThemeProvider theme={dark}>
-            <DocumentUpload document={expectedDocumentText} />
+            <DocumentUpload
+              setStep={jest.fn()}
+              document={expectedDocumentText}
+            />
           </ThemeProvider>
         );
         const input = screen.getByLabelText(expectedFrontLabelText);
@@ -64,7 +67,7 @@ describe("Given a DocumentUpload function", () => {
 
       render(
         <ThemeProvider theme={dark}>
-          <DocumentUpload document={expectedDocumentText} />
+          <DocumentUpload setStep={jest.fn()} document={expectedDocumentText} />
         </ThemeProvider>
       );
       const input = screen.getByLabelText(expectedFrontLabelText);
@@ -86,7 +89,10 @@ describe("Given a DocumentUpload function", () => {
 
         render(
           <ThemeProvider theme={dark}>
-            <DocumentUpload document={expectedDocumentText} />
+            <DocumentUpload
+              setStep={jest.fn()}
+              document={expectedDocumentText}
+            />
           </ThemeProvider>
         );
         const input = screen.getByLabelText(expectedFrontLabelText);
@@ -116,7 +122,7 @@ describe("Given a DocumentUpload function", () => {
 
       render(
         <ThemeProvider theme={dark}>
-          <DocumentUpload document={expectedDocumentText} />
+          <DocumentUpload setStep={jest.fn()} document={expectedDocumentText} />
         </ThemeProvider>
       );
       const frontInput = screen.getByLabelText(expectedFrontLabelText);
@@ -141,7 +147,10 @@ describe("Given a DocumentUpload function", () => {
 
         render(
           <ThemeProvider theme={dark}>
-            <DocumentUpload document={expectedDocumentText} />
+            <DocumentUpload
+              setStep={jest.fn()}
+              document={expectedDocumentText}
+            />
           </ThemeProvider>
         );
         const frontInput = screen.getByLabelText(expectedFrontLabelText);
