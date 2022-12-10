@@ -59,6 +59,7 @@ const Button = ({
         >
           {buttonImage}
           {buttonText}
+          <input type="file" hidden name="document" id="document" />
         </SelectButtonStyled>
       ) : null}
     </>

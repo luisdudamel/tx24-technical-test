@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { DocumentUploaderData } from "../../interfaces/UserData";
 import Button from "../Button/Button";
 import {
   DocumentUploadContainer,
@@ -11,7 +12,21 @@ interface documentUploadProps {
 }
 
 const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
-  const [currentDocument, setCurrentDocument] = useState<string>("");
+  const formInitialState: DocumentUploaderData = {
+    front: "",
+    back: "",
+  };
+
+  const [currentDocument, setCurrentDocument] = useState<string>(document);
+  const [formData, setFormData] =
+    useState<DocumentUploaderData>(formInitialState);
+
+  const uploadImage = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    setFormData({
+      ...formData,
+      [event.target.id]: event.target.files?.[0] || "",
+    });
+  };
 
   return (
     <DocumentUploadContainer>
@@ -45,7 +60,7 @@ const DocumentUpload = ({ document }: documentUploadProps): JSX.Element => {
         buttonText="NEXT STEP"
         buttonType="submit"
         isDisabled={true}
-      />
+      ></Button>
     </DocumentUploadContainer>
   );
 };
