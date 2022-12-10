@@ -49,7 +49,7 @@ export const WalletSelect = styled.select`
   left: 17px;
   top: 278.66px;
   background: #ffffff;
-  border: 1px solid #ff1282;
+  border: 1px solid ${({ theme }) => theme.colors.mainColor};
   border-radius: 5px;
   font-family: "Sansation Light";
   font-style: normal;
@@ -131,8 +131,15 @@ export const AgreementsContainer = styled.div`
   flex-direction: column;
   gap: 20px;
   padding-bottom: 30px;
-
   color: #000000;
+
+  input[type="checkbox"] {
+    visibility: hidden;
+    z-index: 1;
+    width: 25px;
+    height: 25px;
+  }
+
   .wallet__terms {
     padding-left: 10px;
 
@@ -141,5 +148,19 @@ export const AgreementsContainer = styled.div`
       align-items: center;
       justify-content: flex-start;
     }
+
+    &__custom__checkbox {
+      position: absolute;
+      height: 25px;
+      width: 25px;
+      background: #ffffff;
+      border: 1px solid #ff1282;
+      border-radius: 5px;
+    }
+  }
+
+  .wallet__terms__container input:checked ~ .wallet__terms__custom__checkbox {
+    background: url("img/checkmark.svg") no-repeat;
+    background-size: 21px;
   }
 `;

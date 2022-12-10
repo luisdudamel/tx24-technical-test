@@ -10,6 +10,9 @@ import {
 } from "./WalletStyled";
 
 const Wallet = (): JSX.Element => {
+  const onCheck = (): void => {
+    console.log("CHECK");
+  };
   return (
     <WalletContainerStyled>
       <WalletInformationStyled>
@@ -48,18 +51,29 @@ const Wallet = (): JSX.Element => {
       </WalletAddressContainer>
       <AgreementsContainer>
         <div className="wallet__terms__container">
-          <input type="checkbox" id="terms" name="terms" value="terms" />
+          <input
+            className="wallet__terms__checkbox"
+            type="checkbox"
+            id="terms"
+            name="terms"
+            value="terms"
+            onClick={onCheck}
+          />
+          <span className="wallet__terms__custom__checkbox"></span>
           <label className="wallet__terms" htmlFor="terms">
             I Have Read The Terms Of Condition And Privacy Policy.
           </label>
         </div>
         <div className="wallet__terms__container">
           <input
+            className="wallet__terms__checkbox"
             type="checkbox"
             id="information"
             name="information"
             value="information"
+            onClick={onCheck}
           />
+          <span className="wallet__terms__custom__checkbox"></span>
           <label className="wallet__terms" htmlFor="information">
             All The Personal Information I Have Entered Is Correct.
           </label>
