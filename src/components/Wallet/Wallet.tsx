@@ -115,6 +115,7 @@ const Wallet = (): JSX.Element => {
             value="terms"
             onChange={validateTerms}
           />
+
           <span className="wallet__terms__custom__checkbox"></span>
           <label className="wallet__terms" htmlFor="terms">
             I Have Read The Terms Of Condition And Privacy Policy.
