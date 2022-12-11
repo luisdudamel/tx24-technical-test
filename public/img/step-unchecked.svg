@@ -1,0 +1,14 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+	<title>Proyecto nuevo</title>
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m20 40c-11.06 0-20-8.94-20-20 0-11.06 8.94-20 20-20 11.06 0 20 8.94 20 20 0 11.06-8.94 20-20 20z"/>
+		</clipPath>
+	</defs>
+	<style>
+		.s0 { fill: none;stroke: #ff1282 } 
+	</style>
+	<g clip-path="url(#cp1)">
+	</g>
+	<path id="Forma 1" class="s0" d="m19.5 39.2c-10.9 0-19.7-8.6-19.7-19.2 0-10.6 8.8-19.2 19.7-19.2 10.9 0 19.7 8.6 19.7 19.2 0 10.6-8.8 19.2-19.7 19.2z"/>
+</svg>

@@ -20,6 +20,7 @@ export const StyledHeader = styled.header`
 
 export const StyledLogo = styled.img`
   width: 50px;
+  cursor: pointer;
 
   @media (min-width: 769px) {
     margin-left: 10px;
@@ -65,6 +66,7 @@ export const StyledLogin = styled.p`
 
   span {
     color: ${({ theme }) => theme.colors.mainColor};
+    cursor: pointer;
   }
 
   @media (max-width: 769px) {

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const FormDesktopContainerStyled = styled.div`
   display: flex;
-  width: 50%;
+  width: 60%;
   align-items: flex-start;
   flex-direction: column;
   padding: 25px 0px;
@@ -12,6 +12,7 @@ export const FormDesktopContainerStyled = styled.div`
   border: 1px solid #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  max-width: 800px;
 
   @media (max-width: 769px) {
     display: none;
@@ -24,24 +25,22 @@ export const FormDesktopInformationStyled = styled.p`
   font-weight: 300;
   font-size: 17px;
   line-height: 30px;
-  display: flex;
-  align-items: center;
-  text-align: center;
+  text-align: left;
   letter-spacing: 0.05em;
   color: black;
-  padding: 0px 20px;
+  max-width: 710px;
 `;
 
 export const FormDesktopStyled = styled.form`
-  width: 100%;
   display: flex;
   flex-direction: column;
   text-align: left;
+  width: 100%;
   align-items: center;
   padding-top: 50px;
   padding-right: 15px;
   padding-left: 15px;
-  padding-bottom: 70px;
+  padding-bottom: 10px;
 
   .form__input {
     &-label {
@@ -111,8 +110,6 @@ export const FormDesktopStyled = styled.form`
     font-weight: 300;
     font-size: 18px;
     line-height: 20px;
-    display: flex;
-    align-items: center;
     letter-spacing: 0.05em;
     text-align: left;
     width: 100%;
@@ -120,5 +117,39 @@ export const FormDesktopStyled = styled.form`
 
   button {
     margin-top: 50px;
+    position: relative;
+    top: 0;
+    left: 30%;
   }
+
+  .personal__details {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .address {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+`;
+
+export const FormStepIconsContainer = styled.div`
+  border: solid 1px red;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+`;
+
+export const FormStepIcon = styled.div`
+  font-family: "Sansation Light";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #000000;
 `;

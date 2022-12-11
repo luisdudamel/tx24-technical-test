@@ -83,6 +83,7 @@ export const FooterInfo = styled.div`
         line-height: 25px;
         letter-spacing: 0.035em;
         color: #000000;
+        cursor: pointer;
       }
     }
   }
@@ -90,6 +91,7 @@ export const FooterInfo = styled.div`
 
 export const FooterLogo = styled.img`
   width: 150px;
+  cursor: pointer;
 `;
 
 export const FooterCopyright = styled.div`
