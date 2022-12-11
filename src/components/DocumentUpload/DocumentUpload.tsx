@@ -173,15 +173,18 @@ const DocumentUpload = ({
             <DocumentDesktopUploader>
               {currentDocuments?.frontdocument === "" ? (
                 <>
-                  <div>
+                  <div className="documentUpload__selector">
                     <p className="documentUpload__selector--information">
                       Upload here your {document} copy{" "}
                       {document === "National Card" ? "(Front side)" : null}
                     </p>
+                    <p className="documentUpload__selector--drag">
+                      Drag an drop file <br /> OR
+                    </p>
                     <Button
                       buttonClass="select"
                       buttonText="SELECT"
-                      buttonType="submit"
+                      buttonType="button"
                       isDisabled={false}
                       reference={inputRef}
                     />
@@ -197,7 +200,13 @@ const DocumentUpload = ({
                       onChange={uploadImage}
                     />
                   </div>
-                  <img src="img/passport.svg" alt="" />
+                  <img
+                    src={`img/${
+                      document === "Passport" ? "passport" : "id-front"
+                    }.svg`}
+                    width={120}
+                    alt="Identity document front-side icon"
+                  />
                 </>
               ) : (
                 <div className="documentUpload__selector__filenameContainer">
@@ -206,18 +215,22 @@ const DocumentUpload = ({
                 </div>
               )}
             </DocumentDesktopUploader>
+
             {document === "National Card" ? (
               <DocumentDesktopUploader>
                 {currentDocuments?.backdocument === "" ? (
                   <>
-                    <div>
+                    <div className="documentUpload__selector">
                       <p className="documentUpload__selector--information">
                         Upload here your {document} copy (Back side)
+                      </p>
+                      <p className="documentUpload__selector--drag">
+                        Drag an drop file <br /> OR
                       </p>
                       <Button
                         buttonClass="select"
                         buttonText="SELECT"
-                        buttonType="submit"
+                        buttonType="button"
                         isDisabled={false}
                         reference={backInputRef}
                       />
@@ -233,7 +246,11 @@ const DocumentUpload = ({
                         onChange={uploadImage}
                       />
                     </div>
-                    <img src="img/passport.svg" alt="" />
+                    <img
+                      src="img/id-back.svg"
+                      width={120}
+                      alt="Identity document back-side icon"
+                    />
                   </>
                 ) : (
                   <div className="documentUpload__selector__filenameContainer">

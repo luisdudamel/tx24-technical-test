@@ -101,6 +101,7 @@ export const DocumentDesktopUploadContainer = styled.div`
   height: 100%;
   flex: 1;
   justify-content: flex-start;
+  margin-top: 30px;
   width: 60%;
   max-width: 800px;
   align-items: flex-start;
@@ -135,7 +136,9 @@ export const DocumentDesktopUploadContainer = styled.div`
   .documentUpload__container {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
+
   div + button {
     position: relative;
     top: 0;
@@ -167,17 +170,45 @@ export const DocumentDesktopUploader = styled.div`
   padding-left: 10px;
   padding-right: 10px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+
+  button {
+    width: 141.16px;
+    height: 28.68px;
+    font-size: 12px;
+  }
 
   .documentUpload__selector {
+    background: #ffffff;
+    border: 1px solid #949494;
+    border-radius: 10px;
+    width: 477.16px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     &--information {
       font-family: "Sansation Light";
       font-style: normal;
       font-weight: 300;
       font-size: 18px;
       line-height: 20px;
-      text-align: center;
+      text-align: left;
+      padding-left: 10px;
       letter-spacing: 0.05em;
+    }
+
+    &--drag {
+      font-family: "Sansation Light";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 20px;
+      text-align: center;
+      letter-spacing: 0.025em;
+      line-height: 2em;
+      color: rgba(0, 0, 0, 0.25);
     }
 
     &__filenameContainer {

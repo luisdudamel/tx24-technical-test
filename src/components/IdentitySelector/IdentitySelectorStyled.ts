@@ -46,7 +46,7 @@ export const IdentityDesktopContainerStyled = styled.div`
   height: 100%;
   flex: 1;
   margin-top: 30px;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 60%;
   max-width: 800px;
   align-items: flex-start;
