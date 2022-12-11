@@ -63,7 +63,7 @@ export const WalletSelect = styled.select`
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  background: url("img/down-arrow.svg") no-repeat;
+  background: url("img/down-arrow.png") no-repeat;
   background-size: 21px;
   cursor: pointer;
   background-position: right 5px top 50%;
