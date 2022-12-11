@@ -5,14 +5,18 @@ import {
   FormDesktopContainerStyled,
   FormDesktopInformationStyled,
   FormDesktopStyled,
-  FormStepIcon,
-  FormStepIconsContainer,
 } from "./FormDesktopStyled";
 import {
   FormContainerStyled,
   FormInformationStyled,
   FormStyled,
 } from "./FormStyled";
+
+import {
+  FormStepIcon,
+  FormStepIconsContainer,
+} from "../FormSteps/FormStepsStyled";
+import FormSteps from "../FormSteps/FormSteps";
 
 interface FormProps {
   setStep: (currentStep: number) => void;
@@ -184,32 +188,7 @@ const Form = ({ setStep }: FormProps): JSX.Element => {
         </FormStyled>
       </FormContainerStyled>
       <FormDesktopContainerStyled>
-        <FormStepIconsContainer>
-          <FormStepIcon>
-            Personal Details
-            <img
-              src="img/step-checked.svg"
-              alt="Checkmark on icon"
-              width={40}
-            />
-          </FormStepIcon>
-          <FormStepIcon>
-            Document Upload{" "}
-            <img
-              src="img/step-unchecked.svg"
-              alt="Checkmark on icon"
-              width={40}
-            />
-          </FormStepIcon>
-          <FormStepIcon>
-            Your Paying Wallet{" "}
-            <img
-              src="img/step-unchecked.svg"
-              alt="Checkmark on icon"
-              width={40}
-            />
-          </FormStepIcon>
-        </FormStepIconsContainer>
+        <FormSteps step={1} />
         <FormDesktopInformationStyled>
           Please type carefully and fill out the form with your personal
           details. You cannot edit these details once you submitted the form.
