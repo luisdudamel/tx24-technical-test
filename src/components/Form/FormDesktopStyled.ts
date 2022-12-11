@@ -1,21 +1,24 @@
 import styled from "styled-components";
 
-export const FormContainerStyled = styled.div`
+export const FormDesktopContainerStyled = styled.div`
   display: flex;
-  height: 100%;
-  width: 100%;
+  width: 50%;
   align-items: flex-start;
   flex-direction: column;
   padding: 25px 0px;
   padding-top: 60px;
+  margin-top: 30px;
   align-items: center;
+  border: 1px solid #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 
-  @media (min-width: 769px) {
+  @media (max-width: 769px) {
     display: none;
   }
 `;
 
-export const FormInformationStyled = styled.p`
+export const FormDesktopInformationStyled = styled.p`
   font-family: "Sansation Light";
   font-style: normal;
   font-weight: 300;
@@ -29,7 +32,7 @@ export const FormInformationStyled = styled.p`
   padding: 0px 20px;
 `;
 
-export const FormStyled = styled.form`
+export const FormDesktopStyled = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -56,7 +59,7 @@ export const FormStyled = styled.form`
     }
 
     &-container {
-      width: 100%;
+      width: 340px;
       height: 35px;
       border: 1px solid;
       border-color: ${({ theme }) => theme.colors.mainColor};
@@ -79,7 +82,7 @@ export const FormStyled = styled.form`
       }
 
       &-disabled {
-        width: 100%;
+        width: 340px;
         height: 35px;
         background: rgba(230, 230, 230, 0.35);
         border: 1px solid;
