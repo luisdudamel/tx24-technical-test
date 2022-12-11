@@ -10,7 +10,7 @@ describe("Given a Header function", () => {
 
       render(
         <ThemeProvider theme={light}>
-          <Header />
+          <Header width={768} />
         </ThemeProvider>
       );
 

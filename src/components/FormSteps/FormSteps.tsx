@@ -16,7 +16,7 @@ const FormSteps = ({ step }: formStepsProps): JSX.Element => {
         />
       </FormStepIcon>
       <FormStepIcon>
-        Document Upload{" "}
+        Document Selection{" "}
         <img
           src={`img/step-${step >= 2 ? "" : "un"}checked.svg`}
           alt="Checkmark on icon"
@@ -24,9 +24,17 @@ const FormSteps = ({ step }: formStepsProps): JSX.Element => {
         />
       </FormStepIcon>
       <FormStepIcon>
-        Your Paying Wallet{" "}
+        Document Upload{" "}
         <img
           src={`img/step-${step >= 3 ? "" : "un"}checked.svg`}
+          alt="Checkmark on icon"
+          width={40}
+        />
+      </FormStepIcon>
+      <FormStepIcon>
+        Your Paying Wallet{" "}
+        <img
+          src={`img/step-${step >= 4 ? "" : "un"}checked.svg`}
           alt="Checkmark on icon"
           width={40}
         />

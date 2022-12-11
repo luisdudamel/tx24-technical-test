@@ -9,10 +9,6 @@ export const FormContainerStyled = styled.div`
   padding: 25px 0px;
   padding-top: 60px;
   align-items: center;
-
-  @media (min-width: 769px) {
-    display: none;
-  }
 `;
 
 export const FormInformationStyled = styled.p`

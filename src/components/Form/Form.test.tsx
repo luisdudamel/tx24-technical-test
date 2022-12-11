@@ -6,21 +6,20 @@ import Form from "./Form";
 
 describe("Given a Form function", () => {
   describe("When invoked", () => {
-    test("Then it should render a form with two buttons with the text `NEXT STEP`", () => {
+    test("Then it should render a form with a button with the text `NEXT STEP`", () => {
       const expectedText = "NEXT STEP";
-      const expectedButtons = 2;
 
       render(
         <ThemeProvider theme={light}>
-          <Form setStep={jest.fn()} />
+          <Form width={768} setStep={jest.fn()} />
         </ThemeProvider>
       );
 
-      const formButtonList = screen.getAllByRole("button", {
+      const formButton = screen.getByRole("button", {
         name: expectedText,
       });
 
-      expect(formButtonList).toHaveLength(expectedButtons);
+      expect(formButton).toBeInTheDocument();
     });
 
     describe("And the user enters valid text on every input field and clicks the button with the text `NEXT STEP`", () => {
@@ -30,37 +29,37 @@ describe("Given a Form function", () => {
 
         render(
           <ThemeProvider theme={light}>
-            <Form setStep={mockSetFunction} />
+            <Form width={768} setStep={mockSetFunction} />
           </ThemeProvider>
         );
 
         const birthInput = screen.getByRole("textbox", {
-          name: "Date of Birth Date of Birth",
+          name: "Date of Birth",
         });
         userEvent.type(birthInput, "Pedro");
 
         const nationalityInput = screen.getByRole("textbox", {
-          name: "Nationality Nationality",
+          name: "Nationality",
         });
         userEvent.type(nationalityInput, "Spain");
 
         const firstAddressInput = screen.getByRole("textbox", {
-          name: "Address Line 1 Address Line 1",
+          name: "Address Line 1",
         });
         userEvent.type(firstAddressInput, "Calle primera 123");
 
         const secondAddressInput = screen.getByRole("textbox", {
-          name: "Address Line 2 Address Line 2",
+          name: "Address Line 2",
         });
         userEvent.type(secondAddressInput, "5-5");
 
         const countryInput = screen.getByRole("textbox", {
-          name: "Country Country",
+          name: "Country",
         });
         userEvent.type(countryInput, "Spain");
 
         const provinceInput = screen.getByRole("textbox", {
-          name: "Province / State Province / State",
+          name: "Province / State",
         });
         userEvent.type(provinceInput, "Barcelona");
 

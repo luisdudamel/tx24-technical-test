@@ -12,19 +12,11 @@ export const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   background-color: white;
-
-  @media (min-width: 769px) {
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
 `;
 
 export const StyledLogo = styled.img`
   width: 50px;
   cursor: pointer;
-
-  @media (min-width: 769px) {
-    margin-left: 10px;
-  }
 `;
 
 export const StyledHamburger = styled.div`
@@ -47,10 +39,6 @@ export const StyledHamburger = styled.div`
     margin-top: 4px;
     transition: all 0.2s;
   }
-
-  @media (min-width: 769px) {
-    display: none;
-  }
 `;
 
 export const StyledLogin = styled.p`
@@ -67,9 +55,5 @@ export const StyledLogin = styled.p`
   span {
     color: ${({ theme }) => theme.colors.mainColor};
     cursor: pointer;
-  }
-
-  @media (max-width: 769px) {
-    display: none;
   }
 `;
