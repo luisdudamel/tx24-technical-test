@@ -210,8 +210,17 @@ const DocumentUpload = ({
                 </>
               ) : (
                 <div className="documentUpload__selector__filenameContainer">
-                  <p>{currentDocuments?.frontdocument}</p>
-                  <button onClick={() => clearFormData("front")}>X</button>
+                  <div className="uploadedDocument">
+                    <p>{currentDocuments?.frontdocument}</p>
+                    <button onClick={() => clearFormData("front")}>X</button>
+                  </div>
+                  <img
+                    src={`img/${
+                      document === "Passport" ? "passport" : "id-front"
+                    }.svg`}
+                    width={120}
+                    alt="Identity document front-side icon"
+                  />
                 </div>
               )}
             </DocumentDesktopUploader>
@@ -254,8 +263,15 @@ const DocumentUpload = ({
                   </>
                 ) : (
                   <div className="documentUpload__selector__filenameContainer">
-                    <p>{currentDocuments?.backdocument}</p>
-                    <button onClick={() => clearFormData("back")}>X</button>
+                    <div className="uploadedDocument">
+                      <p>{currentDocuments?.backdocument}</p>
+                      <button onClick={() => clearFormData("back")}>X</button>
+                    </div>
+                    <img
+                      src="img/id-back.svg"
+                      width={120}
+                      alt="Identity document front-side icon"
+                    />
                   </div>
                 )}
               </DocumentDesktopUploader>

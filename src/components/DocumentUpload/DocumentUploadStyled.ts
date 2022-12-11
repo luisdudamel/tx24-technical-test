@@ -137,6 +137,7 @@ export const DocumentDesktopUploadContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    flex: 1;
   }
 
   div + button {
@@ -213,9 +214,12 @@ export const DocumentDesktopUploader = styled.div`
 
     &__filenameContainer {
       display: flex;
-      justify-content: space-between;
-      width: 80%;
+      justify-content: space-around;
+      width: 100%;
       gap: 20px;
+      height: 180px;
+      align-items: center;
+      padding: 0px 10px;
 
       p {
         font-family: "Sansation Light";
@@ -235,6 +239,16 @@ export const DocumentDesktopUploader = styled.div`
         border: none;
         background: none;
         cursor: pointer;
+      }
+
+      .uploadedDocument {
+        display: flex;
+        border: 1px solid #949494;
+        border-radius: 10px;
+        width: 477.16px;
+        height: 180px;
+        justify-content: space-around;
+        align-items: center;
       }
     }
   }
