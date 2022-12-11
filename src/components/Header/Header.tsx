@@ -1,4 +1,9 @@
-import { StyledHamburger, StyledHeader, StyledLogo } from "./HeaderStyled";
+import {
+  StyledHamburger,
+  StyledHeader,
+  StyledLogin,
+  StyledLogo,
+} from "./HeaderStyled";
 
 const Header = (): JSX.Element => {
   return (
@@ -9,6 +14,9 @@ const Header = (): JSX.Element => {
         <div className="hamburger_meat"></div>
         <div className="hamburger_bread"></div>
       </StyledHamburger>
+      <StyledLogin>
+        <span>Login </span> or <span> Register</span>
+      </StyledLogin>
     </StyledHeader>
   );
 };

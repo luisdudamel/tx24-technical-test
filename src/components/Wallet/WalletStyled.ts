@@ -157,6 +157,10 @@ export const AgreementsContainer = styled.div`
       border: 1px solid #ff1282;
       border-radius: 5px;
     }
+    &__accent {
+      color: ${({ theme }) => theme.colors.mainColor};
+      cursor: pointer;
+    }
   }
 
   .wallet__terms__container input:checked ~ .wallet__terms__custom__checkbox {
