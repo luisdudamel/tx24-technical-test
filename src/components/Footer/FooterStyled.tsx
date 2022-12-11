@@ -84,6 +84,11 @@ export const FooterInfo = styled.div`
         letter-spacing: 0.035em;
         color: #000000;
         cursor: pointer;
+        transition: all ease-in 0.2s;
+
+        :hover {
+          color: ${({ theme }) => theme.colors.mainColor};
+        }
       }
     }
   }
