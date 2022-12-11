@@ -169,73 +169,81 @@ const DocumentUpload = ({
               Make sure there is no light glare on the card
             </li>
           </ul>
-          <DocumentDesktopUploader>
-            <p className="documentUpload__selector--information">
-              Upload here your {document} copy{" "}
-              {document === "National Card" ? "(Front side)" : null}
-            </p>
-            {currentDocuments?.frontdocument === "" ? (
-              <>
-                <Button
-                  buttonClass="select"
-                  buttonText="SELECT"
-                  buttonType="submit"
-                  isDisabled={false}
-                  reference={inputRef}
-                />
-                <label hidden htmlFor="frontdocument">
-                  Document Front
-                </label>
-                <input
-                  ref={inputRef}
-                  type="file"
-                  name="frontdocument"
-                  hidden
-                  id="frontdocument"
-                  onChange={uploadImage}
-                />
-              </>
-            ) : (
-              <div className="documentUpload__selector__filenameContainer">
-                <p>{currentDocuments?.frontdocument}</p>
-                <button onClick={() => clearFormData("front")}>X</button>
-              </div>
-            )}
-          </DocumentDesktopUploader>
-          {document === "National Card" ? (
+          <div className="documentUpload__container">
             <DocumentDesktopUploader>
-              <p className="documentUpload__selector--information">
-                Upload here your {document} copy (Back side)
-              </p>
-              {currentDocuments?.backdocument === "" ? (
+              {currentDocuments?.frontdocument === "" ? (
                 <>
-                  <Button
-                    buttonClass="select"
-                    buttonText="SELECT"
-                    buttonType="submit"
-                    isDisabled={false}
-                    reference={backInputRef}
-                  />
-                  <label hidden htmlFor="backdocument">
-                    Document Back
-                  </label>
-                  <input
-                    ref={backInputRef}
-                    type="file"
-                    name="backdocument"
-                    hidden
-                    id="backdocument"
-                    onChange={uploadImage}
-                  />
+                  <div>
+                    <p className="documentUpload__selector--information">
+                      Upload here your {document} copy{" "}
+                      {document === "National Card" ? "(Front side)" : null}
+                    </p>
+                    <Button
+                      buttonClass="select"
+                      buttonText="SELECT"
+                      buttonType="submit"
+                      isDisabled={false}
+                      reference={inputRef}
+                    />
+                    <label hidden htmlFor="frontdocument">
+                      Document Front
+                    </label>
+                    <input
+                      ref={inputRef}
+                      type="file"
+                      name="frontdocument"
+                      hidden
+                      id="frontdocument"
+                      onChange={uploadImage}
+                    />
+                  </div>
+                  <img src="img/passport.svg" alt="" />
                 </>
               ) : (
                 <div className="documentUpload__selector__filenameContainer">
-                  <p>{currentDocuments?.backdocument}</p>
-                  <button onClick={() => clearFormData("back")}>X</button>
+                  <p>{currentDocuments?.frontdocument}</p>
+                  <button onClick={() => clearFormData("front")}>X</button>
                 </div>
               )}
             </DocumentDesktopUploader>
-          ) : null}
+            {document === "National Card" ? (
+              <DocumentDesktopUploader>
+                {currentDocuments?.backdocument === "" ? (
+                  <>
+                    <div>
+                      <p className="documentUpload__selector--information">
+                        Upload here your {document} copy (Back side)
+                      </p>
+                      <Button
+                        buttonClass="select"
+                        buttonText="SELECT"
+                        buttonType="submit"
+                        isDisabled={false}
+                        reference={backInputRef}
+                      />
+                      <label hidden htmlFor="backdocument">
+                        Document Back
+                      </label>
+                      <input
+                        ref={backInputRef}
+                        type="file"
+                        name="backdocument"
+                        hidden
+                        id="backdocument"
+                        onChange={uploadImage}
+                      />
+                    </div>
+                    <img src="img/passport.svg" alt="" />
+                  </>
+                ) : (
+                  <div className="documentUpload__selector__filenameContainer">
+                    <p>{currentDocuments?.backdocument}</p>
+                    <button onClick={() => clearFormData("back")}>X</button>
+                  </div>
+                )}
+              </DocumentDesktopUploader>
+            ) : null}
+          </div>
 
           <Button
             buttonClass="formButton"

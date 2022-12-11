@@ -131,6 +131,11 @@ export const DocumentDesktopUploadContainer = styled.div`
       content: "✓ ";
     }
   }
+
+  .documentUpload__container {
+    display: flex;
+    flex-direction: column;
+  }
   div + button {
     position: relative;
     top: 0;
@@ -142,7 +147,7 @@ export const DocumentDesktopUploadInformation = styled.p`
   font-family: "Sansation Light";
   font-style: normal;
   font-weight: 300;
-  font-size: 17px;
+  font-size: 20px;
   line-height: 30px;
   display: flex;
   align-items: center;
@@ -150,18 +155,19 @@ export const DocumentDesktopUploadInformation = styled.p`
   letter-spacing: 0.05em;
   color: black;
   padding: 0px 20px;
-  margin-top: 50px;
+  margin-top: 30px;
 `;
 
 export const DocumentDesktopUploader = styled.div`
   flex: 1;
   display: flex;
   width: 100%;
-  flex-direction: column;
+  flex-direction: row;
   padding-bottom: 50px;
   padding-left: 10px;
   padding-right: 10px;
   align-items: center;
+  justify-content: space-between;
 
   .documentUpload__selector {
     &--information {
