@@ -6,7 +6,6 @@ export const FormDesktopContainerStyled = styled.div`
   align-items: flex-start;
   flex-direction: column;
   padding: 25px 0px;
-  padding-top: 60px;
   margin-top: 30px;
   align-items: center;
   border: 1px solid #ffffff;
@@ -137,10 +136,11 @@ export const FormDesktopStyled = styled.form`
 `;
 
 export const FormStepIconsContainer = styled.div`
-  border: solid 1px red;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  border-bottom: 1px dashed rgba(148, 148, 148, 0.25);
+  padding-bottom: 20px;
 `;
 
 export const FormStepIcon = styled.div`
@@ -152,4 +152,8 @@ export const FormStepIcon = styled.div`
   text-align: center;
   letter-spacing: 0.05em;
   color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 `;

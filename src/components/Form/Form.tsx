@@ -187,10 +187,28 @@ const Form = ({ setStep }: FormProps): JSX.Element => {
         <FormStepIconsContainer>
           <FormStepIcon>
             Personal Details
-            <img src="img/step-checked.svg" alt="Checkmark on icon" />
+            <img
+              src="img/step-checked.svg"
+              alt="Checkmark on icon"
+              width={40}
+            />
           </FormStepIcon>
-          <FormStepIcon>Document Upload</FormStepIcon>
-          <FormStepIcon>Your Paying Wallet</FormStepIcon>
+          <FormStepIcon>
+            Document Upload{" "}
+            <img
+              src="img/step-unchecked.svg"
+              alt="Checkmark on icon"
+              width={40}
+            />
+          </FormStepIcon>
+          <FormStepIcon>
+            Your Paying Wallet{" "}
+            <img
+              src="img/step-unchecked.svg"
+              alt="Checkmark on icon"
+              width={40}
+            />
+          </FormStepIcon>
         </FormStepIconsContainer>
         <FormDesktopInformationStyled>
           Please type carefully and fill out the form with your personal
