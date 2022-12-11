@@ -19,7 +19,9 @@ const Wallet = (): JSX.Element => {
   const [walletAddress, setWalletAddress] = useState<wallet>({
     walletAddress: "",
   });
-  const [termsChecked, setTermsChecked] = useState<number>(0);
+  const [termsChecked, setTermsChecked] = useState<boolean>(false);
+  const [personalInfoChecked, setPersonalInfoChecked] =
+    useState<boolean>(false);
 
   const validateWallet = (
     event: React.ChangeEvent<HTMLTextAreaElement>
@@ -30,24 +32,39 @@ const Wallet = (): JSX.Element => {
   };
 
   const validateTerms = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    if (event?.target.checked === true && termsChecked >= 0) {
-      setTermsChecked(termsChecked + 1);
-    }
-    if (event?.target.checked === false) {
-      setTermsChecked(termsChecked - 1);
+    if (event?.target.id === "terms" && !termsChecked) {
+      setTermsChecked(true);
+    } else if (event?.target.id === "information" && !personalInfoChecked) {
+      setPersonalInfoChecked(true);
+    } else if (event?.target.id === "terms") {
+      setTermsChecked(false);
+    } else {
+      setPersonalInfoChecked(false);
     }
   };
 
   useEffect(() => {
-    if (termsChecked === 2 && walletAddress.walletAddress.length === 42) {
+    if (
+      termsChecked &&
+      personalInfoChecked &&
+      walletAddress.walletAddress.length === 42
+    ) {
       setIsDisabled(false);
     } else {
       setIsDisabled(true);
     }
-  }, [termsChecked, walletAddress.walletAddress.length]);
+  }, [personalInfoChecked, termsChecked, walletAddress.walletAddress.length]);
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsDisabled(true);
+    setWalletAddress({ walletAddress: "" });
+    setTermsChecked(false);
+    setPersonalInfoChecked(false);
+  };
 
   return (
-    <WalletContainerStyled>
+    <WalletContainerStyled onSubmit={handleSubmit}>
       <WalletInformationStyled>
         Setup your paying wallet
       </WalletInformationStyled>
@@ -81,6 +98,7 @@ const Wallet = (): JSX.Element => {
           maxLength={42}
           id="walletAddress"
           onChange={validateWallet}
+          value={walletAddress.walletAddress}
         />
         <p className="wallet__address__note">
           Note: Address should be ERC20-compliant
@@ -92,6 +110,7 @@ const Wallet = (): JSX.Element => {
             className="wallet__terms__checkbox"
             type="checkbox"
             id="terms"
+            checked={termsChecked}
             name="terms"
             value="terms"
             onChange={validateTerms}
@@ -106,6 +125,7 @@ const Wallet = (): JSX.Element => {
             className="wallet__terms__checkbox"
             type="checkbox"
             id="information"
+            checked={personalInfoChecked}
             name="information"
             value="information"
             onChange={validateTerms}
@@ -119,7 +139,7 @@ const Wallet = (): JSX.Element => {
       <Button
         buttonClass="formButton"
         buttonText="SUBMIT"
-        buttonType="button"
+        buttonType="submit"
         isDisabled={isDisabled}
       />
     </WalletContainerStyled>

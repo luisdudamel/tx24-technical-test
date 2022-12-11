@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const WalletContainerStyled = styled.div`
+export const WalletContainerStyled = styled.form`
   display: flex;
   height: 100%;
   flex: 1;
