@@ -16,6 +16,26 @@ export const StyledHeader = styled.header`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     background-color: ${({ theme }) => theme.colors.headerBackground};
   }
+
+  .theme {
+    &__container {
+      margin-right: 20px;
+      color: ${({ theme }) => theme.colors.mainColor};
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    &__icon {
+      cursor: pointer;
+    }
+  }
+
+  .logo__container {
+    @media (min-width: 769px) {
+      padding-left: 10px;
+      flex: 1;
+    }
+  }
 `;
 
 export const StyledLogo = styled.img`
@@ -53,7 +73,7 @@ export const StyledLogin = styled.p`
   line-height: 20px;
   text-align: center;
   letter-spacing: 0.05em;
-  padding-right: 10%;
+  padding-right: 30px;
   color: ${({ theme }) => theme.colors.mainText};
 
   span {

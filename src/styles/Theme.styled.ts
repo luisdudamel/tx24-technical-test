@@ -1,4 +1,4 @@
-interface styleTheme {
+export interface styleTheme {
   name: string;
   colors: {
     mainColor: string;
@@ -17,7 +17,7 @@ interface styleTheme {
 }
 
 export const light: styleTheme = {
-  name: "light-theme",
+  name: "light",
   colors: {
     mainColor: "#ff1282",
     inactiveColor: "#c4c4c4",
@@ -35,7 +35,7 @@ export const light: styleTheme = {
 };
 
 export const dark: styleTheme = {
-  name: "dark-theme",
+  name: "dark",
   colors: {
     mainColor: "#00FFF7",
     inactiveColor: "#c4c4c4",
@@ -51,3 +51,5 @@ export const dark: styleTheme = {
     selectArrow: "img/icons/down-arrow-dark.svg",
   },
 };
+
+export const themeList: styleTheme[] = [dark, light];
