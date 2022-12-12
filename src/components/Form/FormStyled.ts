@@ -89,11 +89,13 @@ export const FormStyled = styled.form`
         display: flex;
         align-items: center;
         letter-spacing: 0.05em;
-        color: #949494;
+        color: ${({ theme }) => theme.colors.inactivePlaceholderText};
         padding-left: 10px;
         margin-bottom: 20px;
+        background-color: ${({ theme }) =>
+          theme.colors.inactivePlaceholderBackground};
         ::placeholder {
-          color: ${({ theme }) => theme.colors.mainText};
+          color: ${({ theme }) => theme.colors.inactivePlaceholderText};
         }
       }
     }

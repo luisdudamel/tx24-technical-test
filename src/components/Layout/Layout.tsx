@@ -7,6 +7,10 @@ import IdentitySelector from "../IdentitySelector/IdentitySelector";
 import Wallet from "../Wallet/Wallet";
 import { MainStyledContainer } from "./LayoutStyled";
 
+interface layoutProps {
+  theme: string;
+}
+
 const Layout = (): JSX.Element => {
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [document, setDocument] = useState<string>("");

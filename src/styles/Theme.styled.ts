@@ -8,6 +8,9 @@ interface styleTheme {
     mainText: string;
     headerBackground: string;
     footerBackground: string;
+    inactivePlaceholderText: string;
+    inactivePlaceholderBackground: string;
+    stepIconBackground: string;
   };
 }
 
@@ -20,7 +23,10 @@ export const light: styleTheme = {
     buttonText: "white",
     mainText: "black",
     headerBackground: "white",
-    footerBackground: "#fff4f9;",
+    footerBackground: "#fff4f9",
+    inactivePlaceholderText: "rgba(148, 148, 148, 1)",
+    inactivePlaceholderBackground: "rgba(230, 230, 230, 1)",
+    stepIconBackground: "#ff1282",
   },
 };
 
@@ -34,5 +40,8 @@ export const dark: styleTheme = {
     mainText: "white",
     headerBackground: "#3F3D4D",
     footerBackground: "#3F3D4D",
+    inactivePlaceholderText: "rgba(148, 148, 148, 1)",
+    inactivePlaceholderBackground: "rgba(133, 133, 133, 0.35)",
+    stepIconBackground: "#363442",
   },
 };

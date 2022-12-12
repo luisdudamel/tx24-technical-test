@@ -81,7 +81,7 @@ export const FormDesktopStyled = styled.form`
       &-disabled {
         width: 340px;
         height: 35px;
-        background: rgba(230, 230, 230, 0.35);
+        background: rgba(133, 133, 133, 0.35);
         border: 1px solid;
         border-color: ${({ theme }) => theme.colors.mainColor};
         border-radius: 5px;
@@ -91,11 +91,13 @@ export const FormDesktopStyled = styled.form`
         font-size: 14px;
         line-height: 20px;
         letter-spacing: 0.05em;
-        color: ${({ theme }) => theme.colors.mainText};
+        color: ${({ theme }) => theme.colors.inactivePlaceholderText};
         padding-left: 10px;
         margin-bottom: 20px;
+        background-color: ${({ theme }) =>
+          theme.colors.inactivePlaceholderBackground};
         ::placeholder {
-          color: ${({ theme }) => theme.colors.mainText};
+          color: ${({ theme }) => theme.colors.inactivePlaceholderText};
         }
       }
     }

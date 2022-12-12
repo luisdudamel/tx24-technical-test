@@ -21,4 +21,28 @@ export const FormStepIcon = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 10px;
+
+  .step__icon__unchecked {
+    width: 40px;
+    height: 40px;
+    border: solid 1px ${({ theme }) => theme.colors.mainColor};
+    border-radius: 50%;
+  }
+  .step__icon__checked {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: solid 1px ${({ theme }) => theme.colors.mainColor};
+    background-color: ${({ theme }) => theme.colors.stepIconBackground};
+    border-radius: 50%;
+    font-size: 30px;
+    color: white;
+    font-weight: 500;
+
+    :before {
+      content: "✓ ";
+    }
+  }
 `;
