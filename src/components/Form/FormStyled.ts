@@ -92,6 +92,9 @@ export const FormStyled = styled.form`
         color: #949494;
         padding-left: 10px;
         margin-bottom: 20px;
+        ::placeholder {
+          color: ${({ theme }) => theme.colors.mainText};
+        }
       }
     }
   }

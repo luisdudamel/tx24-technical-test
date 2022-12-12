@@ -16,7 +16,7 @@ export const FormStepIcon = styled.div`
   line-height: 20px;
   text-align: center;
   letter-spacing: 0.05em;
-  color: #000000;
+  color: ${({ theme }) => theme.colors.mainText};
   display: flex;
   flex-direction: column;
   align-items: center;

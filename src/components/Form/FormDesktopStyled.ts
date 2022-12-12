@@ -8,7 +8,7 @@ export const FormDesktopContainerStyled = styled.div`
   padding: 25px 0px;
   margin-top: 30px;
   align-items: center;
-  border: 1px solid #ffffff;
+  border: 1px solid ${({ theme }) => theme.colors.appBackground};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   max-width: 800px;
@@ -22,7 +22,7 @@ export const FormDesktopInformationStyled = styled.p`
   line-height: 30px;
   text-align: left;
   letter-spacing: 0.05em;
-  color: black;
+  color: ${({ theme }) => theme.colors.mainText};
   max-width: 710px;
 `;
 
@@ -50,6 +50,7 @@ export const FormDesktopStyled = styled.form`
       padding-bottom: 5px;
       text-align: left;
       width: 100%;
+      color: ${({ theme }) => theme.colors.mainText};
     }
 
     &-container {
@@ -66,9 +67,11 @@ export const FormDesktopStyled = styled.form`
       display: flex;
       align-items: center;
       letter-spacing: 0.05em;
-      color: #949494;
       padding-left: 10px;
       margin-bottom: 20px;
+      background: ${({ theme }) => theme.colors.appBackground};
+      color: ${({ theme }) => theme.colors.mainText};
+
       :focus-visible {
         outline: none;
         border: solid 2px;
@@ -87,12 +90,13 @@ export const FormDesktopStyled = styled.form`
         font-weight: 300;
         font-size: 14px;
         line-height: 20px;
-        display: flex;
-        align-items: center;
         letter-spacing: 0.05em;
-        color: #949494;
+        color: ${({ theme }) => theme.colors.mainText};
         padding-left: 10px;
         margin-bottom: 20px;
+        ::placeholder {
+          color: ${({ theme }) => theme.colors.mainText};
+        }
       }
     }
   }

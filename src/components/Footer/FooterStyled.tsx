@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const FooterStyled = styled.footer`
   margin-top: 30px;
   width: 100%;
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.appBackground};
   height: 30px;
   text-align: center;
   padding-bottom: 0px;
@@ -13,7 +13,7 @@ export const FooterStyled = styled.footer`
   font-size: 12px;
   line-height: 30px;
   letter-spacing: 0.035em;
-  color: #000000;
+  color: ${({ theme }) => theme.colors.mainText};
 
   @media (min-width: 769px) {
     display: none;
@@ -25,7 +25,7 @@ export const DesktopFooter = styled.footer`
   flex-direction: column;
   margin-top: 30px;
   width: 100%;
-  background: #fff4f9;
+  background: ${({ theme }) => theme.colors.footerBackground};
   height: 230px;
   text-align: center;
   padding-bottom: 0px;
@@ -72,7 +72,7 @@ export const FooterInfo = styled.div`
         font-size: 20px;
         line-height: 30px;
         letter-spacing: 0.035em;
-        color: #000000;
+        color: ${({ theme }) => theme.colors.mainText};
         text-align: left;
       }
       &__item {
@@ -82,7 +82,7 @@ export const FooterInfo = styled.div`
         font-size: 16px;
         line-height: 25px;
         letter-spacing: 0.035em;
-        color: #000000;
+        color: ${({ theme }) => theme.colors.mainText};
         cursor: pointer;
         transition: all ease-in 0.2s;
 
@@ -102,7 +102,7 @@ export const FooterLogo = styled.img`
 export const FooterCopyright = styled.div`
   width: 100%;
   height: 30px;
-  background: #fff4f9;
+  color: ${({ theme }) => theme.colors.footerBackground};
   text-align: center;
   padding-bottom: 0px;
   padding-top: 0px;
@@ -111,5 +111,5 @@ export const FooterCopyright = styled.div`
   font-size: 12px;
   line-height: 30px;
   letter-spacing: 0.035em;
-  color: #000000;
+  color: ${({ theme }) => theme.colors.mainText};
 `;
