@@ -4,37 +4,46 @@ export const WalletDesktopContainerStyled = styled.form`
   display: flex;
   height: 100%;
   flex: 1;
-  justify-content: space-around;
+  justify-content: flex-start;
   margin-top: 30px;
   width: 60%;
   max-width: 800px;
   align-items: flex-start;
   flex-direction: column;
   align-items: center;
-  padding: 0px 20px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   border: 1px solid #ffffff;
-  padding: 25px 25px;
+  padding: 25px 0px;
 
-  .wallet__title {
-    font-family: "Sansation Light";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 24px;
-    line-height: 20px;
-    letter-spacing: 0.05em;
-    color: #000000;
-    margin-bottom: 10px;
-  }
-  .wallet__subtitle {
-    margin-top: 0px;
-    font-family: "Sansation Light";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 45px;
-    color: #000000;
+  .wallet {
+    &__title {
+      font-family: "Sansation Light";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 24px;
+      line-height: 20px;
+      letter-spacing: 0.05em;
+      color: #000000;
+      margin-bottom: 10px;
+    }
+
+    &__subtitle {
+      margin-top: 0px;
+      font-family: "Sansation Light";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 45px;
+      color: #000000;
+    }
+
+    &__layout {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+    }
   }
 `;
 
@@ -117,9 +126,9 @@ export const WalletDesktopAddressContainer = styled.div`
         font-weight: 300;
         font-size: 14px;
         line-height: 20px;
-        text-align: center;
+        text-align: left;
         letter-spacing: 0.05em;
-
+        margin-left: 10px;
         color: #c4c4c4;
       }
     }

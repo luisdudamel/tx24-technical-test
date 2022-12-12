@@ -119,8 +119,6 @@ export const DocumentDesktopUploadContainer = styled.div`
     font-weight: 300;
     font-size: 18px;
     line-height: 30px;
-
-    align-items: center;
     letter-spacing: 0.05em;
     color: #000000;
 
