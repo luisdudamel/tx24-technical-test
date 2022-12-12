@@ -72,17 +72,17 @@ It includes file uploading, RWD and theme switching.
 **Components**
 
 ```
-   .
-   └── components(/)
-    └── Layout
-    └── Form
-    └── FormSteps
-    └── Header
-    └── Footer
-    └── DocumentUpload
-    └── IdentitySelector
-    └── Wallet
-    └── Button
+    .
+    └── components(/)
+      └── Layout
+      └── Form
+      └── FormSteps
+      └── Header
+      └── Footer
+      └── DocumentUpload
+      └── IdentitySelector
+      └── Wallet
+      └── Button
 
 ```
 
