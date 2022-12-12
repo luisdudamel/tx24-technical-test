@@ -7,7 +7,11 @@ import {
   FooterStyled,
 } from "./FooterStyled";
 
-const Footer = (): JSX.Element => {
+interface footerProps {
+  theme: string;
+}
+
+const Footer = ({ theme }: footerProps): JSX.Element => {
   return (
     <>
       <FooterStyled>
@@ -15,7 +19,10 @@ const Footer = (): JSX.Element => {
       </FooterStyled>
       <DesktopFooter>
         <FooterInfoContainer>
-          <FooterLogo src="img/logo-tx24.svg" alt="TX-24 Logo" />
+          <FooterLogo
+            src={`img/logos/logo-tx24${theme === "dark" ? "-dark" : ""}.svg`}
+            alt="TX-24 Logo"
+          />
           <FooterInfo>
             <div className="footer__info__panel">
               <p className="footer__info__list__title">Company</p>

@@ -14,12 +14,14 @@ interface identitySelectorProps {
   setStep: (step: number) => void;
   setDocument: (document: string) => void;
   width: number;
+  theme: string;
 }
 
 const IdentitySelector = ({
   setStep,
   setDocument,
   width,
+  theme,
 }: identitySelectorProps): JSX.Element => {
   const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
   const [activeButton, setActiveButton] = useState<string>("");
@@ -40,7 +42,6 @@ const IdentitySelector = ({
     <>
       {width <= 768 ? (
         <IdentityContainerStyled>
-          <FormSteps step={2} />
           <IdentityInformationStyled>
             In order to complete this step, please upload any of the following
             personal documents
@@ -53,7 +54,14 @@ const IdentitySelector = ({
               active={activeButton === "Passport" ? true : false}
               setActive={enableNextButton}
               isDisabled={false}
-              buttonImage={<img src="img/Passport-1.svg" alt="Id Icon"></img>}
+              buttonImage={
+                <img
+                  src={`img/documents/Passport-1${
+                    theme === "dark" ? "-dark" : ""
+                  }.svg`}
+                  alt="Passport Icon"
+                />
+              }
             />
             <Button
               buttonClass="identity"
@@ -62,7 +70,14 @@ const IdentitySelector = ({
               isDisabled={false}
               setActive={enableNextButton}
               active={activeButton === "National Card" ? true : false}
-              buttonImage={<img src="img/id-1.svg" alt="Id Icon"></img>}
+              buttonImage={
+                <img
+                  src={`img/documents/id-1${
+                    theme === "dark" ? "-dark" : ""
+                  }.svg`}
+                  alt="Id Icon"
+                />
+              }
             />
             <Button
               buttonClass="identity"
@@ -71,7 +86,14 @@ const IdentitySelector = ({
               isDisabled={false}
               setActive={enableNextButton}
               active={activeButton === "Driver's License" ? true : false}
-              buttonImage={<img src="img/license-1.svg" alt="Id Icon"></img>}
+              buttonImage={
+                <img
+                  src={`img/documents/license-1${
+                    theme === "dark" ? "-dark" : ""
+                  }.svg`}
+                  alt="License Icon"
+                />
+              }
             />
           </DocumentSelector>
           <Button
@@ -98,7 +120,14 @@ const IdentitySelector = ({
               active={activeButton === "Passport" ? true : false}
               setActive={enableNextButton}
               isDisabled={false}
-              buttonImage={<img src="img/Passport-1.svg" alt="Id Icon"></img>}
+              buttonImage={
+                <img
+                  src={`img/documents/Passport-1${
+                    theme === "dark" ? "-dark" : ""
+                  }.svg`}
+                  alt="Passport Icon"
+                ></img>
+              }
             />
             <Button
               buttonClass="identity"
@@ -107,7 +136,14 @@ const IdentitySelector = ({
               isDisabled={false}
               setActive={enableNextButton}
               active={activeButton === "National Card" ? true : false}
-              buttonImage={<img src="img/id-1.svg" alt="Id Icon"></img>}
+              buttonImage={
+                <img
+                  src={`img/documents/id-1${
+                    theme === "dark" ? "-dark" : ""
+                  }.svg`}
+                  alt="Id Icon"
+                ></img>
+              }
             />
             <Button
               buttonClass="identity"
@@ -116,7 +152,14 @@ const IdentitySelector = ({
               isDisabled={false}
               setActive={enableNextButton}
               active={activeButton === "Driver's License" ? true : false}
-              buttonImage={<img src="img/license-1.svg" alt="Id Icon"></img>}
+              buttonImage={
+                <img
+                  src={`img/documents/license-1${
+                    theme === "dark" ? "-dark" : ""
+                  }.svg`}
+                  alt="License Icon"
+                ></img>
+              }
             />
           </DocumentDesktopSelector>
           <Button

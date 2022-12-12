@@ -9,35 +9,19 @@ const FormSteps = ({ step }: formStepsProps): JSX.Element => {
     <FormStepIconsContainer>
       <FormStepIcon>
         Personal Details
-        <img
-          src={`img/step-${step >= 1 ? "" : "un"}checked.svg`}
-          alt="Checkmark on icon"
-          width={40}
-        />
+        <div className={`step__icon__${step >= 1 ? "" : "un"}checked`}></div>
       </FormStepIcon>
       <FormStepIcon>
         Document Selection{" "}
-        <img
-          src={`img/step-${step >= 2 ? "" : "un"}checked.svg`}
-          alt="Checkmark on icon"
-          width={40}
-        />
+        <div className={`step__icon__${step >= 2 ? "" : "un"}checked`}></div>
       </FormStepIcon>
       <FormStepIcon>
         Document Upload{" "}
-        <img
-          src={`img/step-${step >= 3 ? "" : "un"}checked.svg`}
-          alt="Checkmark on icon"
-          width={40}
-        />
+        <div className={`step__icon__${step >= 3 ? "" : "un"}checked`}></div>
       </FormStepIcon>
       <FormStepIcon>
         Your Paying Wallet{" "}
-        <img
-          src={`img/step-${step >= 4 ? "" : "un"}checked.svg`}
-          alt="Checkmark on icon"
-          width={40}
-        />
+        <div className={`step__icon__${step >= 4 ? "" : "un"}checked`}></div>
       </FormStepIcon>
     </FormStepIconsContainer>
   );

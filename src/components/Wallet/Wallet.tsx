@@ -20,6 +20,7 @@ import {
 
 interface walletProps {
   width: number;
+  theme: string;
 }
 
 interface wallet {

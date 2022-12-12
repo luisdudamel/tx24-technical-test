@@ -7,7 +7,11 @@ import IdentitySelector from "../IdentitySelector/IdentitySelector";
 import Wallet from "../Wallet/Wallet";
 import { MainStyledContainer } from "./LayoutStyled";
 
-const Layout = (): JSX.Element => {
+interface layoutProps {
+  theme: string;
+}
+
+const Layout = ({ theme }: layoutProps): JSX.Element => {
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [document, setDocument] = useState<string>("");
   const [width, setWidth] = useState(window.innerWidth);
@@ -21,12 +25,13 @@ const Layout = (): JSX.Element => {
 
   return (
     <MainStyledContainer>
-      <Header width={width} />
+      <Header theme={theme} width={width} />
       {currentStep === 1 ? (
         <Form setStep={setCurrentStep} width={width} />
       ) : null}
       {currentStep === 2 ? (
         <IdentitySelector
+          theme={theme}
           width={width}
           setDocument={setDocument}
           setStep={setCurrentStep}
@@ -34,13 +39,14 @@ const Layout = (): JSX.Element => {
       ) : null}
       {currentStep === 3 ? (
         <DocumentUpload
+          theme={theme}
           width={width}
           document={document}
           setStep={setCurrentStep}
         />
       ) : null}
-      {currentStep === 4 ? <Wallet width={width} /> : null}
-      <Footer />
+      {currentStep === 4 ? <Wallet theme={theme} width={width} /> : null}
+      <Footer theme={theme} />
     </MainStyledContainer>
   );
 };
