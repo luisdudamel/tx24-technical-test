@@ -88,7 +88,7 @@ describe("Given a Describe function", () => {
 
       render(
         <ThemeProvider theme={dark}>
-          <Wallet width={768} />
+          <Wallet width={1000} />
         </ThemeProvider>
       );
 

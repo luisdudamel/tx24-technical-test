@@ -14,7 +14,7 @@ describe("Given a DocumentUpload function", () => {
       render(
         <ThemeProvider theme={dark}>
           <DocumentUpload
-            width={768}
+            width={1000}
             setStep={jest.fn()}
             document={expectedDocumentText}
           />
@@ -162,7 +162,7 @@ describe("Given a DocumentUpload function", () => {
         render(
           <ThemeProvider theme={dark}>
             <DocumentUpload
-              width={768}
+              width={1000}
               setStep={jest.fn()}
               document={expectedDocumentText}
             />

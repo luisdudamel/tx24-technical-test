@@ -2,15 +2,6 @@ import React, { useEffect, useState } from "react";
 import Button from "../Button/Button";
 import FormSteps from "../FormSteps/FormSteps";
 import {
-  AgreementsDesktopContainer,
-  WalletDesktopAddress,
-  WalletDesktopAddressContainer,
-  WalletDesktopContainerStyled,
-  WalletDesktopInformationStyled,
-  WalletDesktopSelect,
-  WalletDesktopSelectContainer,
-} from "./WalletDesktopStyled";
-import {
   AgreementsContainer,
   WalletAddress,
   WalletAddressContainer,
@@ -18,6 +9,13 @@ import {
   WalletInformationStyled,
   WalletSelect,
   WalletSelectContainer,
+  AgreementsDesktopContainer,
+  WalletDesktopAddress,
+  WalletDesktopAddressContainer,
+  WalletDesktopContainerStyled,
+  WalletDesktopInformationStyled,
+  WalletDesktopSelect,
+  WalletDesktopSelectContainer,
 } from "./WalletStyled";
 
 interface walletProps {
