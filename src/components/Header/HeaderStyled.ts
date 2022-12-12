@@ -19,6 +19,7 @@ export const StyledHeader = styled.header`
 
   .theme {
     &__container {
+      padding-right: 20px;
       color: ${({ theme }) => theme.colors.mainColor};
       display: flex;
       gap: 20px;
@@ -26,6 +27,13 @@ export const StyledHeader = styled.header`
     }
     &__icon {
       cursor: pointer;
+    }
+  }
+
+  .logo__container {
+    @media (min-width: 769px) {
+      padding-left: 10px;
+      flex: 1;
     }
   }
 `;
@@ -65,7 +73,7 @@ export const StyledLogin = styled.p`
   line-height: 20px;
   text-align: center;
   letter-spacing: 0.05em;
-  padding-right: 10%;
+  padding-right: 30px;
   color: ${({ theme }) => theme.colors.mainText};
 
   span {

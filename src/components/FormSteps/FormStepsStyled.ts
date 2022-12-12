@@ -7,7 +7,7 @@ export const FormStepIconsContainer = styled.div`
   border-bottom: 1px dashed rgba(148, 148, 148, 0.25);
   padding-bottom: 20px;
   @media (max-width: 1200px) {
-    padding: 10px 25px;
+    padding: 0px 25px;
   }
 `;
 

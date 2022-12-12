@@ -26,7 +26,12 @@ const Layout = ({ theme, themeSwitch }: layoutProps): JSX.Element => {
 
   return (
     <MainStyledContainer>
-      <Header setTheme={themeSwitch} theme={theme} width={width} />
+      <Header
+        goHome={setCurrentStep}
+        setTheme={themeSwitch}
+        theme={theme}
+        width={width}
+      />
       {currentStep === 1 ? (
         <Form setStep={setCurrentStep} width={width} />
       ) : null}
