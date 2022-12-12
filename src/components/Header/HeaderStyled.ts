@@ -19,7 +19,7 @@ export const StyledHeader = styled.header`
 
   .theme {
     &__container {
-      padding-right: 20px;
+      margin-right: 20px;
       color: ${({ theme }) => theme.colors.mainColor};
       display: flex;
       gap: 20px;

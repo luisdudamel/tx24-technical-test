@@ -34,7 +34,7 @@ const Header = ({
               className="theme__icon"
               src={`img/icons/sun-${theme === "dark" ? "dark" : "light"}.svg`}
               height={20}
-              alt="Sun theme icon"
+              alt={`Sun theme icon ${theme === "dark" ? "dark" : "light"}`}
               onClick={() => setTheme("dark")}
             />
             |
@@ -42,7 +42,7 @@ const Header = ({
               className="theme__icon"
               src={`img/icons/moon-${theme === "dark" ? "dark" : "light"}.svg`}
               height={18}
-              alt="Moon theme icon"
+              alt={`Moon theme icon ${theme === "dark" ? "dark" : "light"}`}
               onClick={() => setTheme("light")}
             />
           </div>
@@ -62,7 +62,7 @@ const Header = ({
               className="theme__icon"
               src={`img/icons/sun-${theme === "dark" ? "dark" : "light"}.svg`}
               height={20}
-              alt="Sun theme icon"
+              alt={`Sun theme icon ${theme === "dark" ? "dark" : "light"}`}
               onClick={() => setTheme("dark")}
             />
             |
@@ -70,7 +70,7 @@ const Header = ({
               className="theme__icon"
               src={`img/icons/moon-${theme === "dark" ? "dark" : "light"}.svg`}
               height={18}
-              alt="Moon theme icon"
+              alt={`Moon theme icon ${theme === "dark" ? "dark" : "light"}`}
               onClick={() => setTheme("light")}
             />
           </div>
