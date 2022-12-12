@@ -9,6 +9,7 @@ export const FormContainerStyled = styled.div`
   padding: 25px 0px;
   padding-top: 60px;
   align-items: center;
+  background: ${({ theme }) => theme.colors.appBackground};
 `;
 
 export const FormInformationStyled = styled.p`
@@ -21,7 +22,7 @@ export const FormInformationStyled = styled.p`
   align-items: center;
   text-align: center;
   letter-spacing: 0.05em;
-  color: black;
+  color: ${({ theme }) => theme.colors.mainText};
   padding: 0px 20px;
 `;
 
@@ -49,6 +50,7 @@ export const FormStyled = styled.form`
       padding-bottom: 5px;
       text-align: left;
       width: 100%;
+      color: ${({ theme }) => theme.colors.mainText};
     }
 
     &-container {
@@ -68,6 +70,9 @@ export const FormStyled = styled.form`
       color: #949494;
       padding-left: 10px;
       margin-bottom: 20px;
+      background: ${({ theme }) => theme.colors.appBackground};
+      color: ${({ theme }) => theme.colors.mainText};
+
       :focus-visible {
         outline: none;
         border: solid 2px;

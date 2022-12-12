@@ -17,10 +17,9 @@ export const DocumentUploadContainer = styled.div`
     font-weight: 300;
     font-size: 18px;
     line-height: 30px;
-
+    color: ${({ theme }) => theme.colors.mainText};
     align-items: center;
     letter-spacing: 0.05em;
-    color: #000000;
 
     &--item {
       padding: 10px 0px;
@@ -42,7 +41,7 @@ export const DocumentUploadInformation = styled.p`
   align-items: center;
   text-align: justify;
   letter-spacing: 0.05em;
-  color: black;
+  color: ${({ theme }) => theme.colors.mainText};
   padding: 0px 20px;
   margin-top: 50px;
 `;
@@ -66,6 +65,7 @@ export const DocumentUploader = styled.div`
       line-height: 20px;
       text-align: center;
       letter-spacing: 0.05em;
+      color: ${({ theme }) => theme.colors.mainText};
     }
 
     &__filenameContainer {
@@ -83,6 +83,7 @@ export const DocumentUploader = styled.div`
         line-height: 20px;
         letter-spacing: 0.05em;
         color: #000000;
+        color: ${({ theme }) => theme.colors.mainText};
         overflow-wrap: break-word;
       }
       button {
@@ -92,6 +93,7 @@ export const DocumentUploader = styled.div`
         border: none;
         background: none;
         cursor: pointer;
+        color: ${({ theme }) => theme.colors.mainText};
       }
     }
   }

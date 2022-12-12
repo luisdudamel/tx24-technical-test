@@ -11,9 +11,10 @@ export const StyledHeader = styled.header`
   padding: 5px 10px;
   align-items: center;
   justify-content: space-between;
-  background-color: ${({ theme }) => theme.colors.headerBackground};
+  background-color: ${({ theme }) => theme.colors.appBackground};
   @media (min-width: 769px) {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: ${({ theme }) => theme.colors.headerBackground};
   }
 `;
 

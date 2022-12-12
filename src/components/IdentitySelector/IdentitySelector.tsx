@@ -42,7 +42,6 @@ const IdentitySelector = ({
     <>
       {width <= 768 ? (
         <IdentityContainerStyled>
-          <FormSteps step={2} />
           <IdentityInformationStyled>
             In order to complete this step, please upload any of the following
             personal documents
@@ -56,7 +55,12 @@ const IdentitySelector = ({
               setActive={enableNextButton}
               isDisabled={false}
               buttonImage={
-                <img src="img/documents/Passport-1.svg" alt="Id Icon"></img>
+                <img
+                  src={`img/documents/Passport-1${
+                    theme === "dark" ? "-dark" : ""
+                  }.svg`}
+                  alt="Passport Icon"
+                />
               }
             />
             <Button
@@ -67,7 +71,12 @@ const IdentitySelector = ({
               setActive={enableNextButton}
               active={activeButton === "National Card" ? true : false}
               buttonImage={
-                <img src="img/documents/id-1.svg" alt="Id Icon"></img>
+                <img
+                  src={`img/documents/id-1${
+                    theme === "dark" ? "-dark" : ""
+                  }.svg`}
+                  alt="Id Icon"
+                />
               }
             />
             <Button
@@ -78,7 +87,12 @@ const IdentitySelector = ({
               setActive={enableNextButton}
               active={activeButton === "Driver's License" ? true : false}
               buttonImage={
-                <img src="img/documents/license-1.svg" alt="Id Icon"></img>
+                <img
+                  src={`img/documents/license-1${
+                    theme === "dark" ? "-dark" : ""
+                  }.svg`}
+                  alt="License Icon"
+                />
               }
             />
           </DocumentSelector>

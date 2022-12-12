@@ -82,6 +82,7 @@ const Form = ({ setStep, width }: FormProps): JSX.Element => {
               id="first name"
               className="form__input-container-disabled"
               placeholder="Info from registration form"
+              disabled
             />
             <label htmlFor="last name" className="form__input-label">
               Last Name

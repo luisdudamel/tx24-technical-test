@@ -20,7 +20,7 @@ export const WalletInformationStyled = styled.p`
   line-height: 30px;
   text-align: center;
   letter-spacing: 0.05em;
-  color: black;
+  color: ${({ theme }) => theme.colors.mainText};
   width: 100%;
 `;
 
@@ -37,7 +37,7 @@ export const WalletSelectContainer = styled.div`
         font-size: 18px;
         line-height: 20px;
         letter-spacing: 0.05em;
-        color: #000000;
+        color: ${({ theme }) => theme.colors.mainText};
       }
     }
   }
@@ -57,16 +57,23 @@ export const WalletSelect = styled.select`
   font-size: 18px;
   line-height: 20px;
   letter-spacing: 0.05em;
-  color: #000000;
+  color: ${({ theme }) => theme.colors.mainText};
   padding-left: 10px;
   margin-top: 10px;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  background: url("img/icons/down-arrow.png") no-repeat;
+  background: url(${({ theme }) => theme.colors.selectArrow}) no-repeat;
+  background-color: ${({ theme }) => theme.colors.appBackground};
   background-size: 21px;
   cursor: pointer;
   background-position: right 5px top 50%;
+
+  :focus-visible {
+    outline: none;
+    border: solid 2px;
+    border-color: ${({ theme }) => theme.colors.mainColor};
+  }
 `;
 
 export const WalletAddressContainer = styled.div`
@@ -80,7 +87,7 @@ export const WalletAddressContainer = styled.div`
         font-size: 18px;
         line-height: 20px;
         letter-spacing: 0.05em;
-        color: #000000;
+        color: ${({ theme }) => theme.colors.mainText};
       }
       &__note {
         font-family: "Sansation Light";
@@ -111,13 +118,21 @@ export const WalletAddress = styled.textarea`
   font-size: 18px;
   line-height: 20px;
   letter-spacing: 0.05em;
-  color: #000000;
+  background: ${({ theme }) => theme.colors.appBackground};
+  border: 1px solid ${({ theme }) => theme.colors.mainColor};
+  color: ${({ theme }) => theme.colors.mainText};
   padding-left: 10px;
   padding-top: 10px;
   margin-top: 10px;
   -moz-appearance: none;
   -webkit-appearance: none;
   resize: none;
+
+  :focus-visible {
+    outline: none;
+    border: solid 2px;
+    border-color: ${({ theme }) => theme.colors.mainColor};
+  }
 `;
 
 export const AgreementsContainer = styled.div`
@@ -143,6 +158,7 @@ export const AgreementsContainer = styled.div`
 
   .wallet__terms {
     padding-left: 10px;
+    color: ${({ theme }) => theme.colors.mainText};
 
     &__container {
       display: flex;
@@ -154,8 +170,8 @@ export const AgreementsContainer = styled.div`
       position: absolute;
       height: 25px;
       width: 25px;
-      background: #ffffff;
-      border: 1px solid #ff1282;
+      background: ${({ theme }) => theme.colors.appBackground};
+      border: 1px solid ${({ theme }) => theme.colors.mainColor};
       border-radius: 5px;
     }
     &__accent {
@@ -165,7 +181,7 @@ export const AgreementsContainer = styled.div`
   }
 
   .wallet__terms__container input:checked ~ .wallet__terms__custom__checkbox {
-    background: url("img/icons/checkmark.svg") no-repeat;
+    background: url(${({ theme }) => theme.colors.checkMarkUrl}) no-repeat;
     background-size: 21px;
   }
 `;

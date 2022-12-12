@@ -9,6 +9,7 @@ export const IdentityContainerStyled = styled.div`
   align-items: flex-start;
   flex-direction: column;
   align-items: center;
+  background: ${({ theme }) => theme.colors.appBackground};
 `;
 
 export const IdentityInformationStyled = styled.p`
@@ -38,6 +39,11 @@ export const DocumentSelector = styled.div`
     background-color: ${({ theme }) => theme.colors.appBackground};
     color: ${({ theme }) => theme.colors.mainColor};
     border: solid 1px ${({ theme }) => theme.colors.mainColor};
+  }
+  .button__inactive {
+    background-color: ${({ theme }) => theme.colors.appBackground};
+    color: ${({ theme }) => theme.colors.inactivePlaceholderText};
+    border: solid 1px ${({ theme }) => theme.colors.inactivePlaceholderText};
   }
 `;
 
