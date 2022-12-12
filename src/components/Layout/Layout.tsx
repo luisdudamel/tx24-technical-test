@@ -9,9 +9,10 @@ import { MainStyledContainer } from "./LayoutStyled";
 
 interface layoutProps {
   theme: string;
+  themeSwitch: (theme: string) => void;
 }
 
-const Layout = ({ theme }: layoutProps): JSX.Element => {
+const Layout = ({ theme, themeSwitch }: layoutProps): JSX.Element => {
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [document, setDocument] = useState<string>("");
   const [width, setWidth] = useState(window.innerWidth);
@@ -25,7 +26,7 @@ const Layout = ({ theme }: layoutProps): JSX.Element => {
 
   return (
     <MainStyledContainer>
-      <Header theme={theme} width={width} />
+      <Header setTheme={themeSwitch} theme={theme} width={width} />
       {currentStep === 1 ? (
         <Form setStep={setCurrentStep} width={width} />
       ) : null}

@@ -16,6 +16,18 @@ export const StyledHeader = styled.header`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     background-color: ${({ theme }) => theme.colors.headerBackground};
   }
+
+  .theme {
+    &__container {
+      color: ${({ theme }) => theme.colors.mainColor};
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    &__icon {
+      cursor: pointer;
+    }
+  }
 `;
 
 export const StyledLogo = styled.img`

@@ -25,6 +25,10 @@ export const FormDesktopInformationStyled = styled.p`
   letter-spacing: 0.05em;
   color: ${({ theme }) => theme.colors.mainText};
   max-width: 710px;
+
+  @media (max-width: 1200px) {
+    padding: 0px 25px;
+  }
 `;
 
 export const FormDesktopStyled = styled.form`
@@ -115,13 +119,19 @@ export const FormDesktopStyled = styled.form`
     letter-spacing: 0.05em;
     text-align: left;
     width: 100%;
+    @media (max-width: 1200px) {
+      padding: 0px 25px;
+    }
   }
 
   button {
     margin-top: 50px;
-    position: relative;
-    top: 0;
-    left: 30%;
+
+    @media (min-width: 1200px) {
+      position: relative;
+      top: 0;
+      left: 30%;
+    }
   }
 
   .personal__details {

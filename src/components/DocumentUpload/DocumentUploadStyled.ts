@@ -143,9 +143,11 @@ export const DocumentDesktopUploadContainer = styled.div`
   }
 
   div + button {
-    position: relative;
-    top: 0;
-    left: 30%;
+    @media (min-width: 1200px) {
+      position: relative;
+      top: 0;
+      left: 30%;
+    }
   }
 `;
 
