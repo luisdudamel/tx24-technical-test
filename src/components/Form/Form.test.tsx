@@ -6,28 +6,30 @@ import Form from "./Form";
 
 describe("Given a Form function", () => {
   describe("When invoked", () => {
-    test("Then it should render a form with button with the text `NEXT STEP`", () => {
+    test("Then it should render a form with a button with the text `NEXT STEP`", () => {
       const expectedText = "NEXT STEP";
 
       render(
         <ThemeProvider theme={light}>
-          <Form setStep={jest.fn()} />
+          <Form width={768} setStep={jest.fn()} />
         </ThemeProvider>
       );
 
-      const formButton = screen.getByRole("button", { name: expectedText });
+      const formButton = screen.getByRole("button", {
+        name: expectedText,
+      });
 
       expect(formButton).toBeInTheDocument();
     });
 
     describe("And the user enters valid text on every input field and clicks the button with the text `NEXT STEP`", () => {
-      test("Then the button with the text `NEXT STEP` should be enabled be enabled", async () => {
+      test("Then the button with the text `NEXT STEP` should be enabled", async () => {
         const expectedButtonText = "NEXT STEP";
         const mockSetFunction = jest.fn();
 
         render(
           <ThemeProvider theme={light}>
-            <Form setStep={mockSetFunction} />
+            <Form width={768} setStep={mockSetFunction} />
           </ThemeProvider>
         );
 
@@ -61,13 +63,13 @@ describe("Given a Form function", () => {
         });
         userEvent.type(provinceInput, "Barcelona");
 
-        const nextButton = screen.getByRole("button", {
+        const nextButtonList = screen.getAllByRole("button", {
           name: expectedButtonText,
         });
 
-        expect(nextButton).toBeEnabled();
+        expect(nextButtonList[0]).toBeEnabled();
 
-        await userEvent.click(nextButton);
+        await userEvent.click(nextButtonList[0]);
 
         expect(mockSetFunction).toHaveBeenCalled();
       });

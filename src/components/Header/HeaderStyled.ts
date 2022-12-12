@@ -12,10 +12,14 @@ export const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   background-color: white;
+  @media (min-width: 769px) {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
 `;
 
 export const StyledLogo = styled.img`
   width: 50px;
+  cursor: pointer;
 `;
 
 export const StyledHamburger = styled.div`
@@ -37,5 +41,22 @@ export const StyledHamburger = styled.div`
     width: 1.7em;
     margin-top: 4px;
     transition: all 0.2s;
+  }
+`;
+
+export const StyledLogin = styled.p`
+  font-family: "Sansation Light";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: black;
+  padding-right: 10%;
+
+  span {
+    color: ${({ theme }) => theme.colors.mainColor};
+    cursor: pointer;
   }
 `;

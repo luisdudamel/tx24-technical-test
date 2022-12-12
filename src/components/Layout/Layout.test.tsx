@@ -20,8 +20,8 @@ describe("Given a Layout function", () => {
       expect(logoImage).toBeInTheDocument();
     });
 
-    test("Then it should render a form and a button with the text `NEXT STEP`", () => {
-      const expectedButtonText = "NEXT STEP";
+    test("Then it should render a form and a button with the text `Passport`", () => {
+      const expectedButtonText = "Id Icon Passport";
       const mockSetState = jest.fn();
 
       jest
@@ -34,11 +34,51 @@ describe("Given a Layout function", () => {
         </ThemeProvider>
       );
 
-      const nextButton = screen.getByRole("button", {
+      const passportButton = screen.getByRole("button", {
         name: expectedButtonText,
       });
 
-      expect(nextButton).toBeInTheDocument();
+      expect(passportButton).toBeInTheDocument();
+    });
+    test("Then it should render an image with the alternative text `Identity document front-side icon`", () => {
+      const expectedImageAlternativeText = "Identity document front-side icon";
+      const mockSetState = jest.fn();
+
+      jest
+        .spyOn(React, "useState")
+        .mockImplementationOnce(() => [3, mockSetState])
+        .mockImplementationOnce(() => [3, mockSetState])
+        .mockImplementation(() => ["Passport", mockSetState]);
+
+      render(
+        <ThemeProvider theme={light}>
+          <Layout />
+        </ThemeProvider>
+      );
+
+      const identityImage = screen.getByAltText(expectedImageAlternativeText);
+
+      expect(identityImage).toBeInTheDocument();
+    });
+    test("Then it should render the text `Your address for tokens`", () => {
+      const expectedText = "Your address for tokens";
+      const mockSetState = jest.fn();
+
+      jest
+        .spyOn(React, "useState")
+        .mockImplementationOnce(() => [4, mockSetState])
+        .mockImplementationOnce(() => [4, mockSetState])
+        .mockImplementation(() => ["Passport", mockSetState]);
+
+      render(
+        <ThemeProvider theme={light}>
+          <Layout />
+        </ThemeProvider>
+      );
+
+      const addressText = screen.getByText(expectedText);
+
+      expect(addressText).toBeInTheDocument();
     });
   });
 });

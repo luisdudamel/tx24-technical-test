@@ -13,7 +13,11 @@ describe("Given a DocumentUpload function", () => {
 
       render(
         <ThemeProvider theme={dark}>
-          <DocumentUpload setStep={jest.fn()} document={expectedDocumentText} />
+          <DocumentUpload
+            width={1000}
+            setStep={jest.fn()}
+            document={expectedDocumentText}
+          />
         </ThemeProvider>
       );
       const input = screen.getByLabelText(expectedFrontLabelText);
@@ -36,6 +40,7 @@ describe("Given a DocumentUpload function", () => {
         render(
           <ThemeProvider theme={dark}>
             <DocumentUpload
+              width={768}
               setStep={jest.fn()}
               document={expectedDocumentText}
             />
@@ -67,7 +72,11 @@ describe("Given a DocumentUpload function", () => {
 
       render(
         <ThemeProvider theme={dark}>
-          <DocumentUpload setStep={jest.fn()} document={expectedDocumentText} />
+          <DocumentUpload
+            width={768}
+            setStep={jest.fn()}
+            document={expectedDocumentText}
+          />
         </ThemeProvider>
       );
       const input = screen.getByLabelText(expectedFrontLabelText);
@@ -90,6 +99,7 @@ describe("Given a DocumentUpload function", () => {
         render(
           <ThemeProvider theme={dark}>
             <DocumentUpload
+              width={768}
               setStep={jest.fn()}
               document={expectedDocumentText}
             />
@@ -122,7 +132,11 @@ describe("Given a DocumentUpload function", () => {
 
       render(
         <ThemeProvider theme={dark}>
-          <DocumentUpload setStep={jest.fn()} document={expectedDocumentText} />
+          <DocumentUpload
+            width={768}
+            setStep={jest.fn()}
+            document={expectedDocumentText}
+          />
         </ThemeProvider>
       );
       const frontInput = screen.getByLabelText(expectedFrontLabelText);
@@ -148,6 +162,7 @@ describe("Given a DocumentUpload function", () => {
         render(
           <ThemeProvider theme={dark}>
             <DocumentUpload
+              width={1000}
               setStep={jest.fn()}
               document={expectedDocumentText}
             />

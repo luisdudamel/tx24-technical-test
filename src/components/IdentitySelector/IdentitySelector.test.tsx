@@ -13,7 +13,11 @@ describe("Given a IdentitySelector function", () => {
 
       render(
         <ThemeProvider theme={light}>
-          <IdentitySelector setDocument={jest.fn()} setStep={jest.fn()} />
+          <IdentitySelector
+            width={768}
+            setDocument={jest.fn()}
+            setStep={jest.fn()}
+          />
         </ThemeProvider>
       );
 
@@ -39,7 +43,11 @@ describe("Given a IdentitySelector function", () => {
 
       render(
         <ThemeProvider theme={light}>
-          <IdentitySelector setDocument={jest.fn()} setStep={jest.fn()} />
+          <IdentitySelector
+            width={768}
+            setDocument={jest.fn()}
+            setStep={jest.fn()}
+          />
         </ThemeProvider>
       );
 
@@ -61,7 +69,11 @@ describe("Given a IdentitySelector function", () => {
 
         render(
           <ThemeProvider theme={light}>
-            <IdentitySelector setDocument={jest.fn()} setStep={jest.fn()} />
+            <IdentitySelector
+              width={768}
+              setDocument={jest.fn()}
+              setStep={jest.fn()}
+            />
           </ThemeProvider>
         );
 
@@ -87,7 +99,11 @@ describe("Given a IdentitySelector function", () => {
 
       render(
         <ThemeProvider theme={light}>
-          <IdentitySelector setDocument={jest.fn()} setStep={jest.fn()} />
+          <IdentitySelector
+            width={768}
+            setDocument={jest.fn()}
+            setStep={jest.fn()}
+          />
         </ThemeProvider>
       );
 
@@ -109,7 +125,11 @@ describe("Given a IdentitySelector function", () => {
 
         render(
           <ThemeProvider theme={light}>
-            <IdentitySelector setDocument={jest.fn()} setStep={jest.fn()} />
+            <IdentitySelector
+              width={768}
+              setDocument={jest.fn()}
+              setStep={jest.fn()}
+            />
           </ThemeProvider>
         );
 
@@ -135,7 +155,11 @@ describe("Given a IdentitySelector function", () => {
 
       render(
         <ThemeProvider theme={light}>
-          <IdentitySelector setDocument={jest.fn()} setStep={jest.fn()} />
+          <IdentitySelector
+            width={768}
+            setDocument={jest.fn()}
+            setStep={jest.fn()}
+          />
         </ThemeProvider>
       );
 
@@ -157,7 +181,11 @@ describe("Given a IdentitySelector function", () => {
 
         render(
           <ThemeProvider theme={light}>
-            <IdentitySelector setDocument={jest.fn()} setStep={jest.fn()} />
+            <IdentitySelector
+              width={768}
+              setDocument={jest.fn()}
+              setStep={jest.fn()}
+            />
           </ThemeProvider>
         );
 
