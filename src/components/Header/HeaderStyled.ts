@@ -12,6 +12,9 @@ export const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   background-color: white;
+  @media (min-width: 769px) {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
 `;
 
 export const StyledLogo = styled.img`

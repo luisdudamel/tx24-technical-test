@@ -1,33 +1,61 @@
 import styled from "styled-components";
 
-export const WalletContainerStyled = styled.form`
+export const WalletDesktopContainerStyled = styled.form`
   display: flex;
   height: 100%;
   flex: 1;
   justify-content: space-around;
-  width: 100%;
+  margin-top: 30px;
+  width: 60%;
+  max-width: 800px;
   align-items: flex-start;
   flex-direction: column;
   align-items: center;
   padding: 0px 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+  padding: 25px 25px;
+
+  .wallet__title {
+    font-family: "Sansation Light";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    color: #000000;
+    margin-bottom: 10px;
+  }
+  .wallet__subtitle {
+    margin-top: 0px;
+    font-family: "Sansation Light";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 45px;
+    color: #000000;
+  }
 `;
 
-export const WalletInformationStyled = styled.p`
+export const WalletDesktopInformationStyled = styled.p`
   font-family: "Sansation Light";
   font-style: normal;
   font-weight: 300;
   font-size: 17px;
   line-height: 30px;
-  text-align: center;
+  text-align: left;
   letter-spacing: 0.05em;
   color: black;
   width: 100%;
 `;
 
-export const WalletSelectContainer = styled.div`
+export const WalletDesktopSelectContainer = styled.div`
   width: 100%;
   height: 100%;
   margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
   .wallet {
     &__select {
       &__label {
@@ -43,8 +71,8 @@ export const WalletSelectContainer = styled.div`
   }
 `;
 
-export const WalletSelect = styled.select`
-  width: 100%;
+export const WalletDesktopSelect = styled.select`
+  width: 350px;
   height: 51.23px;
   left: 17px;
   top: 278.66px;
@@ -69,8 +97,9 @@ export const WalletSelect = styled.select`
   background-position: right 5px top 50%;
 `;
 
-export const WalletAddressContainer = styled.div`
+export const WalletDesktopAddressContainer = styled.div`
   width: 100%;
+  margin-bottom: 100px;
   .wallet {
     &__address {
       &__label {
@@ -97,9 +126,9 @@ export const WalletAddressContainer = styled.div`
   }
 `;
 
-export const WalletAddress = styled.textarea`
+export const WalletDesktopAddress = styled.textarea`
   width: 100%;
-  height: 71.23px;
+  height: 50.23px;
   left: 17px;
   top: 278.66px;
   background: #ffffff;
@@ -118,9 +147,10 @@ export const WalletAddress = styled.textarea`
   -moz-appearance: none;
   -webkit-appearance: none;
   resize: none;
+  padding-top: 14px;
 `;
 
-export const AgreementsContainer = styled.div`
+export const AgreementsDesktopContainer = styled.div`
   width: 100%;
   font-family: "Sansation Light";
   font-style: normal;
@@ -135,10 +165,11 @@ export const AgreementsContainer = styled.div`
   color: #000000;
 
   input[type="checkbox"] {
-    visibility: hidden;
     z-index: 1;
     width: 25px;
     height: 25px;
+    opacity: 0;
+    cursor: pointer;
   }
 
   .wallet__terms {

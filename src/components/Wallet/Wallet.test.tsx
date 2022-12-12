@@ -11,7 +11,7 @@ describe("Given a Describe function", () => {
 
       render(
         <ThemeProvider theme={dark}>
-          <Wallet />
+          <Wallet width={768} />
         </ThemeProvider>
       );
 
@@ -29,7 +29,7 @@ describe("Given a Describe function", () => {
 
       render(
         <ThemeProvider theme={dark}>
-          <Wallet />
+          <Wallet width={768} />
         </ThemeProvider>
       );
 
@@ -56,7 +56,7 @@ describe("Given a Describe function", () => {
 
         render(
           <ThemeProvider theme={dark}>
-            <Wallet />
+            <Wallet width={768} />
           </ThemeProvider>
         );
 
@@ -88,7 +88,7 @@ describe("Given a Describe function", () => {
 
       render(
         <ThemeProvider theme={dark}>
-          <Wallet />
+          <Wallet width={768} />
         </ThemeProvider>
       );
 

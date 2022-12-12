@@ -39,7 +39,7 @@ const Layout = (): JSX.Element => {
           setStep={setCurrentStep}
         />
       ) : null}
-      {currentStep === 4 ? <Wallet /> : null}
+      {currentStep === 4 ? <Wallet width={width} /> : null}
       <Footer />
     </MainStyledContainer>
   );
