@@ -11,7 +11,7 @@ interface layoutProps {
   theme: string;
 }
 
-const Layout = (): JSX.Element => {
+const Layout = ({ theme }: layoutProps): JSX.Element => {
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [document, setDocument] = useState<string>("");
   const [width, setWidth] = useState(window.innerWidth);
@@ -31,6 +31,7 @@ const Layout = (): JSX.Element => {
       ) : null}
       {currentStep === 2 ? (
         <IdentitySelector
+          theme={theme}
           width={width}
           setDocument={setDocument}
           setStep={setCurrentStep}

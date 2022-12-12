@@ -46,7 +46,7 @@ const Button = ({
       {buttonClass === "identity" ? (
         <IdentityButtonStyled
           onClick={() => (setActive ? setActive(buttonText) : null)}
-          className={active ? "button__active" : ""}
+          className={active ? "button__active" : "button__inactive"}
           disabled={isDisabled}
           type={buttonType}
         >

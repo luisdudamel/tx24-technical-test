@@ -84,10 +84,17 @@ export const DocumentDesktopSelector = styled.div`
   gap: 40px;
   justify-content: space-evenly;
   align-items: center;
+
   .button__active {
     background-color: ${({ theme }) => theme.colors.appBackground};
-    color: ${({ theme }) => theme.colors.mainColor};
+    color: ${({ theme }) => theme.colors.mainText};
     border: solid 1px ${({ theme }) => theme.colors.mainColor};
+  }
+
+  .button__inactive {
+    background-color: ${({ theme }) => theme.colors.appBackground};
+    color: ${({ theme }) => theme.colors.inactivePlaceholderText};
+    border: solid 1px ${({ theme }) => theme.colors.inactivePlaceholderText};
   }
   button :nth-last-child() {
     position: relative;
