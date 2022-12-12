@@ -22,6 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:coverage": "npm run test -- --coverage --watchAll=false",
+    "test:watch": "npm run test -- --watchAll",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
