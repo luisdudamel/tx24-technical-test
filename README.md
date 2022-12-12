@@ -1,53 +1,130 @@
-# Components / Responsibilities list
+# Tx24 Account creation form
 
-## Components
+## Technical skills assessment for Tx24.
 
-- Form
-- Button
-- Input
-- Select
-- Header
-- Footer
-- Hamburger menu
-- App
+Account creation form is a four step form for KYC verification, document uploading and wallet selection on a cryptocurrency platform.
+It includes file uploading, RWD and theme switching.
 
-## Responsibilities
+---
 
-### Button:
+  <div align="center">
+  <br/>
 
-- Render a button element with a received function, text and class.
-- Call the received function.
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=luisdudamel_visualize-test)
 
-### Input:
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=luisdudamel_tx24-technical-test&metric=coverage)](https://sonarcloud.io/summary/new_code?id=luisdudamel_tx24-technical-test)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=luisdudamel_tx24-technical-test&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=luisdudamel_tx24-technical-test)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=luisdudamel_tx24-technical-test&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=luisdudamel_tx24-technical-test)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=luisdudamel_tx24-technical-test&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=luisdudamel_tx24-technical-test)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=luisdudamel_tx24-technical-test&metric=bugs)](https://sonarcloud.io/summary/new_code?id=luisdudamel_tx24-technical-test)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=luisdudamel_tx24-technical-test&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=luisdudamel_tx24-technical-test)
 
-- Render an input element, with the received class and text.
+---
 
-### Select:
+  <br/>
 
-- Render a select element, with as many options as received, with the received text, and the received function.
-- Call the received function.
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
-### Form:
+  </div>
 
-- Render a button component, giving a text and a function.
-- Render input components, depending on the current stage, giving a text to render.
-- Render select components, giving text, class, and functions to call.
-- Call the established function (submit) depending on the current form stage.
+  <div align="center">
 
-### Header:
+---
 
-- Render a received text and image.
+## Usage
 
-### Footer:
+  </div>
+  <div align="center">
 
-- Render a received list of text elements and image.
+  <img style="height:500px" src="https://s9.gifyu.com/images/desktop.gif" />
+  <br/>
+  <img style="height:300px" src="https://s9.gifyu.com/images/mobile.gif" />
+  <img style="height:300px" src="https://s9.gifyu.com/images/mobile2.gif" />
+  </div>
 
-### Hamburger Menu:
+---
 
-- Render a hamburger menu
+  <br/>
 
-### App
+  <div align="center">
+  <br/>
 
-- Render a header component depending on the viewport size.
-- Render a form component
-- Render a footer component
+## [Live website](https://tx24-technical-test-luis-dudamel.vercel.app/) 🔗
+
+  <br/>
+  </div>
+
+## Project info📚
+
+**Technologies used:**
+
+```
+  - Typescript
+  - React
+  - Styled Components
+  - Jest
+```
+
+**Components**
+
+```
+    .
+    └── components(/)
+      └── Layout
+      └── Form
+      └── FormSteps
+      └── Header
+      └── Footer
+      └── DocumentUpload
+      └── IdentitySelector
+      └── Wallet
+      └── Button
+
+```
+
+  <br/>
+  <br/>
+
+---
+
+  <br/>
+  <br/>
+
+## Commands
+
+```shell
+    # Installation command
+    npm i or npm/yarn i
+
+    # Running command
+    npm start
+
+    # Build command
+    npm run build
+
+```
+
+```shell
+    # Testing command
+    npm run test
+
+    # Testing watch command
+    npm run test:watch
+
+    # Testing coverage command
+    npm run test:coverage
+```
+
+  <br/>
+
+---
+
+  <br/>
+
+## License
+
+[MIT](https://opensource.org/licenses/MIT)
