@@ -7,8 +7,8 @@ It includes file uploading, RWD and theme switching.
 
 ---
 
-<div align="center">
-<br/>
+ <div align="center">
+ <br/>
 
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=luisdudamel_visualize-test)
 
@@ -21,7 +21,7 @@ It includes file uploading, RWD and theme switching.
 
 ---
 
-<br/>
+ <br/>
 
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
@@ -29,51 +29,51 @@ It includes file uploading, RWD and theme switching.
 ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
-</div>
+ </div>
 
-<div align="center">
+ <div align="center">
 
 ---
 
 ## Usage
 
-</div>
-<div align="center">
+ </div>
+ <div align="center">
 
-<img style="height:500px" src="https://s9.gifyu.com/images/desktop.gif" />
-<br/>
-<img style="height:300px" src="https://s9.gifyu.com/images/mobile.gif" />
-<img style="height:300px" src="https://s9.gifyu.com/images/mobile2.gif" />
-</div>
+ <img style="height:500px" src="https://s9.gifyu.com/images/desktop.gif" />
+ <br/>
+ <img style="height:300px" src="https://s9.gifyu.com/images/mobile.gif" />
+ <img style="height:300px" src="https://s9.gifyu.com/images/mobile2.gif" />
+ </div>
 
 ---
 
-<br/>
+ <br/>
 
-<div align="center">
-<br/>
+ <div align="center">
+ <br/>
 
 ## [Live website](https://tx24-technical-test-luis-dudamel.vercel.app/) 🔗
 
-<br/>
-</div>
+ <br/>
+ </div>
 
 ## Project info📚
 
 **Technologies used:**
 
 ```
-- Typescript
-- React
-- Styled Components
-- Jest
+ - Typescript
+ - React
+ - Styled Components
+ - Jest
 ```
 
 **Components**
 
 ```
-.
-└── components(/)
+ .
+ └── components(/)
     └── Layout
     └── Form
     └── FormSteps
@@ -87,12 +87,12 @@ It includes file uploading, RWD and theme switching.
 ```
 
  <br/>
-<br/>
+ <br/>
 
 ---
 
-<br/>
-<br/>
+ <br/>
+ <br/>
 
 ## Commands
 
@@ -119,11 +119,11 @@ It includes file uploading, RWD and theme switching.
     npm run test:coverage
 ```
 
-<br/>
+ <br/>
 
 ---
 
-<br/>
+ <br/>
 
 ## License
 
