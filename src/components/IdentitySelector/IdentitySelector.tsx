@@ -55,7 +55,9 @@ const IdentitySelector = ({
               active={activeButton === "Passport" ? true : false}
               setActive={enableNextButton}
               isDisabled={false}
-              buttonImage={<img src="img/Passport-1.svg" alt="Id Icon"></img>}
+              buttonImage={
+                <img src="img/documents/Passport-1.svg" alt="Id Icon"></img>
+              }
             />
             <Button
               buttonClass="identity"
@@ -64,7 +66,9 @@ const IdentitySelector = ({
               isDisabled={false}
               setActive={enableNextButton}
               active={activeButton === "National Card" ? true : false}
-              buttonImage={<img src="img/id-1.svg" alt="Id Icon"></img>}
+              buttonImage={
+                <img src="img/documents/id-1.svg" alt="Id Icon"></img>
+              }
             />
             <Button
               buttonClass="identity"
@@ -73,7 +77,9 @@ const IdentitySelector = ({
               isDisabled={false}
               setActive={enableNextButton}
               active={activeButton === "Driver's License" ? true : false}
-              buttonImage={<img src="img/license-1.svg" alt="Id Icon"></img>}
+              buttonImage={
+                <img src="img/documents/license-1.svg" alt="Id Icon"></img>
+              }
             />
           </DocumentSelector>
           <Button
@@ -102,7 +108,9 @@ const IdentitySelector = ({
               isDisabled={false}
               buttonImage={
                 <img
-                  src={`img/Passport-1${theme === "dark" ? "-dark" : ""}.svg`}
+                  src={`img/documents/Passport-1${
+                    theme === "dark" ? "-dark" : ""
+                  }.svg`}
                   alt="Passport Icon"
                 ></img>
               }
@@ -116,7 +124,9 @@ const IdentitySelector = ({
               active={activeButton === "National Card" ? true : false}
               buttonImage={
                 <img
-                  src={`img/id-1${theme === "dark" ? "-dark" : ""}.svg`}
+                  src={`img/documents/id-1${
+                    theme === "dark" ? "-dark" : ""
+                  }.svg`}
                   alt="Id Icon"
                 ></img>
               }
@@ -130,7 +140,9 @@ const IdentitySelector = ({
               active={activeButton === "Driver's License" ? true : false}
               buttonImage={
                 <img
-                  src={`img/license-1${theme === "dark" ? "-dark" : ""}.svg`}
+                  src={`img/documents/license-1${
+                    theme === "dark" ? "-dark" : ""
+                  }.svg`}
                   alt="License Icon"
                 ></img>
               }

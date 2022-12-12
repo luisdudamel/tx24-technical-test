@@ -7,12 +7,16 @@ import {
 
 interface headerProps {
   width: number;
+  theme: string;
 }
 
-const Header = ({ width }: headerProps): JSX.Element => {
+const Header = ({ width, theme }: headerProps): JSX.Element => {
   return (
     <StyledHeader>
-      <StyledLogo src="img/logo-tx24.svg" alt="Tx24 logo" />
+      <StyledLogo
+        src={`img/logos/logo-tx24${theme === "dark" ? "-dark" : ""}.svg`}
+        alt="Tx24 logo"
+      />
       {width <= 768 ? (
         <StyledHamburger>
           <div className="hamburger_bread"></div>

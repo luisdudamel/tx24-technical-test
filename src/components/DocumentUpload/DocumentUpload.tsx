@@ -203,7 +203,7 @@ const DocumentUpload = ({
                     />
                   </div>
                   <img
-                    src={`img/${
+                    src={`img/documents/${
                       document === "Passport"
                         ? `${theme === "light" ? "passport" : "passport-dark"}`
                         : `id-${theme === "dark" ? "front-dark" : "front"}`
@@ -219,7 +219,7 @@ const DocumentUpload = ({
                     <button onClick={() => clearFormData("front")}>X</button>
                   </div>
                   <img
-                    src={`img/${
+                    src={`img/documents/${
                       document === "Passport"
                         ? `${theme === "light" ? "passport" : "passport-dark"}`
                         : `id-${theme === "dark" ? "front-dark" : "front"}`
@@ -262,7 +262,9 @@ const DocumentUpload = ({
                       />
                     </div>
                     <img
-                      src={`img/id-back${theme === "dark" ? "-dark" : ""}.svg`}
+                      src={`img/documents/id-back${
+                        theme === "dark" ? "-dark" : ""
+                      }.svg`}
                       width={120}
                       alt="Identity document back-side icon"
                     />
@@ -274,7 +276,9 @@ const DocumentUpload = ({
                       <button onClick={() => clearFormData("back")}>X</button>
                     </div>
                     <img
-                      src={`img/id-back${theme === "dark" ? "-dark" : ""}.svg`}
+                      src={`img/documents/id-back${
+                        theme === "dark" ? "-dark" : ""
+                      }.svg`}
                       width={120}
                       alt="Identity document front-side icon"
                     />

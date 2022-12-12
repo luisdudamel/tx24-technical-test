@@ -25,7 +25,7 @@ const Layout = ({ theme }: layoutProps): JSX.Element => {
 
   return (
     <MainStyledContainer>
-      <Header width={width} />
+      <Header theme={theme} width={width} />
       {currentStep === 1 ? (
         <Form setStep={setCurrentStep} width={width} />
       ) : null}
@@ -46,7 +46,7 @@ const Layout = ({ theme }: layoutProps): JSX.Element => {
         />
       ) : null}
       {currentStep === 4 ? <Wallet theme={theme} width={width} /> : null}
-      <Footer />
+      <Footer theme={theme} />
     </MainStyledContainer>
   );
 };

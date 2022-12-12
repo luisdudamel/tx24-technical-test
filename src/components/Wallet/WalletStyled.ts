@@ -63,7 +63,7 @@ export const WalletSelect = styled.select`
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  background: url("img/down-arrow.png") no-repeat;
+  background: url("img/icons/down-arrow.png") no-repeat;
   background-size: 21px;
   cursor: pointer;
   background-position: right 5px top 50%;
@@ -165,7 +165,7 @@ export const AgreementsContainer = styled.div`
   }
 
   .wallet__terms__container input:checked ~ .wallet__terms__custom__checkbox {
-    background: url("img/checkmark.svg") no-repeat;
+    background: url("img/icons/checkmark.svg") no-repeat;
     background-size: 21px;
   }
 `;
@@ -271,7 +271,7 @@ export const WalletDesktopSelect = styled.select`
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  background: url("img/down-arrow.png") no-repeat;
+  background: url(${({ theme }) => theme.colors.selectArrow}) no-repeat;
   background-color: ${({ theme }) => theme.colors.appBackground};
   background-size: 21px;
   cursor: pointer;
