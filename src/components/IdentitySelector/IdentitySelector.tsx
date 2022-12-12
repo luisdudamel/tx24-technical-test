@@ -103,7 +103,7 @@ const IdentitySelector = ({
               buttonImage={
                 <img
                   src={`img/Passport-1${theme === "dark" ? "-dark" : ""}.svg`}
-                  alt="Id Icon"
+                  alt="Passport Icon"
                 ></img>
               }
             />
@@ -131,7 +131,7 @@ const IdentitySelector = ({
               buttonImage={
                 <img
                   src={`img/license-1${theme === "dark" ? "-dark" : ""}.svg`}
-                  alt="Id Icon"
+                  alt="License Icon"
                 ></img>
               }
             />

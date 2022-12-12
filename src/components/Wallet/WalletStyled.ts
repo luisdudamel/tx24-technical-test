@@ -183,7 +183,8 @@ export const WalletDesktopContainerStyled = styled.form`
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  border: 1px solid #ffffff;
+  border: 1px solid ${({ theme }) => theme.colors.appBackground};
+  background: ${({ theme }) => theme.colors.headerBackground};
   padding: 25px 0px;
 
   .wallet {
@@ -194,7 +195,7 @@ export const WalletDesktopContainerStyled = styled.form`
       font-size: 24px;
       line-height: 20px;
       letter-spacing: 0.05em;
-      color: #000000;
+      color: ${({ theme }) => theme.colors.mainText};
       margin-bottom: 10px;
     }
 
@@ -205,7 +206,7 @@ export const WalletDesktopContainerStyled = styled.form`
       font-weight: 300;
       font-size: 20px;
       line-height: 45px;
-      color: #000000;
+      color: ${({ theme }) => theme.colors.mainText};
     }
 
     &__layout {
@@ -225,7 +226,7 @@ export const WalletDesktopInformationStyled = styled.p`
   line-height: 30px;
   text-align: left;
   letter-spacing: 0.05em;
-  color: black;
+  color: ${({ theme }) => theme.colors.mainText};
   width: 100%;
 `;
 
@@ -244,7 +245,7 @@ export const WalletDesktopSelectContainer = styled.div`
         font-size: 18px;
         line-height: 20px;
         letter-spacing: 0.05em;
-        color: #000000;
+        color: ${({ theme }) => theme.colors.mainText};
       }
     }
   }
@@ -264,13 +265,14 @@ export const WalletDesktopSelect = styled.select`
   font-size: 18px;
   line-height: 20px;
   letter-spacing: 0.05em;
-  color: #000000;
+  color: ${({ theme }) => theme.colors.mainText};
   padding-left: 10px;
   margin-top: 10px;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
   background: url("img/down-arrow.png") no-repeat;
+  background-color: ${({ theme }) => theme.colors.appBackground};
   background-size: 21px;
   cursor: pointer;
   background-position: right 5px top 50%;
@@ -288,7 +290,7 @@ export const WalletDesktopAddressContainer = styled.div`
         font-size: 18px;
         line-height: 20px;
         letter-spacing: 0.05em;
-        color: #000000;
+        color: ${({ theme }) => theme.colors.mainText};
       }
       &__note {
         font-family: "Sansation Light";
@@ -310,8 +312,8 @@ export const WalletDesktopAddress = styled.textarea`
   height: 50.23px;
   left: 17px;
   top: 278.66px;
-  background: #ffffff;
-  border: 1px solid #ff1282;
+  background: ${({ theme }) => theme.colors.appBackground};
+  border: 1px solid ${({ theme }) => theme.colors.mainColor};
   border-radius: 5px;
   font-family: "Sansation Light";
   font-style: normal;
@@ -319,7 +321,7 @@ export const WalletDesktopAddress = styled.textarea`
   font-size: 18px;
   line-height: 20px;
   letter-spacing: 0.05em;
-  color: #000000;
+  color: ${({ theme }) => theme.colors.mainText};
   padding-left: 10px;
   padding-top: 10px;
   margin-top: 10px;
@@ -353,6 +355,7 @@ export const AgreementsDesktopContainer = styled.div`
 
   .wallet__terms {
     padding-left: 10px;
+    color: ${({ theme }) => theme.colors.mainText};
 
     &__container {
       display: flex;
@@ -364,8 +367,8 @@ export const AgreementsDesktopContainer = styled.div`
       position: absolute;
       height: 25px;
       width: 25px;
-      background: #ffffff;
-      border: 1px solid #ff1282;
+      background: ${({ theme }) => theme.colors.appBackground};
+      border: 1px solid ${({ theme }) => theme.colors.mainColor};
       border-radius: 5px;
     }
     &__accent {
@@ -375,7 +378,7 @@ export const AgreementsDesktopContainer = styled.div`
   }
 
   .wallet__terms__container input:checked ~ .wallet__terms__custom__checkbox {
-    background: url("img/checkmark.svg") no-repeat;
+    background: url(${({ theme }) => theme.colors.checkMarkUrl}) no-repeat;
     background-size: 21px;
   }
 `;

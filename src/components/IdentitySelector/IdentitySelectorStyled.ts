@@ -21,7 +21,7 @@ export const IdentityInformationStyled = styled.p`
   align-items: center;
   text-align: justify;
   letter-spacing: 0.05em;
-  color: black;
+  color: ${({ theme }) => theme.colors.mainText};
   padding: 0px 20px;
   margin-top: 50px;
 `;
@@ -55,7 +55,8 @@ export const IdentityDesktopContainerStyled = styled.div`
   padding: 25px 0px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  border: 1px solid #ffffff;
+  border: 1px solid ${({ theme }) => theme.colors.appBackground};
+  background: ${({ theme }) => theme.colors.headerBackground};
 `;
 
 export const IdentityDesktopInformationStyled = styled.p`
@@ -68,7 +69,7 @@ export const IdentityDesktopInformationStyled = styled.p`
   align-items: center;
   text-align: justify;
   letter-spacing: 0.05em;
-  color: black;
+  color: ${({ theme }) => theme.colors.mainText};
   padding: 0px 20px;
   margin-top: 50px;
 `;

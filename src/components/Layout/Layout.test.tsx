@@ -11,7 +11,7 @@ describe("Given a Layout function", () => {
 
       render(
         <ThemeProvider theme={light}>
-          <Layout />
+          <Layout theme="dark" />
         </ThemeProvider>
       );
 
@@ -20,8 +20,8 @@ describe("Given a Layout function", () => {
       expect(logoImage).toBeInTheDocument();
     });
 
-    test("Then it should render a form and a button with the text `Passport`", () => {
-      const expectedButtonText = "Id Icon Passport";
+    test("Then it should render a form and a button with the text `Passport Icon Passport`", () => {
+      const expectedButtonText = "Passport Icon Passport";
       const mockSetState = jest.fn();
 
       jest
@@ -30,7 +30,7 @@ describe("Given a Layout function", () => {
 
       render(
         <ThemeProvider theme={light}>
-          <Layout />
+          <Layout theme="dark" />
         </ThemeProvider>
       );
 
@@ -52,7 +52,7 @@ describe("Given a Layout function", () => {
 
       render(
         <ThemeProvider theme={light}>
-          <Layout />
+          <Layout theme="dark" />
         </ThemeProvider>
       );
 
@@ -72,7 +72,7 @@ describe("Given a Layout function", () => {
 
       render(
         <ThemeProvider theme={light}>
-          <Layout />
+          <Layout theme="dark" />
         </ThemeProvider>
       );
 

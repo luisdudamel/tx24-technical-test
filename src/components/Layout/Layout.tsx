@@ -39,12 +39,13 @@ const Layout = ({ theme }: layoutProps): JSX.Element => {
       ) : null}
       {currentStep === 3 ? (
         <DocumentUpload
+          theme={theme}
           width={width}
           document={document}
           setStep={setCurrentStep}
         />
       ) : null}
-      {currentStep === 4 ? <Wallet width={width} /> : null}
+      {currentStep === 4 ? <Wallet theme={theme} width={width} /> : null}
       <Footer />
     </MainStyledContainer>
   );

@@ -14,12 +14,14 @@ interface documentUploadProps {
   document: string;
   setStep: (step: number) => void;
   width: number;
+  theme: string;
 }
 
 const DocumentUpload = ({
   document,
   setStep,
   width,
+  theme,
 }: documentUploadProps): JSX.Element => {
   const inputRef = useRef(null);
   const backInputRef = useRef(null);
@@ -202,7 +204,9 @@ const DocumentUpload = ({
                   </div>
                   <img
                     src={`img/${
-                      document === "Passport" ? "passport" : "id-front"
+                      document === "Passport"
+                        ? `${theme === "light" ? "passport" : "passport-dark"}`
+                        : `id-${theme === "dark" ? "front-dark" : "front"}`
                     }.svg`}
                     width={120}
                     alt="Identity document front-side icon"
@@ -216,7 +220,9 @@ const DocumentUpload = ({
                   </div>
                   <img
                     src={`img/${
-                      document === "Passport" ? "passport" : "id-front"
+                      document === "Passport"
+                        ? `${theme === "light" ? "passport" : "passport-dark"}`
+                        : `id-${theme === "dark" ? "front-dark" : "front"}`
                     }.svg`}
                     width={120}
                     alt="Identity document front-side icon"
@@ -256,7 +262,7 @@ const DocumentUpload = ({
                       />
                     </div>
                     <img
-                      src="img/id-back.svg"
+                      src={`img/id-back${theme === "dark" ? "-dark" : ""}.svg`}
                       width={120}
                       alt="Identity document back-side icon"
                     />
@@ -268,7 +274,7 @@ const DocumentUpload = ({
                       <button onClick={() => clearFormData("back")}>X</button>
                     </div>
                     <img
-                      src="img/id-back.svg"
+                      src={`img/id-back${theme === "dark" ? "-dark" : ""}.svg`}
                       width={120}
                       alt="Identity document front-side icon"
                     />

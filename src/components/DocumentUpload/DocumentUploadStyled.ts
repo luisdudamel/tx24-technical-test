@@ -109,7 +109,8 @@ export const DocumentDesktopUploadContainer = styled.div`
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  border: 1px solid #ffffff;
+  border: 1px solid ${({ theme }) => theme.colors.headerBackground};
+  background-color: ${({ theme }) => theme.colors.headerBackground};
   padding: 25px 0px;
 
   .documentUpload__list {
@@ -119,8 +120,9 @@ export const DocumentDesktopUploadContainer = styled.div`
     font-weight: 300;
     font-size: 18px;
     line-height: 30px;
+
     letter-spacing: 0.05em;
-    color: #000000;
+    color: ${({ theme }) => theme.colors.mainText};
 
     &--item {
       padding: 10px 0px;
@@ -155,7 +157,7 @@ export const DocumentDesktopUploadInformation = styled.p`
   align-items: center;
   text-align: justify;
   letter-spacing: 0.05em;
-  color: black;
+  color: ${({ theme }) => theme.colors.mainText};
   padding: 0px 20px;
   margin-top: 30px;
 `;
@@ -178,7 +180,7 @@ export const DocumentDesktopUploader = styled.div`
   }
 
   .documentUpload__selector {
-    background: #ffffff;
+    background: ${({ theme }) => theme.colors.appBackground};
     border: 1px solid #949494;
     border-radius: 10px;
     width: 477.16px;
@@ -196,6 +198,7 @@ export const DocumentDesktopUploader = styled.div`
       text-align: left;
       padding-left: 10px;
       letter-spacing: 0.05em;
+      color: ${({ theme }) => theme.colors.mainText};
     }
 
     &--drag {
@@ -207,7 +210,7 @@ export const DocumentDesktopUploader = styled.div`
       text-align: center;
       letter-spacing: 0.025em;
       line-height: 2em;
-      color: rgba(0, 0, 0, 0.25);
+      color: ${({ theme }) => theme.colors.inactivePlaceholderText};
     }
 
     &__filenameContainer {
@@ -227,7 +230,7 @@ export const DocumentDesktopUploader = styled.div`
         font-size: 16px;
         line-height: 20px;
         letter-spacing: 0.05em;
-        color: #000000;
+        color: ${({ theme }) => theme.colors.mainText};
         overflow-wrap: break-word;
       }
       button {
@@ -237,6 +240,7 @@ export const DocumentDesktopUploader = styled.div`
         border: none;
         background: none;
         cursor: pointer;
+        color: ${({ theme }) => theme.colors.mainText};
       }
 
       .uploadedDocument {

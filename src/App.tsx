@@ -3,10 +3,11 @@ import Layout from "./components/Layout/Layout";
 import { light, dark } from "./styles/Theme.styled";
 
 function App() {
+  const theme = "light";
   return (
     <>
-      <ThemeProvider theme={dark}>
-        <Layout theme="dark" />
+      <ThemeProvider theme={light}>
+        <Layout theme={theme} />
       </ThemeProvider>
     </>
   );

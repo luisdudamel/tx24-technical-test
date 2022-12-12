@@ -11,6 +11,7 @@ interface styleTheme {
     inactivePlaceholderText: string;
     inactivePlaceholderBackground: string;
     stepIconBackground: string;
+    checkMarkUrl: string;
   };
 }
 
@@ -27,6 +28,7 @@ export const light: styleTheme = {
     inactivePlaceholderText: "rgba(148, 148, 148, 1)",
     inactivePlaceholderBackground: "rgba(230, 230, 230, 1)",
     stepIconBackground: "#ff1282",
+    checkMarkUrl: "img/checkmark.svg",
   },
 };
 
@@ -43,5 +45,6 @@ export const dark: styleTheme = {
     inactivePlaceholderText: "rgba(148, 148, 148, 1)",
     inactivePlaceholderBackground: "rgba(133, 133, 133, 0.35)",
     stepIconBackground: "#363442",
+    checkMarkUrl: "img/checkmark-dark.svg",
   },
 };
